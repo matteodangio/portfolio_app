@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+message="$(cat $1)"
+requiredPattern="(^(feat|fix|docs|style|refactor|perf|test|chore)(\(.+\))?\:[[:space:]](.{3,})|^Merge branch|^Merge remote-tracking)"
+if ! [[ $message =~ $requiredPattern ]];
+then
+  echo "🚨 Wrong commit message! 😕"
+  echo "The commit message must have this format:"
+  echo "feat|fix|docs|style|refactor|perf|test|done(TOPIC): DESCRIPTION"
+  echo "Example: fix(dashboard paginator): page numer refresh after init"
+  echo "-"
+  echo "Your commit message was:"
+  echo $message
+  echo "-"
+  echo "For more information, check script in .husky/commit-msg"
+  echo "-"
+  exit 1
+fi
