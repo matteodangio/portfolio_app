@@ -17,7 +17,7 @@ export default function Navbar() {
   const pathname = usePathname()
 
   return (
-    <nav className="border-b border-zinc-200 bg-white px-6 py-4">
+    <nav className="border-b border-b-mist-900 px-6 py-4">
       <div className="mx-auto flex max-w-5xl gap-2">
       {navigation.map((item) => {
         const isActive =
@@ -32,7 +32,7 @@ export default function Navbar() {
             className={cn(
               isActive
                 ? 'bg-zinc-900 text-white'
-                : 'text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900',
+                : 'text-zinc-600 hover:bg-zinc-700 hover:text-zinc-900',
               'rounded-md px-3 py-2 text-sm font-medium',
             )}
           >

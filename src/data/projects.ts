@@ -1,9 +1,6 @@
-import type { Project } from "@/types";
+import type { IProject } from "@/types";
 
-/* il dato è un array;
-ogni elemento ha sempre la stessa forma;
-React ama moltissimo questo pattern perché poi puoi iterare e costruire UI in modo programmatico.*/
-export const projects: Project[] = [
+export const projects: IProject[] = [
   {
     slug: "portfolio",
     title: "My portfolio",
@@ -23,6 +20,16 @@ export const projects: Project[] = [
     featured: false,
     githubUrl: "https://github.com/...",
     liveUrl: "https://..."
+  },
+  {
+    slug: "/",
+    title: "Coming soon",
+    description: "Coming soon",
+    stack: [],
+    year: 2026,
+    featured: true,
+    githubUrl: "",
+    liveUrl: ""
   }
 ];
 
