@@ -8,6 +8,10 @@ export default function FeaturedProjects() {
   return (
     <section id="projects" className="p-8">
       <h2 className="text-2xl font-bold text-white mb-6">Projects</h2>
+      <div className="">
+        <h2 className="text-2xl font-bold text-white mb-6">Main Project</h2>
+        <p>inserire il progetto principale da mostrare</p>
+      </div>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
         {featuredProject.map((project) => (
           <ProjectCard key={project.slug} project={project} />

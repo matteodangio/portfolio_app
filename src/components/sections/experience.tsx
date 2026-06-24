@@ -17,7 +17,9 @@ export default function Experience() {
   }));
   return (
     <section id="experience" className="p-8">
-      <h2 className="text-2xl font-bold text-white mb-6">Experience</h2>
+      <h2 className="text-2xl font-bold text-white mb-6">
+        Professional Experience
+      </h2>
       <Accordion items={items}></Accordion>
     </section>
   );

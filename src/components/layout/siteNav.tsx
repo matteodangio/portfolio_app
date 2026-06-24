@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 type NavState = "hero-open" | "compact-closed" | "compact-open";
 
 const navItems = [
-  { label: "Home", href: "#hero" },
+  { label: "Home", href: "#home" },
   { label: "Expertise", href: "#expertise" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },

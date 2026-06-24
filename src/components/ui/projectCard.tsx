@@ -8,7 +8,7 @@ interface ProjectCardProps {
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <Link
-      href={"/projects/${project.slug}"}
+      href={`/projects/${project.slug}`}
       className="group flex flex-col gap-4 rounded-2xl border border-white/10 p-6 transition hover:border-white/30"
     >
       <div className="flex items-center justify-between">

@@ -1,9 +1,9 @@
 import Button from "../ui/button";
 import Image from "next/image";
 
-export default function Hero() {
+export default function Home() {
   return (
-    <section id="hero" className="flex flex-row min-h-screen w-full">
+    <section id="home" className="flex flex-row min-h-screen w-full">
       <div className="container mx-auto flex flex-col items-center px-6 text-center">
         <h1 className="text-xl font-bold mb-3">Frontend Engineer</h1>
         <p className="text-sm mb-3">

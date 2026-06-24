@@ -2,8 +2,8 @@ export interface IProject {
   slug: string;
   title: string;
   description: string;
-  // content: string;        // testo lungo, narrativo
-  // role: string;           // es. "Frontend Engineer"
+  content?: string;        // testo lungo, narrativo
+  role?: string;           // es. "Frontend Engineer"
   stack: string[];
   year: number;
   featured: boolean;
@@ -31,5 +31,12 @@ export interface IProject {
     description?: string;
     chipsType1?: string[];
     chipsType2?: string[];
+  }
+  
+  export interface IExpertise {
+    icon: string; 
+    title: string;
+    subtitle: string;
+    description: string;
   }
   
