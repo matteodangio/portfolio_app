@@ -11,16 +11,17 @@ export interface IProject {
   liveUrl?: string;
 }
 
-  export interface IExperience {
-    jobTitle: string;
-    company: string;
-    location: string;
-    description: string;
-    period: string;
-    exposures?: string[];
-    stack: string[];
-    workMode: 'Remote' | 'On-site' | 'Hybrid';
-  }
+{/*EXPERIENCE*/}
+
+export interface IExperienceItem {
+  period: string;
+  role: string;
+  company: string;
+  location: string;
+  summary: string;
+  highlights: string[];
+  stack: string[];
+};
 
   export interface AccordionItem {
     title?: string;
@@ -33,6 +34,9 @@ export interface IProject {
     chipsType2?: string[];
   }
   
+
+{/*EXPERTISE*/}
+
   export interface IExpertise {
     icon: string; 
     title: string;
@@ -40,3 +44,45 @@ export interface IProject {
     description: string;
   }
   
+
+{/*ABOUT*/}
+
+  export interface IFocusItem {
+    index: string;
+    title: string;
+    description: string;
+  }
+
+  export interface IAboutLabels {
+    sectionTitle: string,
+    mainTitle: string,
+    description1: string,
+    description2: string
+  }
+
+
+
+
+{/*FEATURED PROJECTS*/}
+
+  export interface ITechItem {
+    label: string;
+    icon: React.ComponentType<{ size?: number; color?: string }>;
+    color: string;
+  };
+  export interface IFeaturedProject {
+    title: string;
+    summary: string;
+    context: string;
+    outcome: string;
+    links: IProjectLink[];
+    tech: ITechItem[];
+  };
+  export interface IWorkItem {
+    index: string;
+    title: string;
+    summary: string;
+    href: string;
+    tech: ITechItem[];
+  };
+  export interface IProjectLink { label: string; href: string };

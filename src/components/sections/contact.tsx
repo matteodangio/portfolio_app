@@ -1,49 +1,100 @@
+import { SiGithub } from "@icons-pack/react-simple-icons";
+
 export default function Contact() {
+  const links = [
+    {
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/matteo-dangio",
+      icon: "",
+    },
+    {
+      label: "GitHub",
+      href: "https://github.com/matteodangio",
+      icon: "",
+    },
+  ];
+
+  const mail = { label: "matteo@example.it", href: "mailto:matteo@example.it" };
+
+  const contactLabels = {
+    sectionTitle: "Contact",
+    title: " Let’s build something clear, sharp, and useful.",
+    description1: `I’m interested in frontend roles, product-driven teams, and projects
+            where interface quality and system thinking genuinely matter.`,
+    description2: `Available for selected opportunities, collaborations, and product
+            conversations.`,
+  };
+
   return (
-    <section id="contact" className="p-8">
-      <div className="rounded-2xl border border-white/10 p-6 sm:p-8">
-        <p className="text-xs uppercase tracking-[0.2em] text-white/40 mb-3">
-          Contact
-        </p>
-
-        <h2 className="text-2xl sm:text-4xl font-semibold text-white mb-4">
-          Let’s build something thoughtful.
-        </h2>
-
-        <p className="max-w-2xl text-sm sm:text-base leading-relaxed text-white/60 mb-8">
-          I’m interested in frontend engineering roles, product-focused teams,
-          where code, UX, and visual quality matter.
-        </p>
-
-        <div className="flex flex-col gap-3 text-sm sm:text-base">
-          <a
-            href="mailto:tua-email@example.com"
-            className="text-white underline underline-offset-4 hover:text-white/70 transition"
+    <section
+      id="contact"
+      className="border-t py-20 md:py-28"
+      style={{ borderColor: "var(--border)" }}
+      aria-labelledby="contact-title"
+    >
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
+        <div>
+          <p
+            className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
+            style={{ color: "var(--text-faint)" }}
           >
-            tua-email@example.com
-          </a>
+            {contactLabels.sectionTitle}
+          </p>
 
-          <a
-            href="https://www.linkedin.com/in/matteo-dangio"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open LinkedIn profile in a new tab"
-            className="text-white/70 hover:text-white transition"
+          <h2
+            id="contact-title"
+            className="max-w-sm text-3xl leading-[0.95] md:text-5xl"
+            style={{
+              fontFamily: "var(--font-display)",
+              color: "var(--hero-display)",
+            }}
           >
-            LinkedIn
-          </a>
+            {contactLabels.title}
+          </h2>
+        </div>
 
-          <a
-            href="https://github.com/tuo-username"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Open GitHub profile in a new tab"
-            className="text-white/70 hover:text-white transition"
+        <div>
+          <p
+            className="max-w-2xl text-base leading-8 md:text-lg"
+            style={{ color: "var(--text-muted)" }}
           >
-            GitHub
-          </a>
+            {contactLabels.description1}
+          </p>
 
-          <p className="text-white/40">Milan, Italy</p>
+          <div className="mt-10">
+            <a
+              href={mail.href}
+              className="inline-block text-2xl leading-tight transition-opacity duration-200 hover:opacity-60 md:text-4xl"
+              style={{
+                color: "var(--text)",
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              {mail.label}
+            </a>
+          </div>
+
+          <div className="mt-10 flex flex-wrap gap-6">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
+                style={{ color: "var(--text)" }}
+              >
+                {link.icon ? link.icon : link.label}
+              </a>
+            ))}
+          </div>
+
+          <p
+            className="mt-12 max-w-xl text-sm leading-7"
+            style={{ color: "var(--text-faint)" }}
+          >
+            {contactLabels.description2}
+          </p>
         </div>
       </div>
     </section>

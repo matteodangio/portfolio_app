@@ -1,37 +1,59 @@
 @import "tailwindcss";
 
+/* Superfici alternate per sezioni */
+
 :root {
-  --background: #020617; /*bg-slate-950*/
-  --foreground: #ededed; /*bg-slate-950*/
+  color-scheme: dark;
+
+  --bg: #0f0f0f;
+  --surface: #171717;
+  --surface-2: #1f1f1f;
+  --border: rgba(255, 255, 255, 0.1);
+
+  --text: rgba(255, 255, 255, 0.94);
+  --text-muted: rgba(255, 255, 255, 0.64);
+  --text-faint: rgba(255, 255, 255, 0.4);
+
+  --accent: #9fb7c9;
+
+  --hero-display: #e7dec4;
+  --hero-nav: rgba(255, 255, 255, 0.82);
+  --hero-nav-hover: #ffffff;
+
+  --font-display: "Zodiak", Georgia, serif;
+  --font-body: "Satoshi", sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background2);
-  --color-foreground: var(--foreground2);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #e4ddd2;
+  --surface: #ebe5db;
+  --surface-2: #f2ede5;
+  --border: rgba(33, 28, 24, 0.12);
+  --text: #1e1a17;
+  --text-muted: rgba(30, 26, 23, 0.68);
+  --text-faint: rgba(30, 26, 23, 0.42);
+  --accent: #8c9bb0;
+
+  --hero-display: #2e2a24;
+  --hero-nav: rgba(17, 17, 17, 0.82);
+  --hero-nav-hover: #111111;
+
+  --font-display: "Zodiak", Georgia, serif;
+  --font-body: "Satoshi", sans-serif;
 }
 
-/*
-  MAIN COLORS
-  - 
-
-
-  MAIN FONTS
-
-*/
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617; /*bg-slate-950*/
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  transition:
+    background-color 180ms ease,
+    color 180ms ease;
 }
-
-/* Per il portfolio: colori del brand, tipografia base, reset/minime regole globali. Gli stili dei singoli componenti restano in gran parte con classi Tailwind nei .tsx.*/
