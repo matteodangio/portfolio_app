@@ -18,13 +18,12 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ProjectPage({ params }: Props) {
-  const { slug } = await params;
-  const project = getNavigableProjectBySlug(slug);
+export default function ProjectPage({ params }: Props) {
+  const project = getNavigableProjectBySlug(params.slug);
 
   if (!project) notFound();
 
-  const { previousProject, nextProject } = getProjectSiblings(slug);
+  const { previousProject, nextProject } = getProjectSiblings(params.slug);
 
   return (
     <main className="mx-auto w-full max-w-7xl px-6 pb-24 pt-12 md:px-8 md:pb-32 md:pt-16">
