@@ -1,4 +1,4 @@
-import { IAboutLabels, IFocusItem } from "@/types";
+import { IFocusItem, ISectionLabel } from "@/types";
 
 export const focusItems: IFocusItem[] = [
     {
@@ -23,9 +23,9 @@ export const focusItems: IFocusItem[] = [
 
 
 
-export const aboutLabels: IAboutLabels = {
+export const aboutLabels: ISectionLabel = {
     sectionTitle: "About",
-    mainTitle:
+    title:
       "Frontend work shaped by structure, clarity, and visual discipline.",
     description1: `I’m a frontend engineer focused on building interfaces that feel
               clear, solid, and intentional. My work sits at the intersection of
@@ -34,4 +34,5 @@ export const aboutLabels: IAboutLabels = {
               systems and complex product environments. Outside that, I’m
               interested in sharpening the visual and architectural side of the
               web — especially where design precision and frontend craft overlap.`,
+              subtitle1: "What I Bring"
   };

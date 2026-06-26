@@ -1,30 +1,8 @@
+import { contactLabels, links, mail } from "@/data/contact";
+import { ILink, ISectionLabel } from "@/types";
 import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function Contact() {
-  const links = [
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/matteo-dangio",
-      icon: "",
-    },
-    {
-      label: "GitHub",
-      href: "https://github.com/matteodangio",
-      icon: "",
-    },
-  ];
-
-  const mail = { label: "matteo@example.it", href: "mailto:matteo@example.it" };
-
-  const contactLabels = {
-    sectionTitle: "Contact",
-    title: " Let’s build something clear, sharp, and useful.",
-    description1: `I’m interested in frontend roles, product-driven teams, and projects
-            where interface quality and system thinking genuinely matter.`,
-    description2: `Available for selected opportunities, collaborations, and product
-            conversations.`,
-  };
-
   return (
     <section
       id="contact"

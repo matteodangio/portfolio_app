@@ -1,4 +1,4 @@
-import type { IExperienceItem } from "@/types";
+import type { IExperienceItem, ISectionLabel } from "@/types";
 
 export const experienceItems: IExperienceItem[] = [
   {
@@ -36,3 +36,11 @@ export const experienceItems: IExperienceItem[] = [
     ],
   },
 ];
+
+export const experienceLabels: ISectionLabel = {
+  sectionTitle: "Experience",
+  title: "Professional context, not just job titles.",
+  description1: `My experience is centered on frontend systems, interface quality,
+            and product implementation in environments where structure,
+            maintainability, and clarity matter.`,
+};

@@ -1,5 +1,6 @@
 "use client";
 import ThemeToggle from "@/components/ui/themeToggle";
+import { heroLabels } from "@/data/hero";
 
 const navItems = [
   // { label: "Home", target: "hero" },
@@ -32,7 +33,7 @@ export default function Hero() {
             className="mb-6 text-xs uppercase tracking-[0.24em]"
             style={{ color: "var(--text-faint)" }}
           >
-            Frontend Engineer
+            {heroLabels.sectionSubtitle}
           </p>
 
           <h1
@@ -53,9 +54,7 @@ export default function Hero() {
             className="mt-8 max-w-xl text-base leading-8 md:text-lg"
             style={{ color: "var(--text-muted)" }}
           >
-            Frontend engineer focused on Angular applications, scalable UI
-            architecture, and interfaces that combine product clarity, speed,
-            and visual precision.
+            {heroLabels.description1}
           </p>
         </div>
 

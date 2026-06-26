@@ -1,15 +1,87 @@
-export interface IProject {
+import { ComponentType, SVGProps } from "react";
+
+/* COMMON */
+export interface ISectionLabel {
+    sectionTitle?: string,
+    sectionSubtitle?: string,
+    title?: string, 
+    description1?: string,
+    description2?: string,
+    subtitle1?: string,
+    subtitle2?: string,
+    subtitle3?: string,
+}
+
+export interface ILink {
+  label: string,
+  href: string,
+  icon?: string,
+}
+
+{/*FEATURED PROJECTS*/}
+
+export interface IProjectLink {
+  label: string;
+  href: string;
+}
+
+export interface ITechItem {
+  label: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  color: string;
+}
+
+export interface IProjectShowcaseItem {
+  title: string;
   slug: string;
+  featured: boolean;
+  mainProject: boolean;
+  summary: string;
+  context?: string;
+  outcome?: string;
+  projectPageEnabled: boolean;
+  links?: IProjectLink[];
+  tech?: ITechItem[];
+  description?: string;
+  content?: string;
+  year?: string;
+  role?: string;
+  index?: string;
+  href?: string;
+  stack?: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+
+  heroImage?: IProjectImage;
+  gallery?: IProjectImage[];
+  decisionCards?: IProjectDecisionCard[];
+  workflow?: IProjectWorkflow;
+}
+
+/* PRODUCT PAGE */
+export interface IProjectDecisionCard {
   title: string;
   description: string;
-  content?: string;        // testo lungo, narrativo
-  role?: string;           // es. "Frontend Engineer"
-  stack: string[];
-  year: number;
-  featured: boolean;
-  githubUrl?: string;
-  liveUrl?: string;
 }
+
+export interface IProjectImage {
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+export interface IProjectWorkflowStep {
+  label: string;
+  description?: string;
+}
+
+export interface IProjectWorkflow {
+  title: string;
+  summary?: string;
+  steps: IProjectWorkflowStep[];
+}
+
+
 
 {/*EXPERIENCE*/}
 
@@ -22,27 +94,6 @@ export interface IExperienceItem {
   highlights: string[];
   stack: string[];
 };
-
-  export interface AccordionItem {
-    title?: string;
-    subtitle?: string;
-    prop1?: string;
-    prop2?: string;
-    prop3?: string;
-    description?: string;
-    chipsType1?: string[];
-    chipsType2?: string[];
-  }
-  
-
-{/*EXPERTISE*/}
-
-  export interface IExpertise {
-    icon: string; 
-    title: string;
-    subtitle: string;
-    description: string;
-  }
   
 
 {/*ABOUT*/}
@@ -53,36 +104,3 @@ export interface IExperienceItem {
     description: string;
   }
 
-  export interface IAboutLabels {
-    sectionTitle: string,
-    mainTitle: string,
-    description1: string,
-    description2: string
-  }
-
-
-
-
-{/*FEATURED PROJECTS*/}
-
-  export interface ITechItem {
-    label: string;
-    icon: React.ComponentType<{ size?: number; color?: string }>;
-    color: string;
-  };
-  export interface IFeaturedProject {
-    title: string;
-    summary: string;
-    context: string;
-    outcome: string;
-    links: IProjectLink[];
-    tech: ITechItem[];
-  };
-  export interface IWorkItem {
-    index: string;
-    title: string;
-    summary: string;
-    href: string;
-    tech: ITechItem[];
-  };
-  export interface IProjectLink { label: string; href: string };

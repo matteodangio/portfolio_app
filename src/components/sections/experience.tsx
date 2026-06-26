@@ -1,17 +1,9 @@
 "use client";
 
-import { experienceItems } from "@/data/experience";
+import { experienceItems, experienceLabels } from "@/data/experience";
 import { IExperienceItem } from "@/types";
-import { ArrowRight, ArrowUpRight, Minus, Plus } from "lucide-react";
+import { Minus, Plus } from "lucide-react";
 import { useState } from "react";
-
-export const experienceLabels = {
-  sectionTitle: "Experience",
-  mainTitle: "Professional context, not just job titles.",
-  description: `My experience is centered on frontend systems, interface quality,
-            and product implementation in environments where structure,
-            maintainability, and clarity matter.`,
-};
 
 export default function Experience() {
   const items: IExperienceItem[] = experienceItems;
@@ -41,14 +33,14 @@ export default function Experience() {
               color: "var(--hero-display)",
             }}
           >
-            {experienceLabels.mainTitle}
+            {experienceLabels.title}
           </h2>
 
           <p
             className="mt-6 max-w-md text-base leading-8"
             style={{ color: "var(--text-muted)" }}
           >
-            {experienceLabels.description}
+            {experienceLabels.description1}
           </p>
         </div>
 

@@ -28,7 +28,7 @@ export default function About() {
               color: "var(--hero-display)",
             }}
           >
-            {aboutLabels.mainTitle}
+            {aboutLabels.title}
           </h2>
 
           <div
@@ -100,7 +100,7 @@ export default function About() {
               className="mb-6 text-xs font-medium uppercase tracking-[0.22em]"
               style={{ color: "var(--text-faint)" }}
             >
-              What I Bring
+              {aboutLabels.subtitle1}
             </p>
 
             <div className="flex flex-col">
