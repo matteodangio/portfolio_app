@@ -8,7 +8,7 @@ import {
 } from "@/data/projects.utils";
 
 interface Props {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 export const dynamicParams = false;
 
@@ -18,12 +18,13 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ProjectPage({ params }: Props) {
-  const project = getNavigableProjectBySlug(params.slug);
+export default async function ProjectPage({ params }: Props) {
+  const { slug } = await params;
+  const project = getNavigableProjectBySlug(slug);
 
   if (!project) notFound();
 
-  const { previousProject, nextProject } = getProjectSiblings(params.slug);
+  const { previousProject, nextProject } = getProjectSiblings(slug);
 
   return (
     <main className="mx-auto w-full max-w-7xl px-6 pb-24 pt-12 md:px-8 md:pb-32 md:pt-16">

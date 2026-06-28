@@ -6,17 +6,16 @@ import { useTheme } from "next-themes";
 export default function ThemeToggle() {
   const { setTheme, resolvedTheme } = useTheme();
 
-  const isDark = resolvedTheme === "dark";
-
   function toggleTheme() {
-    setTheme(isDark ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   }
 
   return (
     <button
       type="button"
+      suppressHydrationWarning
       onClick={toggleTheme}
-      aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+      aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
       className="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-full transition-opacity duration-200 hover:opacity-60"
     >
       <Sun className="theme-toggle__sun h-[18px] w-[18px]" />

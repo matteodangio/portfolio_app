@@ -3,9 +3,28 @@
 import { experienceItems, experienceLabels } from "@/data/experience";
 import { IExperienceItem } from "@/types";
 import { Minus, Plus } from "lucide-react";
+import { Variants } from "motion/react";
 import { useState } from "react";
 
 export default function Experience() {
+
+
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
+const fadeUp: Variants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: smoothEase,
+    },
+  },
+};
+
+
+
   const items: IExperienceItem[] = experienceItems;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 

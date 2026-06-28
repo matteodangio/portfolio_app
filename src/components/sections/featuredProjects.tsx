@@ -1,7 +1,9 @@
+"use client";
+
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { IProjectShowcaseItem } from "@/types";
-import { projects, projectLabel } from "@/data/projects";
+import { projectLabel } from "@/data/projects";
 import { getMainProject, getSecondaryProjects } from "@/data/projects.utils";
 import { motion } from "motion/react";
 import type { Variants } from "motion/react";
@@ -21,6 +23,15 @@ const fadeUp: Variants = {
 };
 
 const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const worksContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
@@ -93,13 +104,20 @@ export default function FeaturedProjects() {
   if (!mainProject) return null;
 
   return (
-    <section
-      id="projects"
-      className="border-t py-20 md:py-28"
-      style={{ borderColor: "var(--border)" }}
-      aria-labelledby="projects-title"
-    >
-      <div className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
+    <motion.section
+    id="projects"
+    className="border-t py-20 md:py-28"
+    style={{ borderColor: "var(--border)" }}
+    aria-labelledby="projects-title"
+    variants={staggerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: true, amount: 0.1 }}
+  >
+      <motion.div
+  className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
+  variants={fadeUp}
+>
         <div>
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
@@ -128,12 +146,13 @@ export default function FeaturedProjects() {
             {projectLabel.description1}
           </p>
         </div>
-      </div>
+      </motion.div>
 
-      <article
-        className="pb-12 md:pb-16"
-        style={{ borderBottom: "1px solid var(--border)" }}
-      >
+      <motion.article
+  className="pb-12 md:pb-16"
+  style={{ borderBottom: "1px solid var(--border)" }}
+  variants={fadeUp}
+>
         <p
           className="mb-6 text-xs font-medium uppercase tracking-[0.18em]"
           style={{ color: "var(--text-faint)" }}
@@ -217,19 +236,26 @@ export default function FeaturedProjects() {
             </div>
           </div>
         </div>
-      </article>
+      </motion.article>
 
-      <div className="mt-0">
+      <motion.div
+  className="mt-0"
+  variants={worksContainer}
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: true, amount: 0.05 }}
+>
         {works.map((work, index) => {
           const isLast = index === works.length - 1;
 
           return (
-            <article
+            <motion.article
               key={work.slug}
               className="grid grid-cols-1 gap-6 py-8 md:grid-cols-[80px_minmax(0,1fr)_auto] md:items-center md:gap-10 md:py-9"
               style={{
                 borderBottom: !isLast ? "1px solid var(--border)" : undefined,
               }}
+              variants={fadeUp}
             >
               <div>
                 <span
@@ -268,10 +294,10 @@ export default function FeaturedProjects() {
               <div className="md:shrink-0">
                 <ProjectLink project={work} />
               </div>
-            </article>
+            </motion.article>
           );
         })}
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }
