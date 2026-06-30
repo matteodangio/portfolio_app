@@ -52,16 +52,27 @@ export interface IProjectShowcaseItem {
   liveUrl?: string;
   githubUrl?: string;
 
+  problem?: string;
+  constraints?: string[];
+  impact?: IProjectImpactItem[];
+  lessonsLearned?: string[];
+
   heroImage?: IProjectImage;
   gallery?: IProjectImage[];
   decisionCards?: IProjectDecisionCard[];
   workflow?: IProjectWorkflow;
 }
 
+export interface IProjectImpactItem {
+  label: string;
+  value: string;
+}
+
 /* PRODUCT PAGE */
 export interface IProjectDecisionCard {
   title: string;
   description: string;
+  tradeoff?: string;
 }
 
 export interface IProjectImage {
@@ -73,6 +84,7 @@ export interface IProjectImage {
 export interface IProjectWorkflowStep {
   label: string;
   description?: string;
+  businessBenefit?: string;
 }
 
 export interface IProjectWorkflow {

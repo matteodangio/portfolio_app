@@ -6,7 +6,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="border-t py-20 md:py-28"
+      className="border-t py-16 md:py-24"
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="contact-title"
     >

@@ -1,6 +1,14 @@
 "use client";
 import ThemeToggle from "@/components/ui/themeToggle";
+import HeroWordmark from "@/components/ui/heroWordmark";
 import { heroLabels } from "@/data/hero";
+import { motion } from "motion/react";
+import {
+  fadeUp,
+  heroVariants,
+  navItem,
+  navList,
+} from "@/lib/animations/motionVariants";
 
 const navItems = [
   // { label: "Home", target: "hero" },
@@ -22,57 +30,70 @@ function scrollToSection(targetId: string) {
 
 export default function Hero() {
   return (
-    <section
+    <motion.section
       id="home"
       className="min-h-screen px-4 md:px-6 lg:px-6"
       style={{ background: "var(--bg)", color: "var(--text)" }}
+      variants={heroVariants}
+      initial="hidden"
+      animate="show"
     >
-      <div className="mx-auto grid min-h-[92vh] max-w-7xl grid-cols-1 gap-10 md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] md:items-center md:gap-10">
-        <div className="flex flex-col justify-center py-8 md:py-12">
+      <div className="mx-auto grid min-h-[92vh] max-w-7xl grid-cols-1 gap-2 md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] md:items-center md:gap-10">
+        <div className="flex flex-col justify-center py-4 md:py-12">
           <p
-            className="mb-6 text-xs uppercase tracking-[0.24em]"
+            className="md:mb-3 uppercase tracking-[0.24em]"
             style={{ color: "var(--text-faint)" }}
           >
             {heroLabels.sectionSubtitle}
           </p>
 
           <h1
-            className="max-w-5xl text-[3rem] leading-[0.92] sm:text-[4rem] lg:text-[4.5rem]"
+            className="max-w-5xl"
             style={{
-              fontFamily: "var(--font-display)",
               color: "var(--hero-display)",
             }}
           >
-            Matteo,
-            <br />
-            building sharp
-            <br />
-            digital products.
+            {/* <span className="sr-only">
+              Matteo, building sharp digital products.
+            </span> */}
+            <HeroWordmark
+              srcLight="/dark-hero-me.png"
+              srcDark="/light-hero-me.png"
+              alt="Matteo Dangiò Frontend Engineer"
+              className="hero-wordmark w-full max-w-[clamp(240px,24vw,500px)] md:max-w-[clamp(280px,40vw,640px)] lg:max-w-[clamp(320px,32vw,540px)]"
+            />
           </h1>
 
           <p
-            className="mt-8 max-w-xl text-base leading-8 md:text-lg"
+            className="max-w-xl text-base leading-8 md:text-lg"
             style={{ color: "var(--text-muted)" }}
           >
             {heroLabels.description1}
           </p>
         </div>
 
-        <nav className="w-full" aria-label="Hero navigation">
-          <div className="flex flex-col items-start gap-8 md:items-end">
-            <ul className="flex flex-col gap-2 md:items-end">
+        <motion.nav
+          className="w-full"
+          aria-label="Hero navigation"
+          variants={navList}
+        >
+          <div className="flex flex-col items-start gap-2 md:items-end">
+            <motion.ul
+              className="flex flex-col gap-2 md:items-end"
+              variants={navList}
+            >
               {navItems.map((item) => (
-                <li key={item.target}>
+                <motion.li key={item.target} variants={navItem}>
                   <button
                     type="button"
                     onClick={() => scrollToSection(item.target)}
                     className="group relative block text-left md:text-right"
                   >
                     <span
-                      className="relative block transition-all duration-200 ease-out group-hover:translate-x-1"
+                      className="uppercase relative block transition-all duration-200 ease-out group-hover:translate-x-1"
                       style={{
                         fontFamily: "var(--font-body)",
-                        fontSize: "clamp(2.75rem, 5vw, 5rem)",
+                        fontSize: "clamp(2rem, 5vw, 5rem)",
                         lineHeight: 0.92,
                         letterSpacing: "-0.04em",
                         fontWeight: 700,
@@ -90,16 +111,16 @@ export default function Hero() {
                       }}
                     />
                   </button>
-                </li>
+                </motion.li>
               ))}
-            </ul>
+            </motion.ul>
 
             <div className="pt-4">
               <ThemeToggle />
             </div>
           </div>
-        </nav>
+        </motion.nav>
       </div>
-    </section>
+    </motion.section>
   );
 }

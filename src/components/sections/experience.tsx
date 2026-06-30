@@ -1,41 +1,35 @@
 "use client";
 
 import { experienceItems, experienceLabels } from "@/data/experience";
+import {
+  contentVariants,
+  fadeUp,
+  staggerContainer,
+} from "@/lib/animations/motionVariants";
 import { IExperienceItem } from "@/types";
 import { Minus, Plus } from "lucide-react";
-import { Variants } from "motion/react";
+import { AnimatePresence, motion, Variants } from "motion/react";
 import { useState } from "react";
 
 export default function Experience() {
-
-
-const smoothEase = [0.22, 1, 0.36, 1] as const;
-
-const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      duration: 0.55,
-      ease: smoothEase,
-    },
-  },
-};
-
-
-
   const items: IExperienceItem[] = experienceItems;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section
+    <motion.section
       id="experience"
-      className="border-t pt-20 md:py-28"
+      className="border-t py-16 md:py-24"
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="experience-title"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
     >
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
+      <motion.div
+        className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
+        variants={fadeUp}
+      >
         <div className="lg:sticky lg:top-24 lg:self-start">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
@@ -43,7 +37,6 @@ const fadeUp: Variants = {
           >
             {experienceLabels.sectionTitle}
           </p>
-
           <h2
             id="experience-title"
             className="max-w-sm text-3xl leading-[0.95] md:text-5xl"
@@ -54,7 +47,6 @@ const fadeUp: Variants = {
           >
             {experienceLabels.title}
           </h2>
-
           <p
             className="mt-6 max-w-md text-base leading-8"
             style={{ color: "var(--text-muted)" }}
@@ -68,16 +60,22 @@ const fadeUp: Variants = {
             const isOpen = openIndex === index;
 
             return (
-              <article
+              <motion.article
                 key={`${item.role}-${item.company}`}
                 className="border-t py-6 md:py-8"
                 style={{ borderColor: "var(--border)" }}
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.2 }}
               >
                 <button
                   type="button"
-                  onClick={() => setOpenIndex(isOpen ? -1 : index)}
+                  onClick={() => setOpenIndex(isOpen ? null : index)}
                   className="flex w-full flex-col gap-4 text-left md:flex-row md:items-start md:justify-between"
                   aria-expanded={isOpen}
+                  aria-controls={`experience-panel-${index}`}
+                  id={`experience-trigger-${index}`}
                 >
                   <div className="flex-1">
                     <p
@@ -97,7 +95,6 @@ const fadeUp: Variants = {
                     >
                       {item.role}
                     </h3>
-
                     <p
                       className="mt-2 text-sm uppercase tracking-[0.14em]"
                       style={{ color: "var(--text-muted)" }}
@@ -116,52 +113,64 @@ const fadeUp: Variants = {
                   </div>
                 </button>
 
-                {isOpen && (
-                  <div className="pt-6">
-                    <p
-                      className="max-w-2xl text-base leading-8"
-                      style={{ color: "var(--text-muted)" }}
+                <AnimatePresence initial={false} mode="wait">
+                  {isOpen && (
+                    <motion.div
+                      id={`experience-panel-${index}`}
+                      key={`panel-${index}`}
+                      variants={contentVariants}
+                      initial="hidden"
+                      animate="show"
+                      exit="exit"
+                      className="overflow-hidden"
                     >
-                      {item.summary}
-                    </p>
-
-                    <ul className="mt-6 space-y-3">
-                      {item.highlights.map((highlight) => (
-                        <li
-                          key={highlight}
-                          className="flex gap-3 text-base leading-8"
+                      <div className="pt-6">
+                        <p
+                          className="max-w-2xl text-base leading-8"
                           style={{ color: "var(--text-muted)" }}
                         >
-                          <span
-                            className="mt-3 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
-                            style={{ background: "var(--accent)" }}
-                          />
-                          <span>{highlight}</span>
-                        </li>
-                      ))}
-                    </ul>
+                          {item.summary}
+                        </p>
 
-                    <div className="mt-6 flex flex-wrap gap-2">
-                      {item.stack.map((label) => (
-                        <span
-                          key={label}
-                          className="rounded-full border px-3 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.14em]"
-                          style={{
-                            borderColor: "var(--border)",
-                            color: "var(--text-muted)",
-                          }}
-                        >
-                          {label}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </article>
+                        <ul className="mt-6 space-y-3">
+                          {item.highlights.map((highlight) => (
+                            <li
+                              key={highlight}
+                              className="flex gap-3 text-base leading-8"
+                              style={{ color: "var(--text-muted)" }}
+                            >
+                              <span
+                                className="mt-3 inline-block h-1.5 w-1.5 shrink-0 rounded-full"
+                                style={{ background: "var(--accent)" }}
+                              />
+                              <span>{highlight}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <div className="mt-6 flex flex-wrap gap-2">
+                          {item.stack.map((label) => (
+                            <span
+                              key={label}
+                              className="rounded-full border px-3 py-1.5 text-[0.72rem] font-medium uppercase tracking-[0.14em]"
+                              style={{
+                                borderColor: "var(--border)",
+                                color: "var(--text-muted)",
+                              }}
+                            >
+                              {label}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.article>
             );
           })}
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -1,17 +1,29 @@
+"use client";
+
 import { aboutLabels, focusItems } from "@/data/about";
+import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
 import { IFocusItem } from "@/types";
+import { Variants } from "motion";
+import { motion } from "motion/react";
 
 export default function About() {
   const items: IFocusItem[] = focusItems;
 
   return (
-    <section
+    <motion.section
       id="about"
-      className="border-t py-20 md:py-28"
+      className="border-t py-16 md:py-24"
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="about-title"
+      variants={staggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.2 }}
     >
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
+      <motion.div
+        className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
+        variants={fadeUp}
+      >
         <div className="lg:sticky lg:top-24 lg:self-start">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
@@ -147,7 +159,7 @@ export default function About() {
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
 }

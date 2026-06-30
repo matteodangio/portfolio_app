@@ -39,17 +39,17 @@ const navItems: NavItem[] = [
 const socialLinks: SocialLink[] = [
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/in/TUO-PROFILO",
+    href: "https://www.linkedin.com/in/matteo-dangio",
     icon: LinkedinIcon,
   },
   {
     label: "GitHub",
-    href: "https://github.com/TUO-USERNAME",
+    href: "https://github.com/matteodangio",
     icon: SiGithub,
   },
   {
     label: "Email",
-    href: "mailto:tua@email.com",
+    href: "mailto:matteo@example.it",
     icon: SiGmail,
   },
 ];
@@ -58,6 +58,10 @@ export default function SectionRailNav() {
   const [activeSection, setActiveSection] = useState("home");
   const [mobileExpanded, setMobileExpanded] = useState(false);
   const [railOpen, setRailOpen] = useState(false);
+
+  const autoOpenDoneRef = useRef(false);
+  const closeTimerRef = useRef<number | null>(null);
+  const railHoveredRef = useRef(false);
 
   const pendingTargetRef = useRef<string | null>(null);
   const sectionIds = useMemo(() => navItems.map((item) => item.target), []);
@@ -139,6 +143,39 @@ export default function SectionRailNav() {
     };
   }, [sectionIds]);
 
+  useEffect(() => {
+    const home = document.querySelector<HTMLElement>("#home");
+    if (!home) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return;
+
+        const heroPassed = !entry.isIntersecting;
+
+        if (heroPassed && !autoOpenDoneRef.current) {
+          autoOpenDoneRef.current = true;
+          setRailOpen(true);
+
+          if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+          closeTimerRef.current = window.setTimeout(() => {
+            if (!railHoveredRef.current) {
+              setRailOpen(false);
+            }
+          }, 3000);
+        }
+      },
+      { threshold: 0 },
+    );
+
+    observer.observe(home);
+
+    return () => {
+      observer.disconnect();
+      if (closeTimerRef.current) window.clearTimeout(closeTimerRef.current);
+    };
+  }, [setRailOpen]);
+
   function scrollToSection(targetId: string) {
     const element = document.getElementById(targetId);
     if (!element) return;
@@ -175,6 +212,7 @@ export default function SectionRailNav() {
         setRailOpen={setRailOpen}
         scrollToSection={scrollToSection}
         socialLinks={socialLinks}
+        railHoveredRef={railHoveredRef}
       />
 
       <MobileSectionNav

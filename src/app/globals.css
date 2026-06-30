@@ -11,8 +11,8 @@
   --border: rgba(255, 255, 255, 0.1);
 
   --text: rgba(255, 255, 255, 0.94);
-  --text-muted: rgba(255, 255, 255, 0.64);
-  --text-faint: rgba(255, 255, 255, 0.4);
+  --text-muted: rgba(255, 255, 255, 0.72);
+  --text-faint: rgba(255, 255, 255, 0.55);
 
   --accent: #9fb7c9;
 
@@ -32,8 +32,8 @@ html[data-theme="light"] {
   --surface-2: #f2ede5;
   --border: rgba(33, 28, 24, 0.12);
   --text: #1e1a17;
-  --text-muted: rgba(30, 26, 23, 0.68);
-  --text-faint: rgba(30, 26, 23, 0.42);
+  --text-muted: rgba(30, 26, 23, 0.74);
+  --text-faint: rgba(30, 26, 23, 0.56);
   --accent: #8c9bb0;
 
   --hero-display: #2e2a24;
@@ -47,6 +47,27 @@ html[data-theme="light"] {
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 2rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 body {
@@ -91,4 +112,14 @@ body {
 [data-theme="dark"] .theme-toggle__moon {
   opacity: 0;
   transform: scale(0.85) rotate(12deg);
+}
+
+.hero-wordmark {
+  filter: brightness(0) saturate(100%) invert(13%) sepia(8%) saturate(1268%)
+    hue-rotate(347deg) brightness(95%) contrast(90%);
+}
+
+[data-theme="dark"] .hero-wordmark {
+  filter: brightness(0) saturate(100%) invert(90%) sepia(16%) saturate(278%)
+    hue-rotate(356deg) brightness(93%) contrast(91%);
 }

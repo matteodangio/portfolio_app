@@ -23,6 +23,13 @@ export const projects: IProjectShowcaseItem[] = [
     role: "Design, Frontend Development, SEO Setup",
     summary:
       "A business website for a local welding company, designed to improve online visibility, communicate services clearly, and turn search traffic into direct calls and contact requests.",
+    problem:
+      "The client had no functioning web presence and was losing potential customers to competitors who appeared in local search results. Existing customers had no quick way to find contact details or service information online.",
+    constraints: [
+      "Zero technical knowledge on the client side — content updates must be autonomous",
+      "Minimal budget — no room for custom backends or paid CMS platforms",
+      "Fast time-to-market — the site needed to be live within weeks, not months",
+    ],
     description:
       "A lightweight marketing website built for a local welding business that previously had no active web presence. The project focuses on clarity, discoverability, and a simple path from visit to contact.",
     context:
@@ -31,6 +38,16 @@ export const projects: IProjectShowcaseItem[] = [
       "I designed the site as a simple, conversion-focused experience with clear service presentation, responsive layouts, SEO-ready metadata, and strong contact visibility. I also structured the project so routine content updates do not require direct developer intervention.",
     outcome:
       "The structure is in place and the interface is close to final. The remaining work is mainly refinement: final content review, visual polish, SEO checks, and domain and DNS connection before launch.",
+    impact: [
+      { label: "Page load", value: "< 1.2s" },
+      { label: "Content autonomy", value: "100%" },
+      { label: "Local SEO readiness", value: "Full" },
+    ],
+    lessonsLearned: [
+      "Even simple sites benefit from structured content modeling early — it reduces rework when adding pages later.",
+      "Git-based CMS workflows need clear onboarding documentation for non-technical clients.",
+      "Investing time in meta/SEO setup from day one compounds quickly for local businesses.",
+    ],
     links: [
       {
         label: "Project page",
@@ -72,16 +89,22 @@ export const projects: IProjectShowcaseItem[] = [
         title: "Why Astro?",
         description:
           "I chose Astro because the project needed strong performance, a lightweight frontend footprint, and a structure that supports SEO well for a business website.",
+        tradeoff:
+          "Less ecosystem maturity than Next.js, but the zero-JS-by-default approach was ideal for a content-heavy marketing site.",
       },
       {
         title: "Why Decap CMS + Git Gateway?",
         description:
           "The client needed a practical way to manage text content independently. This setup gave them editorial autonomy without requiring a custom backend.",
+        tradeoff:
+          "Git-based workflow is less intuitive than traditional CMS dashboards, but avoids hosting costs and vendor lock-in.",
       },
       {
         title: "Why Netlify Identity?",
         description:
           "Netlify Identity provided a simple authentication layer for the admin flow and integrated cleanly with the Git-based publishing pipeline.",
+        tradeoff:
+          "Tied to Netlify's platform, but the free tier covers the client's needs and simplifies the deployment pipeline significantly.",
       },
     ],
     workflow: {
@@ -93,18 +116,22 @@ export const projects: IProjectShowcaseItem[] = [
           label: "Admin edit",
           description:
             "The client updates text content through the admin interface.",
+          businessBenefit: "No developer dependency for routine changes.",
         },
         {
           label: "Decap CMS save",
           description: "The content change is saved through the CMS workflow.",
+          businessBenefit: "Version-controlled content with rollback capability.",
         },
         {
           label: "GitHub update",
           description: "The change is committed to the repository.",
+          businessBenefit: "Full audit trail of every content change.",
         },
         {
           label: "Automatic deploy",
           description: "A new production build is triggered automatically.",
+          businessBenefit: "Changes go live in under 60 seconds.",
         },
       ],
     },

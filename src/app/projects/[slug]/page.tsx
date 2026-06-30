@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, ArrowUpRight } from "lucide-react";
@@ -6,6 +7,7 @@ import {
   getProjectSiblings,
   navigableProjects,
 } from "@/data/projects.utils";
+import { ProjectSectionNav } from "./sectionNav";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -26,6 +28,22 @@ export default async function ProjectPage({ params }: Props) {
 
   const { previousProject, nextProject } = getProjectSiblings(slug);
 
+  /* Build section list for sticky nav */
+  const sections: { id: string; label: string }[] = [];
+  if (project.problem || project.description || project.context)
+    sections.push({ id: "overview", label: "Overview" });
+  if (project.impact?.length) sections.push({ id: "impact", label: "Impact" });
+  if (project.decisionCards?.length)
+    sections.push({ id: "decisions", label: "Decisions" });
+  if (project.content)
+    sections.push({ id: "implementation", label: "Implementation" });
+  if (project.workflow) sections.push({ id: "workflow", label: "Workflow" });
+  if (project.gallery?.length)
+    sections.push({ id: "gallery", label: "Gallery" });
+  if (project.lessonsLearned?.length)
+    sections.push({ id: "lessons", label: "Lessons" });
+  if (project.outcome) sections.push({ id: "status", label: "Status" });
+
   return (
     <main className="mx-auto w-full max-w-7xl px-6 pb-24 pt-12 md:px-8 md:pb-32 md:pt-16">
       <div className="mx-auto w-full max-w-6xl">
@@ -38,6 +56,7 @@ export default async function ProjectPage({ params }: Props) {
           Back to projects
         </Link>
 
+        {/* ─── HEADER ─── */}
         <header
           className="border-b pb-12 md:pb-16"
           style={{ borderColor: "var(--border)" }}
@@ -116,16 +135,20 @@ export default async function ProjectPage({ params }: Props) {
               </div>
 
               {(project.liveUrl || project.githubUrl) && (
-                <div className="mt-8 flex flex-wrap gap-6">
+                <div className="mt-8 flex flex-wrap gap-4">
                   {project.liveUrl && (
                     <a
                       href={project.liveUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-60"
-                      style={{ color: "var(--text)" }}
+                      className="inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-70"
+                      style={{
+                        color: "var(--text)",
+                        borderColor: "var(--border)",
+                        background: "var(--surface)",
+                      }}
                     >
-                      Live
+                      View live
                       <ArrowUpRight size={15} />
                     </a>
                   )}
@@ -135,8 +158,11 @@ export default async function ProjectPage({ params }: Props) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-60"
-                      style={{ color: "var(--text)" }}
+                      className="inline-flex items-center gap-2 rounded-lg border px-5 py-2.5 text-sm font-medium uppercase tracking-[0.14em] transition-opacity hover:opacity-70"
+                      style={{
+                        color: "var(--text)",
+                        borderColor: "var(--border)",
+                      }}
                     >
                       GitHub
                       <ArrowUpRight size={15} />
@@ -156,11 +182,16 @@ export default async function ProjectPage({ params }: Props) {
             >
               {project.heroImage ? (
                 <div className="flex h-full flex-col">
-                  <img
-                    src={project.heroImage.src}
-                    alt={project.heroImage.alt}
-                    className="h-full min-h-[260px] w-full object-cover md:min-h-[360px]"
-                  />
+                  <div className="relative min-h-[260px] w-full flex-1 md:min-h-[360px]">
+                    <Image
+                      src={project.heroImage.src}
+                      alt={project.heroImage.alt}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 40vw"
+                      priority
+                      className="object-cover"
+                    />
+                  </div>
                   {project.heroImage.caption && (
                     <div
                       className="border-t px-5 py-4"
@@ -189,9 +220,17 @@ export default async function ProjectPage({ params }: Props) {
           </div>
         </header>
 
+        {/* ─── STICKY SECTION NAV ─── */}
+        {sections.length > 2 && <ProjectSectionNav sections={sections} />}
+
+        {/* ─── CONTENT SECTIONS ─── */}
         <div className="mt-14 grid gap-14">
-          {(project.description || project.context) && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+          {/* Overview: Problem → Constraints → Solution */}
+          {(project.problem || project.description || project.context) && (
+            <section
+              id="overview"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -201,17 +240,68 @@ export default async function ProjectPage({ params }: Props) {
                 </p>
               </div>
 
-              <div className="grid gap-5">
-                {project.description && (
-                  <p
-                    className="max-w-2xl text-sm leading-8 md:text-[15px]"
-                    style={{ color: "var(--text-muted)" }}
-                  >
-                    {project.description}
-                  </p>
+              <div className="grid gap-8">
+                {project.problem && (
+                  <div>
+                    <p
+                      className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em]"
+                      style={{ color: "var(--text-faint)" }}
+                    >
+                      Problem
+                    </p>
+                    <p
+                      className="max-w-2xl text-sm leading-8 md:text-[15px]"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {project.problem}
+                    </p>
+                  </div>
                 )}
 
-                {project.context && (
+                {project.constraints && project.constraints.length > 0 && (
+                  <div>
+                    <p
+                      className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em]"
+                      style={{ color: "var(--text-faint)" }}
+                    >
+                      Constraints
+                    </p>
+                    <ul className="grid gap-2">
+                      {project.constraints.map((c) => (
+                        <li
+                          key={c}
+                          className="flex items-start gap-3 text-sm leading-7"
+                          style={{ color: "var(--text-muted)" }}
+                        >
+                          <span
+                            className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
+                            style={{ background: "var(--accent)" }}
+                          />
+                          {c}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+                {project.description && (
+                  <div>
+                    <p
+                      className="mb-3 text-[11px] font-medium uppercase tracking-[0.18em]"
+                      style={{ color: "var(--text-faint)" }}
+                    >
+                      Solution
+                    </p>
+                    <p
+                      className="max-w-2xl text-sm leading-8 md:text-[15px]"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {project.description}
+                    </p>
+                  </div>
+                )}
+
+                {project.context && !project.problem && (
                   <p
                     className="max-w-2xl text-sm leading-8 md:text-[15px]"
                     style={{ color: "var(--text-muted)" }}
@@ -223,8 +313,58 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
+          {/* Impact metrics */}
+          {project.impact && project.impact.length > 0 && (
+            <section
+              id="impact"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
+              <div>
+                <p
+                  className="text-xs font-medium uppercase tracking-[0.18em]"
+                  style={{ color: "var(--text-faint)" }}
+                >
+                  Impact
+                </p>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-3">
+                {project.impact.map((item) => (
+                  <div
+                    key={item.label}
+                    className="rounded-2xl border p-5"
+                    style={{
+                      borderColor: "var(--border)",
+                      background: "var(--surface)",
+                    }}
+                  >
+                    <p
+                      className="text-2xl font-bold"
+                      style={{
+                        color: "var(--text)",
+                        fontFamily: "var(--font-display)",
+                      }}
+                    >
+                      {item.value}
+                    </p>
+                    <p
+                      className="mt-2 text-xs font-medium uppercase tracking-[0.16em]"
+                      style={{ color: "var(--text-faint)" }}
+                    >
+                      {item.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Key decisions with trade-offs */}
           {project.decisionCards && project.decisionCards.length > 0 && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+            <section
+              id="decisions"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -260,14 +400,33 @@ export default async function ProjectPage({ params }: Props) {
                     >
                       {card.description}
                     </p>
+
+                    {card.tradeoff && (
+                      <p
+                        className="mt-4 border-t pt-4 text-xs leading-6"
+                        style={{
+                          borderColor: "var(--border)",
+                          color: "var(--text-faint)",
+                        }}
+                      >
+                        <span className="font-medium uppercase tracking-[0.1em]">
+                          Trade-off:{" "}
+                        </span>
+                        {card.tradeoff}
+                      </p>
+                    )}
                   </article>
                 ))}
               </div>
             </section>
           )}
 
+          {/* Implementation */}
           {project.content && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+            <section
+              id="implementation"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -288,8 +447,12 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
+          {/* Workflow with business benefits */}
           {project.workflow && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+            <section
+              id="workflow"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -350,6 +513,15 @@ export default async function ProjectPage({ params }: Props) {
                           {step.description}
                         </p>
                       )}
+
+                      {step.businessBenefit && (
+                        <p
+                          className="pl-[52px] text-xs leading-6 italic"
+                          style={{ color: "var(--accent)" }}
+                        >
+                          → {step.businessBenefit}
+                        </p>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -357,8 +529,12 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
+          {/* Gallery */}
           {project.gallery && project.gallery.length > 0 && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+            <section
+              id="gallery"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -378,17 +554,21 @@ export default async function ProjectPage({ params }: Props) {
                       background: "var(--surface)",
                     }}
                   >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="h-[240px] w-full object-cover"
-                    />
+                    <div className="relative h-[240px] w-full">
+                      <Image
+                        src={image.src}
+                        alt={image.alt}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 50vw"
+                        className="object-cover"
+                      />
+                    </div>
                     {image.caption && (
                       <figcaption
                         className="border-t px-5 py-4 text-sm leading-7"
                         style={{
                           borderColor: "var(--border)",
-                          color: "var(--text-muted)",
+                          color: "var(--text)",
                         }}
                       >
                         {image.caption}
@@ -400,8 +580,53 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
+          {/* Lessons learned */}
+          {project.lessonsLearned && project.lessonsLearned.length > 0 && (
+            <section
+              id="lessons"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
+              <div>
+                <p
+                  className="text-xs font-medium uppercase tracking-[0.18em]"
+                  style={{ color: "var(--text-faint)" }}
+                >
+                  Lessons learned
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl border p-6"
+                style={{
+                  borderColor: "var(--border)",
+                  background: "var(--surface)",
+                }}
+              >
+                <ul className="grid gap-4">
+                  {project.lessonsLearned.map((lesson) => (
+                    <li
+                      key={lesson}
+                      className="flex items-start gap-3 text-sm leading-7"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      <span
+                        className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ background: "var(--accent)" }}
+                      />
+                      {lesson}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </section>
+          )}
+
+          {/* Current status */}
           {project.outcome && (
-            <section className="grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]">
+            <section
+              id="status"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
               <div>
                 <p
                   className="text-xs font-medium uppercase tracking-[0.18em]"
@@ -429,6 +654,7 @@ export default async function ProjectPage({ params }: Props) {
           )}
         </div>
 
+        {/* ─── PROJECT NAVIGATION ─── */}
         <nav
           className="mt-16 border-t pt-8 md:mt-20"
           style={{ borderColor: "var(--border)" }}
