@@ -24,7 +24,7 @@ export default function Experience() {
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
+      viewport={{ once: false, amount: "some" }}
     >
       <motion.div
         className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
@@ -100,6 +100,12 @@ export default function Experience() {
                       style={{ color: "var(--text-muted)" }}
                     >
                       {item.company} · {item.location}
+                    </p>
+                    <p
+                      className="mt-2 text-sm tracking-[0.14em]"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      {item.context}
                     </p>
                   </div>
 

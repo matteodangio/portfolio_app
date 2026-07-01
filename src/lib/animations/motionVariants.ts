@@ -87,3 +87,28 @@ export const fadeUp: Variants = {
       transition: { duration: 0.25, ease: "easeIn" },
     },
   };
+export const techStackContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+
+export const panelVariants = {
+  open: {
+    height: "auto",
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.25, ease: "easeOut" as const },
+  },
+  closed: {
+    height: 0,
+    opacity: 0,
+    y: -6,
+    transition: { duration: 0.2, ease: "easeIn" as const },
+  },
+};

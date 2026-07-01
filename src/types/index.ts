@@ -1,3 +1,4 @@
+import { LucideIcon } from "lucide-react";
 import { ComponentType, SVGProps } from "react";
 
 /* COMMON */
@@ -16,6 +17,7 @@ export interface ILink {
   label: string,
   href: string,
   icon?: string,
+  description?: string,
 }
 
 {/*FEATURED PROJECTS*/}
@@ -37,6 +39,7 @@ export interface IProjectShowcaseItem {
   featured: boolean;
   mainProject: boolean;
   summary: string;
+  futureImprovements?: string[];
   context?: string;
   outcome?: string;
   projectPageEnabled: boolean;
@@ -61,6 +64,8 @@ export interface IProjectShowcaseItem {
   gallery?: IProjectImage[];
   decisionCards?: IProjectDecisionCard[];
   workflow?: IProjectWorkflow;
+  contentList?: string[];
+  contentEnd?: string;
 }
 
 export interface IProjectImpactItem {
@@ -105,6 +110,7 @@ export interface IExperienceItem {
   summary: string;
   highlights: string[];
   stack: string[];
+  context: string;
 };
   
 
@@ -116,3 +122,15 @@ export interface IExperienceItem {
     description: string;
   }
 
+export interface IAboutTechItem {
+  title: string;
+  description?: string;
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  color?: string;
+}
+  
+    export interface IAboutTechGroup {
+    title: string;
+    mode: "card" | "chip";
+    items: IAboutTechItem[];
+  };

@@ -16,10 +16,10 @@ export default function ThemeToggle() {
       suppressHydrationWarning
       onClick={toggleTheme}
       aria-label={`Switch to ${resolvedTheme === "dark" ? "light" : "dark"} mode`}
-      className="theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-full transition-opacity duration-200 hover:opacity-60"
+      className="cursor-pointer theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-full transition-opacity duration-200 hover:opacity-60"
     >
-      <Sun className="theme-toggle__sun h-[18px] w-[18px]" />
-      <Moon className="theme-toggle__moon h-[18px] w-[18px]" />
+      <Sun className="theme-toggle__sun h-4.5 w-4.5" />
+      <Moon className="theme-toggle__moon h-4.5 w-4.5" />
     </button>
   );
 }

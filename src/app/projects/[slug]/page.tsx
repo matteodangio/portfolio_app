@@ -443,6 +443,29 @@ export default async function ProjectPage({ params }: Props) {
                 >
                   {project.content}
                 </p>
+                <ul className="grid gap-2">
+                  {project.contentList?.map((c) => (
+                    <li
+                      key={c}
+                      className="flex items-start gap-3 text-sm leading-7"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      <span
+                        className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ background: "var(--accent)" }}
+                      />
+                      {c}
+                    </li>
+                  ))}
+                </ul>
+                {project.contentEnd && (
+                  <p
+                    className="mt-4 max-w-2xl text-sm leading-7"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    {project.contentEnd}
+                  </p>
+                )}
               </div>
             </section>
           )}
@@ -463,7 +486,7 @@ export default async function ProjectPage({ params }: Props) {
               </div>
 
               <div
-                className="rounded-2xl border p-6"
+                className="relative rounded-2xl border p-6 md:p-8"
                 style={{
                   borderColor: "var(--border)",
                   background: "var(--surface)",
@@ -485,45 +508,62 @@ export default async function ProjectPage({ params }: Props) {
                   </p>
                 )}
 
-                <div className="mt-6 grid gap-4 md:grid-cols-4">
-                  {project.workflow.steps.map((step, index) => (
-                    <div key={`${step.label}-${index}`} className="grid gap-2">
-                      <div className="flex items-center gap-3">
+                <div className="relative mt-8">
+                  <div
+                    className="absolute left-4 top-0 h-full w-px"
+                    style={{ background: "var(--border)" }}
+                  />
+
+                  <div className="space-y-6">
+                    {project.workflow.steps.map((step, index) => (
+                      <div
+                        key={`${step.label}-${index}`}
+                        className="relative grid gap-3 pl-12 md:grid-cols-[minmax(0,1fr)]"
+                      >
                         <div
-                          className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-sm font-medium"
+                          className="absolute left-0 top-0 flex h-8 w-8 items-center justify-center rounded-full border text-xs font-medium"
                           style={{
+                            borderColor: "var(--border)",
                             background:
                               "color-mix(in srgb, var(--accent) 14%, var(--surface))",
                             color: "var(--text)",
                           }}
                         >
-                          0{index + 1}
+                          {String(index + 1).padStart(2, "0")}
                         </div>
 
-                        <p className="text-sm" style={{ color: "var(--text)" }}>
-                          {step.label}
-                        </p>
+                        <div
+                          className="rounded-xl border p-4"
+                          style={{
+                            borderColor: "var(--border)",
+                            background: "color-mix(in srgb, var(--surface) 90%, transparent)",
+                          }}
+                        >
+                          <p className="text-sm font-medium" style={{ color: "var(--text)" }}>
+                            {step.label}
+                          </p>
+
+                          {step.description && (
+                            <p
+                              className="mt-2 text-sm leading-7"
+                              style={{ color: "var(--text-muted)" }}
+                            >
+                              {step.description}
+                            </p>
+                          )}
+
+                          {step.businessBenefit && (
+                            <p
+                              className="mt-2 text-xs leading-6 italic"
+                              style={{ color: "var(--accent)" }}
+                            >
+                              → {step.businessBenefit}
+                            </p>
+                          )}
+                        </div>
                       </div>
-
-                      {step.description && (
-                        <p
-                          className="pl-[52px] text-sm leading-7"
-                          style={{ color: "var(--text-muted)" }}
-                        >
-                          {step.description}
-                        </p>
-                      )}
-
-                      {step.businessBenefit && (
-                        <p
-                          className="pl-[52px] text-xs leading-6 italic"
-                          style={{ color: "var(--accent)" }}
-                        >
-                          → {step.businessBenefit}
-                        </p>
-                      )}
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </div>
               </div>
             </section>
@@ -632,7 +672,7 @@ export default async function ProjectPage({ params }: Props) {
                   className="text-xs font-medium uppercase tracking-[0.18em]"
                   style={{ color: "var(--text-faint)" }}
                 >
-                  Current status
+                  Next steps
                 </p>
               </div>
 
@@ -649,6 +689,47 @@ export default async function ProjectPage({ params }: Props) {
                 >
                   {project.outcome}
                 </p>
+              </div>
+            </section>
+          )}
+
+{/*Future improvements*/}
+          {project.futureImprovements && project.futureImprovements.length > 0 && (
+            <section
+              id="future-improvements"
+              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+            >
+              <div>
+                <p
+                  className="text-xs font-medium uppercase tracking-[0.18em]"
+                  style={{ color: "var(--text-faint)" }}
+                >
+                  Future improvements
+                </p>
+              </div>
+
+              <div
+                className="rounded-2xl border p-6"
+                style={{
+                  borderColor: "var(--border)",
+                  background: "var(--surface)",
+                }}
+              >
+                <ul className="grid gap-4">
+                  {project.futureImprovements.map((improvement) => (
+                    <li
+                      key={improvement}
+                      className="flex items-start gap-3 text-sm leading-7"
+                      style={{ color: "var(--text-muted)" }}
+                    >
+                      <span
+                        className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
+                        style={{ background: "var(--accent)" }}
+                      />
+                      {improvement}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </section>
           )}

@@ -2,45 +2,50 @@ import type { IExperienceItem, ISectionLabel } from "@/types";
 
 export const experienceItems: IExperienceItem[] = [
   {
-    period: "2022 — Present",
+    period: "2024 — Present",
     role: "Frontend Engineer",
-    company: "Dedagroup",
+    company: "Deda",
+    context: "Financial B2B SaaS · Cross-functional team · Remote",
     location: "Italy",
-    summary:
-      "I work on frontend applications for structured business environments, focusing on Angular architecture, UI consistency, and product-facing implementation quality.",
+    summary: "Building Angular applications for a financial B2B SaaS platform, with a focus on scalable frontend architecture, reusable UI systems, and long-term maintainability",
     highlights: [
-      "Built and maintained Angular interfaces for complex enterprise workflows.",
-      "Improved consistency across screens through reusable UI patterns and shared structures.",
-      "Worked closely with product and design constraints to turn dense requirements into clearer interfaces.",
+      "Developed standalone Angular components using Signals and RxJS",
+      "Built dynamic, configuration-driven interfaces for complex business workflows",
+      "Worked closely with designers and backend engineers to translate business requirements into production-ready features",
+      "Implemented Figma designs as responsive Angular interfaces integrated with REST APIs",
+      "Designed Cypress E2E tests for critical user journeys",
+      "Contributed to legacy modernization and production support",
     ],
-    stack: ["Angular", "TypeScript", "RxJS", "SCSS", "REST APIs"],
+    stack: ["Angular", "Signals", "RxJS", "TypeScript", "REST APIs", "Cypress", "Git", "GitHub Copilot", "Jira", "Figma"],
   },
   {
-    period: "Earlier",
-    role: "Frontend / Product-Oriented Work",
-    company: "Selected Projects",
-    location: "Independent & Team Contexts",
-    summary:
-      "Across personal and collaborative work, I explored interaction quality, component systems, and frontend patterns that balance visual refinement with maintainability.",
-    highlights: [
-      "Designed and implemented reusable interface patterns.",
-      "Explored stronger structure for project presentation and scalable content layouts.",
-      "Developed a sharper approach to frontend quality, readability, and long-term consistency.",
+    period: "2022 — 2023",
+    role: "Fullstack Developer",
+    company: "Deda",
+    location: "Italy",
+    context: "Enterprise logistics and supply chain management · Remote",
+    summary:"Contributed to an enterprise logistics platform by developing backend services, REST APIs, and AngularJS frontend features",
+    highlights: [ 
+      "Developed REST APIs using Spring Boot and Spring Data JPA",
+      "Worked with PostgreSQL for data persistence",
+      "Built AngularJS frontend features",
+      "Applied secure coding practices based on OWASP principles",
+      "Collaborated with cross-functional teams to deliver new features and maintain existing platform functionality",
     ],
     stack: [
-      "React",
-      "Next.js",
-      "Tailwind",
-      "UI Systems",
-      "Responsive Design",
+      "Java",
+      "Spring Boot",
+      "Hibernate",
+      "PostgreSQL",
+      "AngularJS",
+      "REST APIs",
+      "OWASP"
     ],
   },
 ];
 
 export const experienceLabels: ISectionLabel = {
   sectionTitle: "Experience",
-  title: "Professional context, not just job titles.",
-  description1: `My experience is centered on frontend systems, interface quality,
-            and product implementation in environments where structure,
-            maintainability, and clarity matter.`,
+  title: "Building products in real-world environments",
+  description1: `I enjoy turning complex requirements into maintainable interfaces while working across design, development, testing, and long-term product evolution`,
 };

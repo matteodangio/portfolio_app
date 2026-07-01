@@ -33,11 +33,31 @@ function ProjectLink({ project }: { project: IProjectShowcaseItem }) {
   return (
     <Link
       href={projectPageLink.href}
-      className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
+     className="
+group
+inline-flex
+items-center
+gap-2
+text-sm
+font-medium
+uppercase
+tracking-[0.14em]
+transition-colors
+duration-200
+"
       style={{ color: "var(--text)" }}
     >
       {projectPageLink.label}
-      <ArrowUpRight size={15} />
+    <ArrowUpRight
+  size={15}
+  className="
+    transition-transform
+    duration-200
+    ease-out
+    group-hover:-translate-y-0.5
+    group-hover:translate-x-0.5
+  "
+/>
     </Link>
   );
 }
@@ -81,14 +101,13 @@ export default function FeaturedProjects() {
       className="border-t py-16 md:py-24"
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="projects-title"
-      variants={staggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: false, amount: 0.2 }}
     >
       <motion.div
         className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
-        variants={fadeUp}
+         variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.2 }}
       >
         <div>
           <p
@@ -123,10 +142,10 @@ export default function FeaturedProjects() {
       <motion.article
         className="pb-12 md:pb-16"
         style={{ borderBottom: "1px solid var(--border)" }}
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+         variants={fadeUp}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.15 }}
       >
         <p
           className="mb-6 text-xs font-medium uppercase tracking-[0.18em]"
@@ -215,22 +234,22 @@ export default function FeaturedProjects() {
 
       <motion.div
         className="mt-0"
-        variants={worksContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.05 }}
+          variants={staggerContainer}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.1 }}
       >
         {works.map((work, index) => {
           const isLast = index === works.length - 1;
 
           return (
             <motion.article
+            variants={fadeUp}
               key={work.slug}
               className="grid grid-cols-1 gap-6 py-8 md:grid-cols-[80px_minmax(0,1fr)_auto] md:items-center md:gap-10 md:py-9"
               style={{
                 borderBottom: !isLast ? "1px solid var(--border)" : undefined,
               }}
-              variants={fadeUp}
             >
               <div>
                 <span

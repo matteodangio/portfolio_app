@@ -11,7 +11,6 @@ import {
 } from "@/lib/animations/motionVariants";
 
 const navItems = [
-  // { label: "Home", target: "hero" },
   { label: "About", target: "about" },
   { label: "Projects", target: "projects" },
   { label: "Experience", target: "experience" },
@@ -38,17 +37,20 @@ export default function Hero() {
       initial="hidden"
       animate="show"
     >
+      <div className="pt-6 items-center flex flex-row justify-between">
+        <p className="md:mb-3 uppercase tracking-[0.24em]"
+          style={{ color: "var(--text-faint)" }}>
+          {heroLabels.sectionSubtitle}
+        </p>
+        <ThemeToggle />
+      </div>
       <div className="mx-auto grid min-h-[92vh] max-w-7xl grid-cols-1 gap-2 md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] md:items-center md:gap-10">
         <div className="flex flex-col justify-center py-4 md:py-12">
-          <p
-            className="md:mb-3 uppercase tracking-[0.24em]"
-            style={{ color: "var(--text-faint)" }}
-          >
-            {heroLabels.sectionSubtitle}
-          </p>
 
-          <h1
-            className="max-w-5xl"
+
+
+          <div
+            className="max-w-5xl flex justify-center"
             style={{
               color: "var(--hero-display)",
             }}
@@ -62,7 +64,7 @@ export default function Hero() {
               alt="Matteo Dangiò Frontend Engineer"
               className="hero-wordmark w-full max-w-[clamp(240px,24vw,500px)] md:max-w-[clamp(280px,40vw,640px)] lg:max-w-[clamp(320px,32vw,540px)]"
             />
-          </h1>
+          </div>
 
           <p
             className="max-w-xl text-base leading-8 md:text-lg"
@@ -77,7 +79,7 @@ export default function Hero() {
           aria-label="Hero navigation"
           variants={navList}
         >
-          <div className="flex flex-col items-start gap-2 md:items-end">
+          <div className="flex flex-col items-center text-center gap-2 md:items-end">
             <motion.ul
               className="flex flex-col gap-2 md:items-end"
               variants={navList}
@@ -105,7 +107,7 @@ export default function Hero() {
 
                     <span
                       aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-[2px] w-0 transition-all duration-200 ease-out group-hover:w-full md:left-auto md:right-0"
+                      className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-200 ease-out group-hover:w-full md:left-auto md:right-0"
                       style={{
                         background: "var(--hero-nav-hover)",
                       }}
@@ -114,10 +116,6 @@ export default function Hero() {
                 </motion.li>
               ))}
             </motion.ul>
-
-            <div className="pt-4">
-              <ThemeToggle />
-            </div>
           </div>
         </motion.nav>
       </div>
