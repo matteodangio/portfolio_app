@@ -2,7 +2,10 @@
 
 import Image, { type ImageProps } from "next/image";
 
-type HeroWordmarkProps = Omit<ImageProps, "src" | "alt" | "width" | "height"> & {
+type HeroWordmarkProps = Omit<
+  ImageProps,
+  "src" | "alt" | "width" | "height"
+> & {
   srcLight: string;
   srcDark: string;
   alt: string;

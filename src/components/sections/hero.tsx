@@ -38,26 +38,22 @@ export default function Hero() {
       animate="show"
     >
       <div className="pt-6 items-center flex flex-row justify-between">
-        <p className="md:mb-3 uppercase tracking-[0.24em]"
-          style={{ color: "var(--text-faint)" }}>
+        <p
+          className="md:mb-3 uppercase tracking-[0.24em]"
+          style={{ color: "var(--text-faint)" }}
+        >
           {heroLabels.sectionSubtitle}
         </p>
         <ThemeToggle />
       </div>
       <div className="mx-auto grid min-h-[92vh] max-w-7xl grid-cols-1 gap-2 md:grid-cols-[minmax(0,0.9fr)_minmax(320px,0.85fr)] md:items-center md:gap-10">
         <div className="flex flex-col justify-center py-4 md:py-12">
-
-
-
           <div
             className="max-w-5xl flex justify-center"
             style={{
               color: "var(--hero-display)",
             }}
           >
-            {/* <span className="sr-only">
-              Matteo, building sharp digital products.
-            </span> */}
             <HeroWordmark
               srcLight="/dark-hero-me.png"
               srcDark="/light-hero-me.png"
@@ -92,9 +88,8 @@ export default function Hero() {
                     className="group relative block text-left md:text-right"
                   >
                     <span
-                      className="uppercase relative block transition-all duration-200 ease-out group-hover:translate-x-1"
+                      className="font-body uppercase relative block transition-all duration-200 ease-out group-hover:translate-x-1"
                       style={{
-                        fontFamily: "var(--font-body)",
                         fontSize: "clamp(2rem, 5vw, 5rem)",
                         lineHeight: 0.92,
                         letterSpacing: "-0.04em",

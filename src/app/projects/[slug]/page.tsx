@@ -71,10 +71,9 @@ export default async function ProjectPage({ params }: Props) {
               </p>
 
               <h1
-                className="max-w-3xl text-4xl leading-[0.95] md:text-6xl"
+                className="font-display max-w-3xl text-4xl leading-[0.95] md:text-6xl"
                 style={{
                   color: "var(--hero-display)",
-                  fontFamily: "var(--font-display)",
                 }}
               >
                 {project.title}
@@ -339,10 +338,9 @@ export default async function ProjectPage({ params }: Props) {
                     }}
                   >
                     <p
-                      className="text-2xl font-bold"
+                      className="font-displaytext-2xl font-bold"
                       style={{
                         color: "var(--text)",
-                        fontFamily: "var(--font-display)",
                       }}
                     >
                       {item.value}
@@ -536,10 +534,14 @@ export default async function ProjectPage({ params }: Props) {
                           className="rounded-xl border p-4"
                           style={{
                             borderColor: "var(--border)",
-                            background: "color-mix(in srgb, var(--surface) 90%, transparent)",
+                            background:
+                              "color-mix(in srgb, var(--surface) 90%, transparent)",
                           }}
                         >
-                          <p className="text-sm font-medium" style={{ color: "var(--text)" }}>
+                          <p
+                            className="text-sm font-medium"
+                            style={{ color: "var(--text)" }}
+                          >
                             {step.label}
                           </p>
 
@@ -693,46 +695,47 @@ export default async function ProjectPage({ params }: Props) {
             </section>
           )}
 
-{/*Future improvements*/}
-          {project.futureImprovements && project.futureImprovements.length > 0 && (
-            <section
-              id="future-improvements"
-              className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
-            >
-              <div>
-                <p
-                  className="text-xs font-medium uppercase tracking-[0.18em]"
-                  style={{ color: "var(--text-faint)" }}
-                >
-                  Future improvements
-                </p>
-              </div>
-
-              <div
-                className="rounded-2xl border p-6"
-                style={{
-                  borderColor: "var(--border)",
-                  background: "var(--surface)",
-                }}
+          {/*Future improvements*/}
+          {project.futureImprovements &&
+            project.futureImprovements.length > 0 && (
+              <section
+                id="future-improvements"
+                className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
               >
-                <ul className="grid gap-4">
-                  {project.futureImprovements.map((improvement) => (
-                    <li
-                      key={improvement}
-                      className="flex items-start gap-3 text-sm leading-7"
-                      style={{ color: "var(--text-muted)" }}
-                    >
-                      <span
-                        className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
-                        style={{ background: "var(--accent)" }}
-                      />
-                      {improvement}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </section>
-          )}
+                <div>
+                  <p
+                    className="text-xs font-medium uppercase tracking-[0.18em]"
+                    style={{ color: "var(--text-faint)" }}
+                  >
+                    Future improvements
+                  </p>
+                </div>
+
+                <div
+                  className="rounded-2xl border p-6"
+                  style={{
+                    borderColor: "var(--border)",
+                    background: "var(--surface)",
+                  }}
+                >
+                  <ul className="grid gap-4">
+                    {project.futureImprovements.map((improvement) => (
+                      <li
+                        key={improvement}
+                        className="flex items-start gap-3 text-sm leading-7"
+                        style={{ color: "var(--text-muted)" }}
+                      >
+                        <span
+                          className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
+                          style={{ background: "var(--accent)" }}
+                        />
+                        {improvement}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </section>
+            )}
         </div>
 
         {/* ─── PROJECT NAVIGATION ─── */}

@@ -41,7 +41,10 @@ export default function MobileSectionNav({
       <div
         className="fixed left-0 top-0 z-40 w-full px-3 py-3 backdrop-blur"
         style={{
-          background: "color-mix(in srgb, var(--bg) 78%, transparent)",
+          backgroundColor: "var(--bg)",
+          opacity: 0.92,
+          backdropFilter: "blur(12px)",
+          WebkitBackdropFilter: "blur(12px)",
           borderBottom: "1px solid var(--border)",
         }}
       >
@@ -53,10 +56,16 @@ export default function MobileSectionNav({
             aria-expanded={mobileExpanded}
             aria-controls="mobile-section-nav"
           >
-            <span className="text-xs font-medium uppercase tracking-[0.18em]" style={{ color: "var(--text)" }}>
+            <span
+              className="text-xs font-medium uppercase tracking-[0.18em]"
+              style={{ color: "var(--text)" }}
+            >
               {activeLabel}
             </span>
-            <span className="h-px flex-1" style={{ background: "var(--border)" }} />
+            <span
+              className="h-px flex-1"
+              style={{ background: "var(--border)" }}
+            />
           </button>
 
           <motion.div
@@ -66,7 +75,10 @@ export default function MobileSectionNav({
             animate={mobileExpanded ? "open" : "closed"}
             variants={panelVariants}
           >
-            <div className="flex flex-col gap-3 mt-3 pt-2 border-t"  style={{ borderColor: "var(--border)" }}>
+            <div
+              className="flex flex-col gap-3 mt-3 pt-2 border-t"
+              style={{ borderColor: "var(--border)" }}
+            >
               {mobileItems.map((item) => {
                 const active = activeSection === item.target;
 
@@ -78,20 +90,25 @@ export default function MobileSectionNav({
                       setMobileExpanded(false);
                       setTimeout(() => scrollToSection(item.target), 0);
                     }}
-                   className={`cursor-pointer flex items-center justify-between py-1 text-left transition-all duration-200 ${
-                                active 
-                                  ? "opacity-100" 
-                                  : "opacity-72 hover:opacity-100"
-                              }`}
+                    className={`cursor-pointer flex items-center justify-between py-1 text-left transition-all duration-200 ${
+                      active ? "opacity-100" : "opacity-72 hover:opacity-100"
+                    }`}
                   >
                     <span
                       className=" text-xs font-medium uppercase tracking-[0.18em] hover:color-(--text)"
-                      style={{ color: active ? "var(--text)" : "var(--text-muted)" }}
+                      style={{
+                        color: active ? "var(--text)" : "var(--text-muted)",
+                      }}
                     >
                       {item.label}
                     </span>
 
-                    {active && <span className="h-1.5 w-1.5 rounded-full" style={{ background: "var(--accent)" }} />}
+                    {active && (
+                      <span
+                        className="h-1.5 w-1.5 rounded-full"
+                        style={{ background: "var(--accent)" }}
+                      />
+                    )}
                   </button>
                 );
               })}

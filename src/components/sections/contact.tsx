@@ -21,9 +21,8 @@ export default function Contact() {
 
           <h2
             id="contact-title"
-            className="max-w-sm text-3xl leading-[0.95] md:text-5xl"
+            className="font-display max-w-sm text-3xl leading-[0.95] md:text-5xl"
             style={{
-              fontFamily: "var(--font-display)",
               color: "var(--hero-display)",
             }}
           >
@@ -41,10 +40,9 @@ export default function Contact() {
 
           <a
             href={mail.href}
-            className="mt-5 inline-block text-2xl transition-opacity duration-200 hover:opacity-60 md:text-4xl"
+            className="font-display mt-5 inline-block text-2xl transition-opacity duration-200 hover:opacity-60 md:text-4xl"
             style={{
               color: "var(--text)",
-              fontFamily: "var(--font-display)",
             }}
           >
             {mail.label}

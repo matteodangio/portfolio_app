@@ -39,9 +39,8 @@ export default function Experience() {
           </p>
           <h2
             id="experience-title"
-            className="max-w-sm text-3xl leading-[0.95] md:text-5xl"
+            className="font-display max-w-sm text-3xl leading-[0.95] md:text-5xl"
             style={{
-              fontFamily: "var(--font-display)",
               color: "var(--hero-display)",
             }}
           >
@@ -85,10 +84,9 @@ export default function Experience() {
                       {item.period}
                     </p>
                     <h3
-                      className="text-2xl leading-tight md:text-3xl"
+                      className="font-body text-2xl leading-tight md:text-3xl"
                       style={{
                         color: "var(--text)",
-                        fontFamily: "var(--font-body)",
                         fontWeight: 700,
                         letterSpacing: "-0.03em",
                       }}

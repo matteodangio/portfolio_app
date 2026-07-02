@@ -1,7 +1,17 @@
 "use client";
 
-import { aboutLabels, focusItems, personalItems, personalLabels, techGroups } from "@/data/about";
-import { fadeUp, staggerContainer, techStackContainer } from "@/lib/animations/motionVariants";
+import {
+  aboutLabels,
+  focusItems,
+  personalItems,
+  personalLabels,
+  techGroups,
+} from "@/data/about";
+import {
+  fadeUp,
+  staggerContainer,
+  techStackContainer,
+} from "@/lib/animations/motionVariants";
 import { IFocusItem } from "@/types";
 import { Minus, Plus } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
@@ -17,11 +27,8 @@ export default function About() {
       className="border-t py-16 md:py-24"
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="about-title"
-      
     >
-      <div
-        className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
-      >
+      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
         <div className="lg:sticky lg:top-24 lg:self-start">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
@@ -32,9 +39,8 @@ export default function About() {
 
           <h2
             id="about-title"
-            className="max-w-sm text-3xl leading-[0.95] md:text-5xl"
+            className="font-display max-w-sm text-3xl leading-[0.95] md:text-5xl"
             style={{
-              fontFamily: "var(--font-display)",
               color: "var(--hero-display)",
             }}
           >
@@ -102,10 +108,9 @@ export default function About() {
 
                   <div>
                     <h3
-                      className="text-2xl leading-tight md:text-3xl"
+                      className="font-body text-2xl leading-tight md:text-3xl"
                       style={{
                         color: "var(--text)",
-                        fontFamily: "var(--font-body)",
                         fontWeight: 700,
                         letterSpacing: "-0.03em",
                       }}
@@ -128,7 +133,8 @@ export default function About() {
               className="mt-10 rounded-[1.75rem] border p-5 md:p-6"
               style={{
                 borderColor: "var(--border)",
-                background: "color-mix(in srgb, var(--surface) 82%, transparent)",
+                background:
+                  "color-mix(in srgb, var(--surface) 82%, transparent)",
               }}
             >
               <p
@@ -142,7 +148,8 @@ export default function About() {
                 className="mt-3 max-w-2xl text-sm leading-7"
                 style={{ color: "var(--text-muted)" }}
               >
-                The technologies I use most often when building production applications.
+                The technologies I use most often when building production
+                applications.
               </p>
 
               <div className="mt-6 flex flex-col gap-6">
@@ -160,11 +167,12 @@ export default function About() {
                     </p>
 
                     {group.mode === "card" ? (
-                      <motion.div className="mt-4 grid grid-cols-1 gap-3 xl:grid-cols-3" 
-                          variants={staggerContainer}
-                          initial="hidden"
-                          whileInView="visible"
-                          viewport={{ once: true, amount: 0.5 }}
+                      <motion.div
+                        className="mt-4 grid grid-cols-1 gap-3 xl:grid-cols-3"
+                        variants={staggerContainer}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: true, amount: 0.5 }}
                       >
                         {group.items.map((tech) => {
                           const Icon = tech.icon;
@@ -189,7 +197,12 @@ export default function About() {
                                       "color-mix(in srgb, var(--surface) 70%, transparent)",
                                   }}
                                 >
-                                  <Icon color={tech.color ? tech.color : "default"} width={16} height={16} strokeWidth={1.8} />
+                                  <Icon
+                                    color={tech.color ? tech.color : "default"}
+                                    width={16}
+                                    height={16}
+                                    strokeWidth={1.8}
+                                  />
                                 </span>
                                 <div className="min-w-0">
                                   <p
@@ -232,9 +245,17 @@ export default function About() {
                                     "color-mix(in srgb, var(--surface) 70%, transparent)",
                                 }}
                               >
-                                <Icon color={tech.color ? tech.color : "default"} width={13} height={13} strokeWidth={1.8} />
+                                <Icon
+                                  color={tech.color ? tech.color : "default"}
+                                  width={13}
+                                  height={13}
+                                  strokeWidth={1.8}
+                                />
                               </span>
-                              <span className="text-xs font-medium" style={{ color: "var(--text)" }}>
+                              <span
+                                className="text-xs font-medium"
+                                style={{ color: "var(--text)" }}
+                              >
                                 {tech.title}
                               </span>
                             </div>
@@ -251,7 +272,8 @@ export default function About() {
               className="mt-8 rounded-[1.75rem] border p-5 md:p-6"
               style={{
                 borderColor: "var(--border)",
-                background: "color-mix(in srgb, var(--surface) 82%, transparent)",
+                background:
+                  "color-mix(in srgb, var(--surface) 82%, transparent)",
               }}
             >
               <button
@@ -282,8 +304,16 @@ export default function About() {
                     key="personal-accordion"
                     variants={{
                       hidden: { opacity: 0, height: 0 },
-                      visible: { opacity: 1, height: "auto", transition: { duration: 0.28, ease: "easeOut" } },
-                      exit: { opacity: 0, height: 0, transition: { duration: 0.22, ease: "easeIn" } },
+                      visible: {
+                        opacity: 1,
+                        height: "auto",
+                        transition: { duration: 0.28, ease: "easeOut" },
+                      },
+                      exit: {
+                        opacity: 0,
+                        height: 0,
+                        transition: { duration: 0.22, ease: "easeIn" },
+                      },
                     }}
                     initial="hidden"
                     animate="visible"
@@ -291,7 +321,12 @@ export default function About() {
                     className="overflow-hidden"
                   >
                     <div className="pt-5">
-                      <p className="leading-tight md:text-lg" style={{ color: "var(--text)", fontFamily: "var(--font-body)" }}>
+                      <p
+                        className="font-body leading-tight md:text-lg"
+                        style={{
+                          color: "var(--text)",
+                        }}
+                      >
                         {personalLabels.subtitle1}
                         <br />
                         {personalLabels.subtitle2}
@@ -329,7 +364,10 @@ export default function About() {
                                   {item.title}
                                 </span>
                               </div>
-                              <p className="mt-3 text-sm leading-6" style={{ color: "var(--text-muted)" }}>
+                              <p
+                                className="mt-3 text-sm leading-6"
+                                style={{ color: "var(--text-muted)" }}
+                              >
                                 {item.description}
                               </p>
                             </div>

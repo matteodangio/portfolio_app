@@ -19,9 +19,6 @@
   --hero-display: #e7dec4;
   --hero-nav: rgba(255, 255, 255, 0.82);
   --hero-nav-hover: #ffffff;
-
-  --font-display: "Zodiak", Georgia, serif;
-  --font-body: "Satoshi", sans-serif;
 }
 
 html[data-theme="light"] {
@@ -39,9 +36,6 @@ html[data-theme="light"] {
   --hero-display: #2e2a24;
   --hero-nav: rgba(17, 17, 17, 0.82);
   --hero-nav-hover: #111111;
-
-  --font-display: "Zodiak", Georgia, serif;
-  --font-body: "Satoshi", sans-serif;
 }
 
 html {
@@ -122,4 +116,12 @@ body {
 [data-theme="dark"] .hero-wordmark {
   filter: brightness(0) saturate(100%) invert(90%) sepia(16%) saturate(278%)
     hue-rotate(356deg) brightness(93%) contrast(91%);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
 }
