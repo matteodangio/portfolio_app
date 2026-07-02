@@ -116,7 +116,7 @@ src/
 
 ---
 
-# Screenshots
+<!--# Screenshots
 
 ## Homepage
 
@@ -149,6 +149,7 @@ src/
 </p>
 
 ---
+-->
 
 # Getting Started
 
@@ -230,7 +231,7 @@ Target scores:
 
 # Author
 
-**Matteo D'Angio**
+**Matteo Dangio**
 
 Frontend Engineer
 
