@@ -35,7 +35,7 @@ export const metadata: Metadata = {
       "Frontend engineer building sharp, clear and useful digital products.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Matteo Dangio Portfolio",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     title: "Matteo Dangio — Frontend Engineer",
     description:
       "Frontend engineer building sharp, clear and useful digital products.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-icon.png",
   },
   verification: {
     google: "...",
