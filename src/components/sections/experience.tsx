@@ -8,7 +8,7 @@ import {
 } from "@/lib/animations/motionVariants";
 import { IExperienceItem } from "@/types";
 import { Minus, Plus } from "lucide-react";
-import { AnimatePresence, motion, Variants } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 
 export default function Experience() {

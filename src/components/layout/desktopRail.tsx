@@ -2,7 +2,7 @@
 
 import type { Dispatch, RefObject, SetStateAction } from "react";
 import ThemeToggle from "@/components/ui/themeToggle";
-import type { NavItem, SocialLink } from "@/components/layout/sectionRailNav";
+import type { NavItem, SocialLink } from "@/data/navigation";
 import { ChevronUp } from "lucide-react";
 import { motion } from "motion/react";
 

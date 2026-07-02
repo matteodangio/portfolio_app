@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: "%s — Matteo Dangio",
   },
   description:
-    "Frontend Engineer specialized Angular. Building clear, maintainable and user-focused digital products with strong attention to interface quality and frontend architecture",
+    "Frontend engineer based in Italy, building Angular and React interfaces for maintainable product teams across Europe.",
   keywords: [
     "Frontend Engineer",
     "Frontend Developer",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     title: "Matteo Dangio — Frontend Engineer",
     siteName: "Matteo Dangio",
     description:
-      "Frontend engineer building sharp, clear and useful digital products.",
+      "Frontend engineer focused on Angular, React, TypeScript and maintainable UI architecture for European product teams.",
     images: [
       {
         url: "/og-image.png",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Matteo Dangio — Frontend Engineer",
     description:
-      "Frontend engineer building sharp, clear and useful digital products.",
+      "Angular and React frontend engineer building maintainable product interfaces across Europe.",
     images: ["/og-image.png"],
   },
   robots: {

@@ -1,6 +1,4 @@
 import { contactLabels, links, mail } from "@/data/contact";
-import { ILink, ISectionLabel } from "@/types";
-import { SiGithub } from "@icons-pack/react-simple-icons";
 
 export default function Contact() {
   return (
@@ -49,26 +47,31 @@ export default function Contact() {
           </a>
 
           <div className="mt-5 flex flex-wrap gap-6">
-            {links.map((link) => (
-              <div key={link.label} className="flex flex-col">
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
-                  style={{ color: "var(--text)" }}
-                >
-                  {link.icon || link.label}
-                </a>
+            {links.map((link) => {
+              const Icon = link.icon;
 
-                <p
-                  className="mt-1 text-xs"
-                  style={{ color: "var(--text-muted)" }}
-                >
-                  {link.description}
-                </p>
-              </div>
-            ))}
+              return (
+                <div key={link.label} className="flex flex-col">
+                  <a
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
+                    style={{ color: "var(--text)" }}
+                  >
+                    <Icon width={14} height={14} />
+                    {link.label}
+                  </a>
+
+                  <p
+                    className="mt-1 text-xs"
+                    style={{ color: "var(--text-muted)" }}
+                  >
+                    {link.description}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
           <p

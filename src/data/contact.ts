@@ -1,29 +1,14 @@
-import { ILink, ISectionLabel } from "@/types";
+import { ISectionLabel } from "@/types";
+import { emailLink, profileLinks } from "@/data/navigation";
 
-  export const links: ILink[] = [
-    {
-      label: "LinkedIn",
-      description: "Professional profile",
-      href: "https://www.linkedin.com/in/matteo-dangio",
-      icon: "",
-    },
-    {
-      label: "GitHub",
-      description: "Projects & experiments",
-      href: "https://github.com/matteodangio",
-      icon: "",
-    },
-  ];
+export const links = profileLinks;
 
-  export const mail: ILink = {
-    label: "Send me an email",
-    href: "mailto:matteo.dangio@outlook.com",
-  };
+export const mail = emailLink;
 
-  export const contactLabels: ISectionLabel = {
-    sectionTitle: "Contact",
-    title: "Let's build products with clarity and purpose",
-    description1: `I’m interested in frontend roles, product-driven teams, and projects
-            where thoughtful interfaces and maintainable systems matter`,
-    description2: `Based in Italy • Open to remote opportunities across Europe`,
-  };
+export const contactLabels: ISectionLabel = {
+  sectionTitle: "Contact",
+  title: "Available for frontend roles in Europe",
+  description1: `I’m interested in frontend roles, product-driven teams, and projects
+            where Angular, React, TypeScript and maintainable UI architecture matter`,
+  description2: `Based in Italy • Open to remote opportunities across Europe`,
+};

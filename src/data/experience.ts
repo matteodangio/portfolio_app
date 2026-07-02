@@ -7,16 +7,27 @@ export const experienceItems: IExperienceItem[] = [
     company: "Deda",
     context: "Financial B2B SaaS · Cross-functional team · Remote",
     location: "Italy",
-    summary: "Building Angular applications for a financial B2B SaaS platform, with a focus on scalable frontend architecture, reusable UI systems, and long-term maintainability",
+    summary:
+      "Frontend work on a financial B2B SaaS platform, focused on Angular features, reusable UI patterns and production reliability.",
     highlights: [
-      "Developed standalone Angular components using Signals and RxJS",
-      "Built dynamic, configuration-driven interfaces for complex business workflows",
-      "Worked closely with designers and backend engineers to translate business requirements into production-ready features",
-      "Implemented Figma designs as responsive Angular interfaces integrated with REST APIs",
-      "Designed Cypress E2E tests for critical user journeys",
-      "Contributed to legacy modernization and production support",
+      "Developed standalone Angular components with Signals, RxJS and TypeScript",
+      "Built configuration-driven interfaces for complex financial workflows",
+      "Implemented responsive Figma designs integrated with REST APIs",
+      "Added Cypress E2E coverage for critical user journeys",
+      "Supported legacy modernization, production fixes and release work",
     ],
-    stack: ["Angular", "Signals", "RxJS", "TypeScript", "REST APIs", "Cypress", "Git", "GitHub Copilot", "Jira", "Figma"],
+    stack: [
+      "Angular",
+      "Signals",
+      "RxJS",
+      "TypeScript",
+      "REST APIs",
+      "Cypress",
+      "Git",
+      "GitHub Copilot",
+      "Jira",
+      "Figma",
+    ],
   },
   {
     period: "2022 — 2023",
@@ -24,13 +35,14 @@ export const experienceItems: IExperienceItem[] = [
     company: "Deda",
     location: "Italy",
     context: "Enterprise logistics and supply chain management · Remote",
-    summary:"Contributed to an enterprise logistics platform by developing backend services, REST APIs, and AngularJS frontend features",
-    highlights: [ 
-      "Developed REST APIs using Spring Boot and Spring Data JPA",
-      "Worked with PostgreSQL for data persistence",
-      "Built AngularJS frontend features",
-      "Applied secure coding practices based on OWASP principles",
-      "Collaborated with cross-functional teams to deliver new features and maintain existing platform functionality",
+    summary:
+      "Fullstack contribution to an enterprise logistics platform, covering Spring Boot services, REST APIs and AngularJS features.",
+    highlights: [
+      "Developed REST APIs with Spring Boot and Spring Data JPA",
+      "Worked with PostgreSQL data models and persistence flows",
+      "Built and maintained AngularJS frontend features",
+      "Applied OWASP-oriented secure coding practices",
+      "Collaborated with cross-functional teams on features and maintenance",
     ],
     stack: [
       "Java",
@@ -39,13 +51,13 @@ export const experienceItems: IExperienceItem[] = [
       "PostgreSQL",
       "AngularJS",
       "REST APIs",
-      "OWASP"
+      "OWASP",
     ],
   },
 ];
 
 export const experienceLabels: ISectionLabel = {
   sectionTitle: "Experience",
-  title: "Building products in real-world environments",
-  description1: `I enjoy turning complex requirements into maintainable interfaces while working across design, development, testing, and long-term product evolution`,
+  title: "Production experience in enterprise products",
+  description1: `Hands-on work across frontend delivery, API integration, testing and maintenance in remote, cross-functional teams.`,
 };

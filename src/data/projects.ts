@@ -22,37 +22,38 @@ export const projects: IProjectShowcaseItem[] = [
     year: "2026",
     role: "Product Design · Frontend Development · SEO · Content Architecture",
     summary:
-      "Designed and built a lightweight marketing website that gives a local welding company a professional online presence, improves local discoverability, and creates a clear conversion path from search to contact",
+      "Static-first marketing site for a local welding company, built to improve search visibility and convert visits into contact requests.",
     problem:
-      "The company had no effective online presence and relied almost entirely on word of mouth. The goal was to create a website that could increase local discoverability, communicate services clearly, and provide a simple path to contact",
+      "The company relied mainly on word of mouth and had no effective online presence. The goal was to clarify services, improve local discoverability and make contact immediate.",
     constraints: [
       "Zero technical knowledge on the client side — content updates must be autonomous",
       "Minimal budget — no room for custom backends or paid CMS platforms",
       "Fast time-to-market — the site needed to be live within weeks, not months",
     ],
     description:
-      "A lightweight marketing website built for a local welding business that previously had no active web presence. The project focuses on clarity, discoverability, and a simple path from visit to contact",
+      "A fast marketing website with clear service pages, structured content and a low-friction path from search to contact.",
     context:
-      "The client needed a new website to regain online visibility and be easier to find through search engines. The site had to present the company in a clear and trustworthy way for both private customers and businesses, while keeping the browsing experience fast and lightweight",
+      "The client needed a trustworthy web presence for private customers and businesses, without adding technical maintenance overhead.",
     content: "The implementation focused on three areas: ",
     contentList: [
       "Building reusable page sections",
       "Optimizing the information hierarchy",
-      "Integrating a Git-based CMS that allows the client to publish content independently."
+      "Integrating a Git-based CMS that allows the client to publish content independently.",
     ],
-    contentEnd: "The frontend uses Astro for static rendering while React is used where interactivity is needed, keeping the shipped JavaScript minimal.",
+    contentEnd:
+      "Astro handles static rendering, with React added only where interaction is needed.",
 
-
-    outcome: "The core architecture is complete and ready for production. The remaining work focuses on final content validation, launch preparation, and post-launch monitoring",
+    outcome:
+      "Core architecture is ready for production. Remaining work: final content validation, launch preparation and post-launch monitoring.",
     impact: [
       { label: "Deployment", value: "Automated" },
       { label: "Content management", value: "Client-managed" },
       { label: "Architecture", value: "Static-first" },
     ],
     lessonsLearned: [
-      "Modeling structured content early reduces future maintenance costs and makes the site easier to scale",
-      "Git-based CMS workflows need clear onboarding documentation for non-technical clients",
-      "Investing time in meta/SEO setup from day one compounds quickly for local businesses",
+      "Structured content reduces maintenance cost and makes the site easier to extend",
+      "Git-based CMS workflows need clear onboarding for non-technical clients",
+      "Early SEO setup compounds quickly for local businesses",
     ],
     links: [
       {
@@ -80,54 +81,54 @@ export const projects: IProjectShowcaseItem[] = [
       src: "/images/projects/mcsaldature/hero-homepage.jpg",
       alt: "Homepage preview of the mcSaldature website",
       caption:
-        "The public-facing interface is designed to communicate services clearly and push users toward direct contact",
+        "The public interface prioritizes service clarity and direct contact.",
     },
     gallery: [
       {
         src: "/images/projects/mcsaldature/admin-panel.jpg",
         alt: "Admin content editing interface for mcSaldature",
         caption:
-          "The admin area allows the client to update content without relying on manual developer edits",
+          "The admin area lets the client update content without developer edits.",
       },
     ],
     decisionCards: [
       {
         title: "Why Astro?",
         description:
-          "The project prioritized performance, SEO, and low maintenance over complex client-side interactions. Astro's static-first architecture reduced unnecessary JavaScript while keeping the development experience familiar through React components",
+          "The project prioritized performance, SEO and low maintenance over complex client-side interactions. Astro reduced unnecessary JavaScript while still allowing React components where useful.",
         tradeoff:
-          "Less ecosystem maturity than Next.js, but the zero-JS-by-default approach was ideal for a content-heavy marketing site",
+          "Less ecosystem maturity than Next.js, but the zero-JS-by-default model fits a content-heavy marketing site.",
       },
       {
         title: "Why Decap CMS + Git Gateway?",
         description:
           "The client needed editorial autonomy without introducing the complexity or cost of a traditional backend.",
         tradeoff:
-          "Git-based workflow is less intuitive than traditional CMS dashboards, but avoids hosting costs and vendor lock-in",
+          "Git-based publishing is less familiar than a traditional CMS, but avoids hosting costs and vendor lock-in.",
       },
       {
         title: "Why Netlify Identity?",
         description:
-          "Netlify Identity provided a simple authentication layer for the admin flow and integrated cleanly with the Git-based publishing pipeline",
+          "Netlify Identity provided a simple authentication layer for the admin flow and integrated with the Git-based publishing pipeline.",
         tradeoff:
-          "Tied to Netlify's platform, but the free tier covers the client's needs and simplifies the deployment pipeline significantly",
+          "It ties the project to Netlify, but simplifies deployment and fits the client's budget.",
       },
     ],
     workflow: {
       title: "Content publishing workflow",
       summary:
-        "The project was structured to reduce ongoing developer involvement in routine content edits",
+        "The workflow reduces developer involvement in routine content edits.",
       steps: [
         {
           label: "Admin edit",
-          description:
-            "The client updates text content through the admin interface",
+          description: "The client updates text through the admin interface",
           businessBenefit: "No developer dependency for routine changes",
         },
         {
           label: "Decap CMS save",
           description: "The content change is saved through the CMS workflow",
-          businessBenefit: "Version-controlled content with rollback capability",
+          businessBenefit:
+            "Version-controlled content with rollback capability",
         },
         {
           label: "GitHub update",
@@ -141,7 +142,13 @@ export const projects: IProjectShowcaseItem[] = [
         },
       ],
     },
-    futureImprovements: ["Lighthouse monitoring", "Image optimization pipeline", "Analytics dashboard", "Contact conversion tracking", "CMS preview workflow"],
+    futureImprovements: [
+      "Lighthouse monitoring",
+      "Image optimization pipeline",
+      "Analytics dashboard",
+      "Contact conversion tracking",
+      "CMS preview workflow",
+    ],
     liveUrl: undefined,
     githubUrl: undefined,
   },
@@ -154,23 +161,24 @@ export const projects: IProjectShowcaseItem[] = [
     projectPageEnabled: true,
     year: "2026",
     role: "Frontend Engineering · Information Architecture · UI Design",
-    summary: "A portfolio application designed to showcase projects through reusable UI components, structured content, and dedicated case studies rather than a conventional one-page layout",
+    summary:
+      "Portfolio application built with reusable UI sections, typed content and dedicated project case studies.",
     description:
-      "This portfolio serves both as a professional showcase and as an evolving frontend application. Rather than relying on a generic template, I designed a reusable content system that supports dedicated project pages, scalable layouts, and consistent information architecture",
-    content:
-      "The implementation focused on building a scalable frontend architecture through:",
+      "A professional showcase and frontend application, designed around structured content instead of a generic one-page template.",
+    content: "The implementation focuses on:",
 
     contentList: [
       "Reusable React components",
       "Centralized TypeScript-driven content",
       "Dynamic project routing with Next.js",
       "Responsive navigation patterns",
-      "Theming and design consistency"
+      "Theming and design consistency",
     ],
 
     contentEnd:
-      "The project also became an opportunity to deepen my experience with React, Next.js, and component-driven architecture while building an application intended to evolve over time",
-    outcome:"The project established a scalable foundation for presenting future work while remaining easy to extend through reusable components and centralized content",
+      "The project also deepened my React and Next.js practice while keeping the codebase ready to evolve.",
+    outcome:
+      "The portfolio now has a scalable foundation for future work, with reusable components and centralized content.",
     links: [
       {
         label: "Project page",
@@ -188,38 +196,46 @@ export const projects: IProjectShowcaseItem[] = [
       src: "/images/projects/personal-portfolio/hero-homepage.jpg",
       alt: "Homepage preview of the personal portfolio",
       caption:
-        "The homepage was designed to present work and experience with clearer hierarchy, stronger navigation, and a more intentional visual structure",
+        "The homepage presents work and experience through a clear hierarchy and dedicated navigation.",
     },
     gallery: [
       {
         src: "/images/projects/personal-portfolio/projects-section.jpg",
         alt: "Projects section of the personal portfolio",
         caption:
-          "The projects section is driven by centralized TypeScript data so featured content, lists, and detail pages stay aligned",
+          "The projects section is driven by centralized TypeScript data.",
       },
       {
         src: "/images/projects/personal-portfolio/project-detail-page.jpg",
         alt: "Project detail page of the personal portfolio",
         caption:
-          "Dynamic project pages extend the same system while allowing more space for project-specific decisions, content, and visuals",
+          "Dynamic project pages create space for decisions, content and visuals.",
       },
     ],
     decisionCards: [
       {
         title: "Why centralized content?",
         description:
-          "I chose Next.js to build the portfolio on a React-based stack that is more aligned with the frontend roles I want to target and better suited for scalable UI work",
+          "Centralized TypeScript data keeps homepage cards and project detail pages aligned without duplicating content.",
       },
       {
         title: "Why dynamic project routes?",
-        description:"Instead of embedding every project directly into the homepage, I separated overview and detail pages through dynamic routing. This keeps navigation simpler while allowing each project to grow independently as new content is added"
+        description:
+          "Dynamic routing keeps the homepage concise while allowing each project to grow into a full case study.",
       },
       {
         title: "Why reusable sections?",
-        description:"Every major section was designed as an independent component driven by typed data. This makes the portfolio easier to extend, maintain, and reuse without duplicating layout logic"
+        description:
+          "Each major section is driven by typed data, making the portfolio easier to extend without duplicating layout logic.",
       },
     ],
-    futureImprovements: ["MDX-powered project pages", "Full-text search", "Interactive animations", "Automated OG generation", "Internationalization"],
+    futureImprovements: [
+      "MDX-powered project pages",
+      "Full-text search",
+      "Interactive animations",
+      "Automated OG generation",
+      "Internationalization",
+    ],
     liveUrl: undefined,
     githubUrl: "https://github.com/matteodangio/portfolio_app",
   },
@@ -233,13 +249,12 @@ export const projects: IProjectShowcaseItem[] = [
     year: "2026",
     role: "Frontend Development",
     summary:
-      "An ongoing product-focused application for workout planning and progress tracking, currently under active development",
+      "Workout planning and progress tracking app, currently in early product development.",
     description:
-      "This project is intended to become a more complete product-focused application centered on workout planning, tracking, and day-to-day usability in the gym",
+      "A product-focused application for workout planning, tracking and day-to-day gym usability.",
     context:
-      "The app is still in its early implementation stage, so the project page is intentionally not available yet",
-    outcome:
-      "Initial setup and technical direction are defined. The project will be added as a full case study only after the first meaningful implementation milestone",
+      "The app is still early, so the project page will be added after the first meaningful implementation milestone.",
+    outcome: "Initial setup and technical direction are defined.",
     tech: [
       { label: "Angular", icon: SiAngular, color: "#DD0031" },
       { label: "TypeScript", icon: SiTypescript, color: "#3178C6" },
@@ -254,8 +269,9 @@ export const projects: IProjectShowcaseItem[] = [
 
 export const projectLabel: ISectionLabel = {
   sectionTitle: "Projects",
-  title: "Selected work, from business websites to product-focused applications",
-  description1: "Each project reflects a different challenge, from helping a local business build its online presence to exploring frontend architecture, product thinking, and user experience through personal work",
+  title: "Selected work with product and engineering context",
+  description1:
+    "A compact view of client work, portfolio architecture and product experiments, with enough detail for technical review.",
   subtitle1: "01 — Featured project",
   subtitle2: "Context",
   subtitle3: "Outcome",

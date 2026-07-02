@@ -2,20 +2,13 @@
 import ThemeToggle from "@/components/ui/themeToggle";
 import HeroWordmark from "@/components/ui/heroWordmark";
 import { heroLabels } from "@/data/hero";
+import { heroNavItems } from "@/data/navigation";
 import { motion } from "motion/react";
 import {
-  fadeUp,
   heroVariants,
   navItem,
   navList,
 } from "@/lib/animations/motionVariants";
-
-const navItems = [
-  { label: "About", target: "about" },
-  { label: "Projects", target: "projects" },
-  { label: "Experience", target: "experience" },
-  { label: "Contact", target: "contact" },
-];
 
 function scrollToSection(targetId: string) {
   const element = document.getElementById(targetId);
@@ -80,7 +73,7 @@ export default function Hero() {
               className="flex flex-col gap-2 md:items-end"
               variants={navList}
             >
-              {navItems.map((item) => (
+              {heroNavItems.map((item) => (
                 <motion.li key={item.target} variants={navItem}>
                   <button
                     type="button"

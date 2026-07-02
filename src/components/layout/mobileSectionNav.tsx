@@ -1,7 +1,8 @@
 "use client";
 
 import type { ReactNode, Dispatch, SetStateAction } from "react";
-import type { SocialLink } from "@/components/layout/sectionRailNav";
+import { sectionNavItems } from "@/data/navigation";
+import type { SocialLink } from "@/data/navigation";
 import { motion } from "motion/react";
 import { panelVariants } from "@/lib/animations/motionVariants";
 
@@ -15,14 +16,6 @@ type MobileSectionNavProps = {
   socialLinks: SocialLink[];
   children: ReactNode;
 };
-
-const mobileItems = [
-  { label: "Home", target: "home" },
-  { label: "About", target: "about" },
-  { label: "Projects", target: "projects" },
-  { label: "Experience", target: "experience" },
-  { label: "Contact", target: "contact" },
-];
 
 export default function MobileSectionNav({
   activeLabel,
@@ -79,7 +72,7 @@ export default function MobileSectionNav({
               className="flex flex-col gap-3 mt-3 pt-2 border-t"
               style={{ borderColor: "var(--border)" }}
             >
-              {mobileItems.map((item) => {
+              {sectionNavItems.map((item) => {
                 const active = activeSection === item.target;
 
                 return (

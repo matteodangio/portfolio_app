@@ -6,11 +6,7 @@ import { IProjectShowcaseItem } from "@/types";
 import { projectLabel } from "@/data/projects";
 import { getMainProject, getSecondaryProjects } from "@/data/projects.utils";
 import { motion } from "motion/react";
-import {
-  fadeUp,
-  staggerContainer,
-  worksContainer,
-} from "@/lib/animations/motionVariants";
+import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
 
 function ProjectLink({ project }: { project: IProjectShowcaseItem }) {
   if (!project.projectPageEnabled) {

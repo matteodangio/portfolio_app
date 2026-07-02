@@ -1,26 +1,27 @@
-import { LucideIcon } from "lucide-react";
 import { ComponentType, SVGProps } from "react";
 
 /* COMMON */
 export interface ISectionLabel {
-    sectionTitle?: string,
-    sectionSubtitle?: string,
-    title?: string, 
-    description1?: string,
-    description2?: string,
-    subtitle1?: string,
-    subtitle2?: string,
-    subtitle3?: string,
+  sectionTitle?: string;
+  sectionSubtitle?: string;
+  title?: string;
+  description1?: string;
+  description2?: string;
+  subtitle1?: string;
+  subtitle2?: string;
+  subtitle3?: string;
 }
 
 export interface ILink {
-  label: string,
-  href: string,
-  icon?: string,
-  description?: string,
+  label: string;
+  href: string;
+  icon?: string;
+  description?: string;
 }
 
-{/*FEATURED PROJECTS*/}
+{
+  /*FEATURED PROJECTS*/
+}
 
 export interface IProjectLink {
   label: string;
@@ -98,9 +99,9 @@ export interface IProjectWorkflow {
   steps: IProjectWorkflowStep[];
 }
 
-
-
-{/*EXPERIENCE*/}
+{
+  /*EXPERIENCE*/
+}
 
 export interface IExperienceItem {
   period: string;
@@ -111,16 +112,17 @@ export interface IExperienceItem {
   highlights: string[];
   stack: string[];
   context: string;
-};
-  
+}
 
-{/*ABOUT*/}
+{
+  /*ABOUT*/
+}
 
-  export interface IFocusItem {
-    index: string;
-    title: string;
-    description: string;
-  }
+export interface IFocusItem {
+  index: string;
+  title: string;
+  description: string;
+}
 
 export interface IAboutTechItem {
   title: string;
@@ -128,9 +130,9 @@ export interface IAboutTechItem {
   icon: ComponentType<SVGProps<SVGSVGElement>>;
   color?: string;
 }
-  
-    export interface IAboutTechGroup {
-    title: string;
-    mode: "card" | "chip";
-    items: IAboutTechItem[];
-  };
+
+export interface IAboutTechGroup {
+  title: string;
+  mode: "card" | "chip";
+  items: IAboutTechItem[];
+}

@@ -1,5 +1,20 @@
 import { IAboutTechGroup, IFocusItem, ISectionLabel } from "@/types";
-import { SiAngular, SiBootstrap, SiCursor, SiCypress, SiDatabricks, SiFramer, SiGit, SiGithub, SiGithubcopilot, SiJavascript, SiNextdotjs, SiPostgresql, SiPostman, SiPrimeng, SiReact, SiReactivex, SiSpringboot, SiSwagger, SiTailwindcss, SiTeamcity, SiTypescript } from "@icons-pack/react-simple-icons";
+import {
+  SiAngular,
+  SiCursor,
+  SiCypress,
+  SiDatabricks,
+  SiGit,
+  SiGithubcopilot,
+  SiNextdotjs,
+  SiReact,
+  SiReactivex,
+  SiSpringboot,
+  SiSwagger,
+  SiTailwindcss,
+  SiTeamcity,
+  SiTypescript,
+} from "@icons-pack/react-simple-icons";
 import { Guitar, LucideIcon, Mountain, Plane } from "lucide-react";
 
 export const focusItems: IFocusItem[] = [
@@ -7,39 +22,35 @@ export const focusItems: IFocusItem[] = [
     index: "01",
     title: "Frontend Engineering",
     description:
-      "I build scalable frontend applications with reusable components, clean architecture and maintainable code that evolves with the product.",
+      "Production Angular and React interfaces, built with typed data flows, reusable components and predictable delivery.",
   },
   {
     index: "02",
     title: "Component Architecture",
     description:
-      "I enjoy breaking complex interfaces into reusable components and creating consistent UI patterns that simplify development over time.",
+      "UI systems that reduce duplication, keep patterns consistent and make feature work easier to extend.",
   },
   {
     index: "03",
     title: "Product Quality",
     description:
-      "I care about the details that shape a great product: performance, accessibility, responsive layouts and interactions that feel intuitive."
+      "Responsive layouts, accessibility basics, performance awareness and E2E coverage for critical journeys.",
   },
   {
     index: "04",
     title: "Collaboration",
     description:
-      "I enjoy working closely with designers, backend engineers and product teams to turn requirements into reliable features that deliver value."
-  }
+      "Comfortable translating product requirements into frontend work with designers, backend engineers and stakeholders.",
+  },
 ];
-
-
 
 export const aboutLabels: ISectionLabel = {
   sectionTitle: "About",
-  title:
-    "Building frontend experiences that stay maintainable as products grow.",
-  description1: `I'm a frontend engineer with experience building enterprise web applications used in real business environments. I enjoy turning complex requirements into interfaces that are clear, scalable and pleasant to use.`,
-  description2: `My work combines frontend architecture, reusable components and close collaboration with designers and backend developers. I'm currently focusing on React and modern frontend technologies while applying the engineering principles I've developed in production projects.`,
-  subtitle1: "What I Bring"
+  title: "Frontend engineering for maintainable product interfaces.",
+  description1: `I am a frontend engineer based in Italy, working on enterprise web applications for real business workflows. My strongest production experience is Angular, TypeScript, RxJS, REST integrations and E2E testing.`,
+  description2: `I am expanding my React and Next.js work through product-focused projects, while keeping the same engineering standards I use in production: clear components, typed content, reliable interfaces and pragmatic collaboration.`,
+  subtitle1: "Core strengths",
 };
-
 
 export const techGroups: IAboutTechGroup[] = [
   {
@@ -48,20 +59,21 @@ export const techGroups: IAboutTechGroup[] = [
     items: [
       {
         title: "Angular",
-        description: "Building modern interfaces with component-driven architecture.",
-        icon: SiAngular, color: "#DD0031"
+        description:
+          "Production UI work with standalone components and Signals.",
+        icon: SiAngular,
+        color: "#DD0031",
       },
       {
         title: "TypeScript",
-        description: "Writing safer, maintainable code for large codebases",
+        description: "Typed application code for safer long-term maintenance",
         icon: SiTypescript,
       },
       {
         title: "RxJS",
-        description: "Managing asynchronous data and complex application flows",
+        description: "Asynchronous data flows for complex frontend state",
         icon: SiReactivex,
       },
-
     ],
   },
   {
@@ -80,10 +92,9 @@ export const techGroups: IAboutTechGroup[] = [
       {
         title: "Next.js",
         icon: SiNextdotjs,
-        color: "#888888"
+        color: "#888888",
       },
       { title: "Tailwind", icon: SiTailwindcss },
-
     ],
   },
   {
@@ -97,33 +108,37 @@ export const techGroups: IAboutTechGroup[] = [
   },
 ];
 
-
-export const personalItems: Array<{ title?: string, description: string, icon: LucideIcon, color?: string }> = [
+export const personalItems: Array<{
+  title?: string;
+  description: string;
+  icon: LucideIcon;
+  color?: string;
+}> = [
   {
     title: "Music",
-    description: "Playing guitar in a metal band has taught me how to work as part of a team, stay consistent and perform confidently under pressure.",
+    description:
+      "Guitarist in a metal band; useful training for consistency, listening and performing under pressure.",
     icon: Guitar,
-    color: "#888888"
+    color: "#888888",
   },
   {
     title: "Adventure",
-    description: "I enjoy hiking, snowboarding and longboarding. I like activities that push me out of my comfort zone and help me recharge away from the screen.",
+    description:
+      "Hiking, snowboarding and longboarding help me reset and stay comfortable with challenge.",
     icon: Mountain,
-    color: "#888888"
-
+    color: "#888888",
   },
   {
     title: "Curiosity",
-    description: "I love travelling and discovering different cultures. Every new place gives me fresh perspectives that often influence the way I approach both work and everyday life.",
+    description:
+      "Travel keeps me curious about people, context and how different teams solve problems.",
     icon: Plane,
-    color: "#888888"
-
+    color: "#888888",
   },
 ];
 
 export const personalLabels: ISectionLabel = {
-  title: "Who I am beyond the laptop",
-  subtitle1: "Outside of work you'll usually find me playing guitar, hiking, snowboarding or planning my next trip.",
-  subtitle2: "I enjoy learning new things, challenging myself and bringing that same curiosity into the way I build software."
-}
-
+  title: "Beyond work",
+  subtitle1: "Guitar, mountains, snowboarding and travel.",
+  subtitle2: "Different contexts keep me curious and adaptable.",
+};
