@@ -6,6 +6,7 @@ import { SiGithub, SiGmail } from "@icons-pack/react-simple-icons";
 import DesktopRail from "@/components/layout/desktopRail";
 import MobileSectionNav from "@/components/layout/mobileSectionNav";
 import ThemeToggle from "@/components/ui/themeToggle";
+import { Mail } from "lucide-react";
 
 export type NavItem = {
   label: string;
@@ -49,8 +50,8 @@ const socialLinks: SocialLink[] = [
   },
   {
     label: "Email",
-    href: "mailto:matteo@example.it",
-    icon: SiGmail,
+    href: "mailto:matteo.dangio@outlook.com",
+    icon: Mail,
   },
 ];
 

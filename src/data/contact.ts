@@ -16,8 +16,8 @@ import { ILink, ISectionLabel } from "@/types";
   ];
 
   export const mail: ILink = {
-    label: "matteo@example.it",
-    href: "mailto:matteo@example.it",
+    label: "Send me an email",
+    href: "mailto:matteo.dangio@outlook.com",
   };
 
   export const contactLabels: ISectionLabel = {

@@ -39,41 +39,39 @@ export default function Contact() {
             {contactLabels.description1}
           </p>
 
-          <div className="mt-10">
-            <a
-              href={mail.href}
-              className="inline-block text-2xl leading-tight transition-opacity duration-200 hover:opacity-60 md:text-4xl"
-              style={{
-                color: "var(--text)",
-                fontFamily: "var(--font-display)",
-              }}
-            >
-              {mail.label}
-            </a>
+          <a
+            href={mail.href}
+            className="mt-5 inline-block text-2xl transition-opacity duration-200 hover:opacity-60 md:text-4xl"
+            style={{
+              color: "var(--text)",
+              fontFamily: "var(--font-display)",
+            }}
+          >
+            {mail.label}
+          </a>
+
+          <div className="mt-5 flex flex-wrap gap-6">
+            {links.map((link) => (
+              <div key={link.label} className="flex flex-col">
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
+                  style={{ color: "var(--text)" }}
+                >
+                  {link.icon || link.label}
+                </a>
+
+                <p
+                  className="mt-1 text-xs"
+                  style={{ color: "var(--text-muted)" }}
+                >
+                  {link.description}
+                </p>
+              </div>
+            ))}
           </div>
-
-<div className="mt-10 flex flex-wrap gap-6">
-  {links.map((link) => (
-    <div key={link.label} className="flex flex-col">
-      <a
-        href={link.href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-sm font-medium uppercase tracking-[0.14em] transition-opacity duration-200 hover:opacity-60"
-        style={{ color: "var(--text)" }}
-      >
-        {link.icon || link.label}
-      </a>
-
-      <p
-        className="mt-1 text-xs"
-        style={{ color: "var(--text-muted)" }}
-      >
-        {link.description}
-      </p>
-    </div>
-  ))}
-</div>
 
           <p
             className="mt-12 max-w-xl text-sm leading-7"

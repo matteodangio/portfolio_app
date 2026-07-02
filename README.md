@@ -1,246 +1,129 @@
 <div align="center">
 
-# Portfolio
+# Personal Portfolio
 
-A modern frontend portfolio built with **Next.js**, **React**, and **TypeScript**, focused on reusable architecture, structured content, and thoughtful user experience.
+A frontend portfolio built with **Next.js**, **React**, and **TypeScript**, designed to showcase real projects through reusable UI patterns, structured content, and dedicated case studies.
 
-[🌐 Live Demo](https://your-domain.com) • [💼 LinkedIn](https://linkedin.com/in/matteo-dangio)
+🌐 **Live:** https://your-domain.com
 
-<br>
-
-![Next.js](https://img.shields.io/badge/Next.js-15-black)
-![React](https://img.shields.io/badge/React-19-61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38BDF8)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Vercel](https://img.shields.io/badge/Deploy-Vercel-black)
+💼 **LinkedIn:** https://linkedin.com/in/matteo-dangio
 
 </div>
 
 ---
 
-# Overview
+## About
 
-This project is more than a personal website.
+This project is both my personal portfolio and a long-term frontend engineering project.
 
-It was designed as a long-term frontend project to showcase real work through reusable UI patterns, structured content, and dedicated project case studies instead of relying on a traditional one-page portfolio.
-
-The application emphasizes:
-
-- Reusable component architecture
-- Centralized TypeScript data
-- Scalable content structure
-- Responsive design
-- Accessibility
-- Performance
-- Maintainability
+Rather than building a traditional one-page portfolio, I wanted a system that could grow over time through reusable components, centralized content, and dedicated project pages. The focus is not only on visual presentation, but also on maintainable architecture, scalability, and thoughtful user experience.
 
 ---
 
-# Features
+## What this project demonstrates
 
-- Responsive layout
-- Dynamic project pages
-- Static Site Generation (SSG)
-- Reusable UI components
+- React and Next.js application architecture
+- TypeScript-first development
+- Reusable component design
 - Centralized content management
-- Motion animations
-- Light / Dark theme
-- SEO-ready metadata
-- Project navigation
-- Fully typed codebase
+- Responsive layouts
+- UI consistency
+- Information architecture
+- Animation with Motion
+- SEO-friendly static pages
+- Long-term maintainability
 
 ---
 
-# Tech Stack
+## Tech Stack
 
-### Frontend
+**Framework**
 
 - Next.js
 - React
 - TypeScript
+
+**Styling**
+
 - Tailwind CSS
 
-### UI & UX
+**UI**
 
 - Motion
 - Lucide React
 - React Simple Icons
 
-### Tooling
+**Deployment**
 
-- ESLint
-- Git
 - Vercel
 
 ---
 
-# Architecture Highlights
+## Architecture
 
-Instead of storing project content directly inside components, the application uses centralized TypeScript data models.
+Some implementation decisions that shaped the project:
 
-This architecture provides:
-
-- Single source of truth for project content
-- Dynamic project pages
-- Better separation between data and presentation
-- Easier scalability
-- Improved maintainability
-- Strong type safety
+- Project content is centralized in typed data files instead of being embedded inside components.
+- Dynamic project pages reuse the same rendering system while allowing project-specific content.
+- Components are designed to remain reusable rather than page-specific.
+- Motion animations are intentionally subtle to support the interface without distracting from the content.
+- The overall structure prioritizes readability, maintainability, and future scalability.
 
 ---
 
-# Project Structure
+<!--
+## Screenshots
 
-```text
-src/
-│
-├── app/
-│   ├── projects/
-│   └── ...
-│
-├── components/
-│
-├── data/
-│
-├── hooks/
-│
-├── lib/
-│
-├── styles/
-│
-├── types/
-│
-└── utils/
-```
+### Homepage
+
+> _(Insert screenshot here)_
+
+![Homepage](./docs/homepage.png)
 
 ---
 
-<!--# Screenshots
+### Projects
 
-## Homepage
+> _(Insert screenshot here)_
 
-<p align="center">
-<img src="./docs/homepage.png" width="900" alt="Homepage">
-</p>
+![Projects](./docs/projects.png)
 
 ---
 
-## Featured Projects
+### Project Detail
 
-<p align="center">
-<img src="./docs/projects.png" width="900" alt="Projects section">
-</p>
+> _(Insert screenshot here)_
 
----
-
-## Project Detail Page
-
-<p align="center">
-<img src="./docs/project-detail.png" width="900" alt="Project detail">
-</p>
+![Project Detail](./docs/project-detail.png)
 
 ---
 
-## Mobile Version
+### Mobile
 
-<p align="center">
-<img src="./docs/mobile.png" width="340" alt="Mobile version">
-</p>
+> _(Insert screenshot here)_
+
+![Mobile](./docs/mobile.png)
 
 ---
 -->
 
-# Getting Started
+## Future Improvements
 
-Clone the repository:
+Planned evolutions include:
 
-```bash
-git clone https://github.com/matteodangio/portfolio_app.git
-```
-
-Move into the project:
-
-```bash
-cd portfolio_app
-```
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-Build for production:
-
-```bash
-npm run build
-```
-
-Run the production build:
-
-```bash
-npm run start
-```
+- MDX-powered case studies
+- Internationalization (i18n)
+- Search
+- Automated Open Graph image generation
+- Analytics dashboard
+- Additional project case studies
 
 ---
 
-# Design Principles
+## Contact
 
-The project was built around a few core principles:
-
-- Build reusable components instead of page-specific implementations.
-- Keep content separate from presentation.
-- Prioritize readability and information hierarchy.
-- Write maintainable and scalable frontend code.
-- Use animations only when they improve the experience.
-- Keep the interface clean without sacrificing personality.
-
----
-
-# Future Improvements
-
-- [ ] MDX-powered project pages
-- [ ] Search functionality
-- [ ] Internationalization (i18n)
-- [ ] Automated Open Graph image generation
-- [ ] Blog section
-- [ ] Lighthouse CI
-- [ ] Analytics dashboard
-
----
-
-# Lighthouse Goals
-
-Target scores:
-
-| Category       | Goal |
-| -------------- | ---- |
-| Performance    | 95+  |
-| Accessibility  | 100  |
-| Best Practices | 100  |
-| SEO            | 100  |
-
----
-
-# Author
-
-**Matteo Dangio**
-
-Frontend Engineer
+If you'd like to discuss the project or potential opportunities, feel free to reach out.
 
 - 🌐 Portfolio: https://your-domain.com
 - 💼 LinkedIn: https://linkedin.com/in/matteo-dangio
-- 🐙 GitHub: https://github.com/matteodangio
-
----
-
-# License
-
-This project is licensed under the MIT License.
+- 📧 hello@your-domain.com
