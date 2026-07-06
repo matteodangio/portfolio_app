@@ -4,9 +4,7 @@
 
 A frontend portfolio built with **Next.js**, **React**, and **TypeScript**, designed to showcase real projects through reusable UI patterns, structured content, and dedicated case studies.
 
-🌐 **Live:** https://your-domain.com
-
-💼 **LinkedIn:** https://linkedin.com/in/matteo-dangio
+🌐 **Live:** https://matteodangio.com
 
 </div>
 
@@ -105,7 +103,7 @@ Some implementation decisions that shaped the project:
 ![Mobile](./docs/mobile.png)
 
 ---
--->
+
 
 ## Future Improvements
 
@@ -119,11 +117,8 @@ Planned evolutions include:
 - Additional project case studies
 
 ---
-
+-->
 ## Contact
 
-If you'd like to discuss the project or potential opportunities, feel free to reach out.
 
-- 🌐 Portfolio: https://your-domain.com
-- 💼 LinkedIn: https://linkedin.com/in/matteo-dangio
-- 📧 hello@your-domain.com
+- 🌐 Portfolio: https://matteodangio.com
