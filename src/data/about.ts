@@ -22,7 +22,7 @@ export const focusItems: IFocusItem[] = [
     index: "01",
     title: "Frontend Engineering",
     description:
-      "Production Angular and React interfaces, built with typed data flows, reusable components and predictable delivery.",
+      "Production Angular interfaces, built with typed data flows, reusable components and predictable delivery.",
   },
   {
     index: "02",
@@ -46,9 +46,9 @@ export const focusItems: IFocusItem[] = [
 
 export const aboutLabels: ISectionLabel = {
   sectionTitle: "About",
-  title: "Frontend engineering for maintainable product interfaces.",
-  description1: `I am a frontend engineer based in Italy, working on enterprise web applications for real business workflows. My strongest production experience is Angular, TypeScript, RxJS, REST integrations and E2E testing.`,
-  description2: `I am expanding my React and Next.js work through product-focused projects, while keeping the same engineering standards I use in production: clear components, typed content, reliable interfaces and pragmatic collaboration.`,
+  title: "Frontend engineering for maintainable product interfaces",
+  description1: `I am a frontend engineer based in Italy, working on enterprise web applications for real business workflows. My strongest production experience is Angular, TypeScript, RxJS, REST API integrations and E2E testing.`,
+  description2: `I am expanding my React and Next.js work through product-focused projects, while keeping the same engineering standards I use in production: clear components, typed content and reliable interfaces.`,
   subtitle1: "Core strengths",
 };
 

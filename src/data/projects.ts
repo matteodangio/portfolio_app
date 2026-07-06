@@ -31,7 +31,7 @@ export const projects: IProjectShowcaseItem[] = [
       "Fast time-to-market — the site needed to be live within weeks, not months",
     ],
     description:
-      "A fast marketing website with clear service pages, structured content and a low-friction path from search to contact.",
+      "A fast marketing website with clear service page sections, structured content and a low-friction path from search to contact.",
     context:
       "The client needed a trustworthy web presence for private customers and businesses, without adding technical maintenance overhead.",
     content: "The implementation focused on three areas: ",
@@ -40,8 +40,8 @@ export const projects: IProjectShowcaseItem[] = [
       "Optimizing the information hierarchy",
       "Integrating a Git-based CMS that allows the client to publish content independently.",
     ],
-    contentEnd:
-      "Astro handles static rendering, with React added only where interaction is needed.",
+    contentEnd: "",
+      // "Astro handles static rendering, with React added only where interaction is needed.",
 
     outcome:
       "Core architecture is ready for production. Remaining work: final content validation, launch preparation and post-launch monitoring.",
@@ -63,14 +63,12 @@ export const projects: IProjectShowcaseItem[] = [
     ],
     tech: [
       { label: "Astro", icon: SiAstro, color: "#FF5D01" },
-      { label: "React", icon: SiReact, color: "#61DAFB" },
       { label: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
       { label: "Decap CMS", icon: SiDecapcms, color: "#FF0082" },
       { label: "Netlify", icon: SiNetlify, color: "#00C7B7" },
     ],
     stack: [
       "Astro",
-      "React",
       "Tailwind CSS",
       "Decap CMS",
       "Netlify Identity",
@@ -79,14 +77,14 @@ export const projects: IProjectShowcaseItem[] = [
     ],
     heroImage: {
       src: "/images/projects/mcsaldature/hero-homepage.jpg",
-      alt: "Homepage preview of the mcSaldature website",
+      alt: "Homepage preview of the website",
       caption:
         "The public interface prioritizes service clarity and direct contact.",
     },
     gallery: [
       {
         src: "/images/projects/mcsaldature/admin-panel.jpg",
-        alt: "Admin content editing interface for mcSaldature",
+        alt: "Admin content editing interface",
         caption:
           "The admin area lets the client update content without developer edits.",
       },
@@ -95,7 +93,7 @@ export const projects: IProjectShowcaseItem[] = [
       {
         title: "Why Astro?",
         description:
-          "The project prioritized performance, SEO and low maintenance over complex client-side interactions. Astro reduced unnecessary JavaScript while still allowing React components where useful.",
+          "The project prioritized performance, SEO and low maintenance over complex client-side interactions.",
         tradeoff:
           "Less ecosystem maturity than Next.js, but the zero-JS-by-default model fits a content-heavy marketing site.",
       },
@@ -111,7 +109,7 @@ export const projects: IProjectShowcaseItem[] = [
         description:
           "Netlify Identity provided a simple authentication layer for the admin flow and integrated with the Git-based publishing pipeline.",
         tradeoff:
-          "It ties the project to Netlify, but simplifies deployment and fits the client's budget.",
+          "It ties the project to Netlify, but simplifies deployment and fits the client's needs.",
       },
     ],
     workflow: {
