@@ -222,7 +222,7 @@ export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
           {(project.liveUrl || project.githubUrl) && (
             <div className="mt-8 flex flex-wrap gap-4">
               {project.liveUrl && (
-                <ExternalProjectLink href={project.liveUrl ? project.liveUrl : project.temporaryUrl!}>
+                <ExternalProjectLink href={project.temporaryUrl ? project.temporaryUrl : project.liveUrl!}>
                   View live
                 </ExternalProjectLink>
               )}
