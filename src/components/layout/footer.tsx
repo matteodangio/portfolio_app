@@ -18,7 +18,7 @@ export default function Footer() {
           >
             Privacy
           </Link>
-          <p aria-label={`Copyright ${year}`}>© {year}</p>
+          <p aria-label={`Copyright ${year}`}>© {year}. All rights reserved.</p>
         </div>
       </div>
     </footer>

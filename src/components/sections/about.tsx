@@ -27,8 +27,8 @@ export default function About() {
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="about-title"
     >
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
-        <div className="lg:sticky lg:top-24 lg:self-start">
+      <div className="grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] xl:gap-16">
+        <div className="xl:sticky xl:top-24 xl:self-start">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
             style={{ color: "var(--text-faint)" }}
@@ -45,8 +45,8 @@ export default function About() {
           >
             {aboutLabels.title}
           </h2>
-
-          <div
+          {/* section for personal avatar */}
+          {/* <div
             className="mt-8 overflow-hidden rounded-[1.75rem] border"
             style={{
               borderColor: "var(--border)",
@@ -60,7 +60,7 @@ export default function About() {
                   "linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, var(--surface)) 0%, var(--surface-2) 100%)",
               }}
             />
-          </div>
+          </div> */}
         </div>
 
         <div>

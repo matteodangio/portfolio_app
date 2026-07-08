@@ -27,10 +27,10 @@ export default function Experience() {
       viewport={{ once: false, amount: "some" }}
     >
       <motion.div
-        className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
+        className="grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] xl:gap-16"
         variants={fadeUp}
       >
-        <div className="lg:sticky lg:top-24 lg:self-start">
+        <div className="xl:sticky xl:top-24 xl:self-start">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"
             style={{ color: "var(--text-faint)" }}

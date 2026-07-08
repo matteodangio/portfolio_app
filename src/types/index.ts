@@ -54,6 +54,7 @@ export interface IProjectShowcaseItem {
   href?: string;
   stack?: string[];
   liveUrl?: string;
+  temporaryUrl?: string;
   githubUrl?: string;
 
   problem?: string;

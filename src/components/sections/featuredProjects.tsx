@@ -29,30 +29,26 @@ function ProjectLink({ project }: { project: IProjectShowcaseItem }) {
   return (
     <Link
       href={projectPageLink.href}
-      className="
-group
-inline-flex
-items-center
-gap-2
-text-sm
-font-medium
-uppercase
-tracking-[0.14em]
-transition-colors
-duration-200
-"
+      className="group
+                inline-flex
+                items-center
+                gap-2
+                text-sm
+                font-medium
+                uppercase
+                tracking-[0.14em]
+                transition-colors
+                duration-200"
       style={{ color: "var(--text)" }}
     >
       {projectPageLink.label}
       <ArrowUpRight
         size={15}
-        className="
-    transition-transform
-    duration-200
-    ease-out
-    group-hover:-translate-y-0.5
-    group-hover:translate-x-0.5
-  "
+        className="transition-transform
+                  duration-200
+                  ease-out
+                  group-hover:-translate-y-0.5
+                  group-hover:translate-x-0.5"
       />
     </Link>
   );
@@ -99,7 +95,7 @@ export default function FeaturedProjects() {
       aria-labelledby="projects-title"
     >
       <motion.div
-        className="mb-14 grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16"
+        className="mb-14 grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] xl:gap-16"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -149,7 +145,7 @@ export default function FeaturedProjects() {
           {projectLabel.subtitle1}
         </p>
 
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] lg:gap-16">
+        <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:gap-16">
           <div
             className="min-h-[260px] rounded-2xl md:min-h-[400px]"
             style={{

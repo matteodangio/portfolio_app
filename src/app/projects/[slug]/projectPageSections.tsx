@@ -139,7 +139,7 @@ function ProjectImageFrame({
 }) {
   return (
     <div
-      className="overflow-hidden rounded-2xl border"
+      className="w-full overflow-hidden rounded-2xl border"
       style={{
         borderColor: "var(--border)",
         background:
@@ -147,17 +147,19 @@ function ProjectImageFrame({
       }}
     >
       {image ? (
-        <div className="flex h-full flex-col">
-          <div className="relative min-h-[260px] w-full flex-1 md:min-h-[360px]">
-            <Image
-              src={image.src}
-              alt={image.alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 40vw"
-              priority={priority}
-              className="object-cover"
-            />
-          </div>
+        <div className="flex flex-col">
+          <a href={image.src} target="_blank" rel="noopener noreferrer">
+            <div className="relative aspect-video w-full">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                priority={priority}
+                className="object-cover"
+              />
+            </div>
+          </a>
           {image.caption && (
             <div
               className="border-t px-5 py-4"
@@ -170,7 +172,7 @@ function ProjectImageFrame({
           )}
         </div>
       ) : (
-        <div className="flex min-h-[260px] items-center justify-center p-8 md:min-h-[360px]">
+        <div className="flex aspect-video items-center justify-center p-8">
           <p
             className="text-center text-sm uppercase tracking-[0.16em]"
             style={{ color: "var(--text-faint)" }}
@@ -186,11 +188,11 @@ function ProjectImageFrame({
 export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
   return (
     <header
-      className="border-b pb-12 md:pb-16"
-      style={{ borderColor: "var(--border)" }}
+      // className="border-b pb-12 md:pb-16"
+      // style={{ borderColor: "var(--border)" }}
     >
-      <div className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(320px,0.85fr)] lg:gap-16">
-        <div>
+      <div className="grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,28rem)] xl:items-start xl:gap-16">
+        <div className="min-w-0">
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.18em]"
             style={{ color: "var(--text-faint)" }}
@@ -220,7 +222,7 @@ export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
           {(project.liveUrl || project.githubUrl) && (
             <div className="mt-8 flex flex-wrap gap-4">
               {project.liveUrl && (
-                <ExternalProjectLink href={project.liveUrl}>
+                <ExternalProjectLink href={project.liveUrl ? project.liveUrl : project.temporaryUrl!}>
                   View live
                 </ExternalProjectLink>
               )}
@@ -233,7 +235,9 @@ export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
           )}
         </div>
 
-        <ProjectImageFrame image={project.heroImage} priority />
+        <div className="min-w-0">
+          <ProjectImageFrame image={project.heroImage} priority />
+        </div>
       </div>
     </header>
   );
@@ -527,7 +531,8 @@ function ProjectGallery({ images }: { images: IProjectImage[] }) {
               background: "var(--surface)",
             }}
           >
-            <div className="relative h-[240px] w-full">
+          <a href={image.src} target="_blank" rel="noopener noreferrer">
+            <div className="relative aspect-video w-full">
               <Image
                 src={image.src}
                 alt={image.alt}
@@ -536,6 +541,7 @@ function ProjectGallery({ images }: { images: IProjectImage[] }) {
                 className="object-cover"
               />
             </div>
+          </a>
             {image.caption && (
               <figcaption
                 className="border-t px-5 py-4 text-sm leading-7"

@@ -8,7 +8,7 @@ export default function Contact() {
       style={{ borderColor: "var(--border)" }}
       aria-labelledby="contact-title"
     >
-      <div className="grid grid-cols-1 gap-12 lg:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] lg:gap-16">
+      <div className="grid grid-cols-1 gap-12 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] xl:gap-16">
         <div>
           <p
             className="mb-4 text-xs font-medium uppercase tracking-[0.22em]"

@@ -39,8 +39,8 @@ export default function Hero() {
         </p>
         <ThemeToggle />
       </div>
-      <div className="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-7xl grid-cols-1 gap-6 pb-8 pt-4 md:grid-cols-[minmax(0,0.82fr)_minmax(320px,1fr)] md:items-center md:gap-10 md:py-8 [@media(max-height:480px)]:min-h-[calc(100svh-3.5rem)] [@media(max-height:480px)]:gap-4 [@media(max-height:480px)]:py-2">
-        <div className="flex flex-col justify-center py-2 md:py-8 [@media(max-height:480px)]:py-0">
+      <div className="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-7xl grid-cols-1 gap-6 pb-8 pt-4 md:grid-cols-[minmax(0,0.82fr)_minmax(320px,1fr)] md:items-center md:gap-8 md:py-6 lg:gap-10 [@media(max-height:820px)]:gap-5 [@media(max-height:820px)]:py-3 [@media(max-height:480px)]:min-h-[calc(100svh-3.5rem)] [@media(max-height:480px)]:gap-4 [@media(max-height:480px)]:py-2">
+        <div className="flex flex-col justify-center py-2 md:py-6 [@media(max-height:820px)]:py-1 [@media(max-height:480px)]:py-0">
           <div
             className="flex max-w-5xl justify-center md:justify-start"
             style={{
@@ -51,12 +51,12 @@ export default function Hero() {
               srcLight="/dark-hero-me.png"
               srcDark="/light-hero-me.png"
               alt="Matteo Dangiò Frontend Engineer"
-              className="hero-wordmark w-full max-w-[260px] sm:max-w-[320px] md:max-w-[430px] lg:max-w-[500px] xl:max-w-[560px] [@media(max-height:480px)]:max-w-[220px]"
+              className="hero-wordmark w-full max-w-[260px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[470px] xl:max-w-[520px] 2xl:max-w-[560px] [@media(max-height:820px)]:md:max-w-[360px] [@media(max-height:820px)]:lg:max-w-[410px] [@media(max-height:820px)]:xl:max-w-[450px] [@media(max-height:480px)]:max-w-[220px]"
             />
           </div>
 
           <p
-            className="max-w-xl text-base leading-8 md:text-lg [@media(max-height:480px)]:max-w-md [@media(max-height:480px)]:text-sm [@media(max-height:480px)]:leading-6"
+            className="max-w-xl text-base leading-8 md:text-lg [@media(max-height:820px)]:max-w-lg [@media(max-height:820px)]:text-base [@media(max-height:820px)]:leading-7 [@media(max-height:480px)]:max-w-md [@media(max-height:480px)]:text-sm [@media(max-height:480px)]:leading-6"
             style={{ color: "var(--text-muted)" }}
           >
             {heroLabels.description1}
@@ -81,7 +81,7 @@ export default function Hero() {
                     className="group relative block text-left md:text-right"
                   >
                     <span
-                      className="font-body relative block text-[2rem] font-bold uppercase leading-[0.92] tracking-normal transition-all duration-200 ease-out group-hover:translate-x-1 md:text-[3.75rem] lg:text-[5.5rem] xl:text-[6.5rem] 2xl:text-[7.5rem] [@media(max-height:480px)]:text-[2.2rem]"
+                      className="font-body relative block text-[2rem] font-bold uppercase leading-[0.92] tracking-normal transition-all duration-200 ease-out group-hover:translate-x-1 md:text-[clamp(3.4rem,7vw,4.5rem)] lg:text-[clamp(4.2rem,6.5vw,5.25rem)] xl:text-[clamp(4.75rem,6.2vw,6rem)] 2xl:text-[7rem] [@media(max-height:820px)]:md:text-[clamp(3rem,6.2vw,4.25rem)] [@media(max-height:820px)]:xl:text-[clamp(4rem,5.5vw,5rem)] [@media(max-height:480px)]:text-[2.2rem]"
                       style={{
                         color: "var(--hero-nav)",
                       }}

@@ -76,14 +76,14 @@ export const projects: IProjectShowcaseItem[] = [
       "Google Analytics 4",
     ],
     heroImage: {
-      src: "/images/projects/mcsaldature/hero-homepage.jpg",
+      src: "/images/projects/mcsaldature/home.webp",
       alt: "Homepage preview of the website",
       caption:
         "The public interface prioritizes service clarity and direct contact.",
     },
     gallery: [
       {
-        src: "/images/projects/mcsaldature/admin-panel.jpg",
+        src: "/images/projects/mcsaldature/admin-panel.webp",
         alt: "Admin content editing interface",
         caption:
           "The admin area lets the client update content without developer edits.",
@@ -147,7 +147,8 @@ export const projects: IProjectShowcaseItem[] = [
       "Contact conversion tracking",
       "CMS preview workflow",
     ],
-    liveUrl: undefined,
+    liveUrl: "https://www.mcsaldature.com/",
+    temporaryUrl: "https://mcsaldature.netlify.app/",
     githubUrl: undefined,
   },
   {
@@ -234,7 +235,7 @@ export const projects: IProjectShowcaseItem[] = [
       "Automated OG generation",
       "Internationalization",
     ],
-    liveUrl: undefined,
+    liveUrl: "https://matteodangio.com",
     githubUrl: "https://github.com/matteodangio/portfolio_app",
   },
   {
