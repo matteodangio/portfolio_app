@@ -99,7 +99,7 @@ export default function FeaturedProjects() {
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
       >
         <div>
           <p
@@ -136,7 +136,7 @@ export default function FeaturedProjects() {
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.15 }}
+        viewport={{ once: true, amount: 0.15 }}
       >
         <p
           className="mb-6 text-xs font-medium uppercase tracking-[0.18em]"
@@ -227,7 +227,7 @@ export default function FeaturedProjects() {
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.1 }}
+        viewport={{ once: true, amount: 0.1 }}
       >
         {works.map((work, index) => {
           const isLast = index === works.length - 1;

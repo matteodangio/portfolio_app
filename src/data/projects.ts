@@ -283,9 +283,9 @@ export const projects: IProjectShowcaseItem[] = [
 
 export const projectLabel: ISectionLabel = {
   sectionTitle: "Projects",
-  title: "Selected work with product and engineering context",
+  title: "Selected work and the decisions behind it",
   description1:
-    "A compact view of client work, portfolio architecture and product experiments, with enough detail for technical review.",
+    "A client project and this portfolio, each with the technical decisions behind it.",
   subtitle1: "01 — Featured project",
   subtitle2: "Context",
   subtitle3: "Outcome",

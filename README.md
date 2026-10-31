@@ -2,7 +2,7 @@
 
 # Personal Portfolio
 
-A frontend portfolio built with **Next.js**, **React**, and **TypeScript**, designed to showcase real projects through reusable UI patterns, structured content, and dedicated case studies.
+A full-stack engineer's portfolio, built with **Next.js**, **React**, and **TypeScript**, designed to showcase real projects through reusable UI patterns, structured content, and dedicated case studies.
 
 🌐 **Live:** https://matteodangio.com
 
@@ -12,7 +12,7 @@ A frontend portfolio built with **Next.js**, **React**, and **TypeScript**, desi
 
 ## About
 
-This project is both my personal portfolio and a long-term frontend engineering project.
+This project is both my personal portfolio and my React and Next.js practice project.
 
 Rather than building a traditional one-page portfolio, I wanted a system that could grow over time through reusable components, centralized content, and dedicated project pages. The focus is not only on visual presentation, but also on maintainable architecture, scalability, and thoughtful user experience.
 
@@ -118,7 +118,7 @@ Planned evolutions include:
 
 ---
 -->
-## Contact
 
+## Contact
 
 - 🌐 Portfolio: https://matteodangio.com
