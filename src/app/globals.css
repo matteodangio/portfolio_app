@@ -25,9 +25,9 @@ html[data-theme="light"] {
   color-scheme: light;
 
   --bg: #e4ddd2;
-  --surface: #ebe5db;
-  --surface-2: #f2ede5;
-  --border: rgba(33, 28, 24, 0.12);
+  --surface: #efe9df;
+  --surface-2: #f6f2ea;
+  --border: rgba(33, 28, 24, 0.17);
   --text: #1e1a17;
   --text-muted: rgba(30, 26, 23, 0.74);
   --text-faint: rgba(30, 26, 23, 0.68);

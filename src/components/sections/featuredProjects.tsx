@@ -248,7 +248,7 @@ export default function FeaturedProjects() {
             <motion.article
               variants={fadeUp}
               key={work.slug}
-              className="grid grid-cols-1 gap-6 py-8 md:grid-cols-[80px_minmax(0,1fr)_auto] md:items-center md:gap-10 md:py-9"
+              className="grid grid-cols-1 gap-6 py-8 md:grid-cols-[80px_minmax(0,1fr)_minmax(0,300px)] md:items-center md:gap-10 md:py-10"
               style={{
                 borderBottom: !isLast ? "1px solid var(--border)" : undefined,
               }}
@@ -286,7 +286,21 @@ export default function FeaturedProjects() {
                 </div>
               </div>
 
-              <div className="md:shrink-0">
+              <div className="flex flex-col gap-4 md:shrink-0">
+                {work.heroImage && (
+                  <div
+                    className="relative aspect-[16/10] overflow-hidden rounded-xl border"
+                    style={{ borderColor: "var(--border)" }}
+                  >
+                    <Image
+                      src={work.heroImage.src}
+                      alt={work.heroImage.alt}
+                      fill
+                      sizes="(min-width: 768px) 300px, 100vw"
+                      className="object-cover object-top"
+                    />
+                  </div>
+                )}
                 <ProjectLink project={work} />
               </div>
             </motion.article>

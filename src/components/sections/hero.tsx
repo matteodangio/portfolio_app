@@ -71,17 +71,27 @@ export default function Hero() {
             {heroLabels.description1}
           </p>
 
-          <p
-            className="mt-5 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em] [@media(max-height:480px)]:hidden"
-            style={{ color: "var(--text-faint)" }}
-          >
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full"
-              style={{ background: "var(--accent)" }}
-            />
-            {heroLabels.sectionSubtitle2}
-          </p>
+          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 [@media(max-height:480px)]:hidden">
+            <button
+              type="button"
+              onClick={() => scrollToSection("contact")}
+              className="cursor-pointer rounded-full px-6 py-3 text-xs font-medium uppercase tracking-[0.16em] transition-opacity duration-200 hover:opacity-80"
+              style={{ background: "var(--text)", color: "var(--bg)" }}
+            >
+              Get in touch
+            </button>
+            <p
+              className="inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
+              style={{ color: "var(--text-faint)" }}
+            >
+              <span
+                aria-hidden="true"
+                className="h-2 w-2 rounded-full"
+                style={{ background: "var(--accent)" }}
+              />
+              {heroLabels.sectionSubtitle2}
+            </p>
+          </div>
         </div>
 
         <motion.nav
