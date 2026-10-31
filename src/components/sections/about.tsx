@@ -8,16 +8,10 @@ import {
   techGroups,
 } from "@/data/about";
 import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
-import { IFocusItem } from "@/types";
 import { Minus, Plus } from "lucide-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useState } from "react";
+import { motion } from "motion/react";
 
 export default function About() {
-  const items: IFocusItem[] = focusItems;
-  const [personalOpenIndex, setPersonalOpenIndex] = useState<number | null>(
-    null,
-  );
   const coreGroup = techGroups.find((group) => group.mode === "card");
   const chipGroups = techGroups.filter((group) => group.mode === "chip");
 
@@ -46,22 +40,6 @@ export default function About() {
           >
             {aboutLabels.title}
           </h2>
-          {/* section for personal avatar */}
-          {/* <div
-            className="mt-8 overflow-hidden rounded-[1.75rem] border"
-            style={{
-              borderColor: "var(--border)",
-              background: "var(--surface)",
-            }}
-          >
-            <div
-              className="aspect-4/5 w-full"
-              style={{
-                background:
-                  "linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, var(--surface)) 0%, var(--surface-2) 100%)",
-              }}
-            />
-          </div> */}
         </div>
 
         <div>
@@ -91,7 +69,7 @@ export default function About() {
             </p>
 
             <div className="flex flex-col">
-              {items.map((item) => (
+              {focusItems.map((item) => (
                 <article
                   key={item.title}
                   className="grid grid-cols-1 gap-5 border-t py-8 md:grid-cols-[72px_minmax(0,1fr)] md:gap-8"
@@ -230,124 +208,71 @@ export default function About() {
               </div>
             </div>
 
-            {/* Peronal interests */}
-            <div
-              className="mt-8 rounded-[1.75rem] border p-5 md:p-6"
+            {/* Personal interests */}
+            <details
+              className="group mt-8 rounded-[1.75rem] border p-5 md:p-6"
               style={{
                 borderColor: "var(--border)",
-                background:
-                  "color-mix(in srgb, var(--surface) 82%, transparent)",
+                background: "var(--surface)",
               }}
             >
-              <button
-                type="button"
-                onClick={() =>
-                  setPersonalOpenIndex(personalOpenIndex === 0 ? null : 0)
-                }
-                className="flex w-full items-start justify-between gap-4 text-left cursor-pointer"
-                aria-expanded={personalOpenIndex === 0}
-                aria-controls="personal-accordion"
-              >
-                <div>
-                  <p
-                    className="text-xs font-medium uppercase tracking-[0.22em]"
-                    style={{ color: "var(--text-faint)" }}
-                  >
-                    {personalLabels.title}
-                  </p>
-                </div>
-
-                <span style={{ color: "var(--text-faint)" }}>
-                  {personalOpenIndex === 0 ? (
-                    <Minus size={18} />
-                  ) : (
-                    <Plus size={18} />
-                  )}
+              <summary className="flex cursor-pointer list-none items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                <span
+                  className="text-xs font-medium uppercase tracking-[0.22em]"
+                  style={{ color: "var(--text-faint)" }}
+                >
+                  {personalLabels.title}
                 </span>
-              </button>
+                <span style={{ color: "var(--text-faint)" }}>
+                  <Plus size={18} className="group-open:hidden" />
+                  <Minus size={18} className="hidden group-open:block" />
+                </span>
+              </summary>
 
-              <AnimatePresence initial={false} mode="wait">
-                {personalOpenIndex === 0 && (
-                  <motion.div
-                    id="personal-accordion"
-                    key="personal-accordion"
-                    variants={{
-                      hidden: { opacity: 0, height: 0 },
-                      visible: {
-                        opacity: 1,
-                        height: "auto",
-                        transition: { duration: 0.28, ease: "easeOut" },
-                      },
-                      exit: {
-                        opacity: 0,
-                        height: 0,
-                        transition: { duration: 0.22, ease: "easeIn" },
-                      },
-                    }}
-                    initial="hidden"
-                    animate="visible"
-                    exit="exit"
-                    className="overflow-hidden"
-                  >
-                    <div className="pt-5">
-                      <p
-                        className="font-body leading-tight md:text-lg"
-                        style={{
-                          color: "var(--text)",
-                        }}
+              <div className="pt-5">
+                <p
+                  className="font-body leading-tight md:text-lg"
+                  style={{ color: "var(--text)" }}
+                >
+                  {personalLabels.subtitle1}
+                  <br />
+                  {personalLabels.subtitle2}
+                </p>
+
+                <ul className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
+                  {personalItems.map((item) => {
+                    const Icon = item.icon;
+                    return (
+                      <li
+                        key={item.title}
+                        className="rounded-[1.1rem] border p-4"
+                        style={{ borderColor: "var(--border)" }}
                       >
-                        {personalLabels.subtitle1}
-                        <br />
-                        {personalLabels.subtitle2}
-                      </p>
-
-                      <div className="mt-5 grid grid-cols-1 gap-4 md:grid-cols-3">
-                        {personalItems.map((item) => {
-                          const Icon = item.icon;
-                          return (
-                            <div
-                              key={item.title}
-                              className="rounded-[1.1rem] border p-4"
-                              style={{
-                                borderColor: "var(--border)",
-                                background:
-                                  "color-mix(in srgb, var(--surface) 88%, transparent)",
-                              }}
-                            >
-                              <div className="flex items-center gap-2.5">
-                                <span
-                                  className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border"
-                                  style={{
-                                    borderColor: "var(--border)",
-                                    color: "var(--text)",
-                                    background:
-                                      "color-mix(in srgb, var(--surface) 70%, transparent)",
-                                  }}
-                                >
-                                  <Icon size={16} strokeWidth={1.75} />
-                                </span>
-                                <span
-                                  className="text-xs font-medium uppercase tracking-[0.18em]"
-                                  style={{ color: "var(--text-faint)" }}
-                                >
-                                  {item.title}
-                                </span>
-                              </div>
-                              <p
-                                className="mt-3 text-sm leading-6"
-                                style={{ color: "var(--text-muted)" }}
-                              >
-                                {item.description}
-                              </p>
-                            </div>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                        <div className="flex items-center gap-2.5">
+                          <Icon
+                            size={16}
+                            strokeWidth={1.75}
+                            aria-hidden="true"
+                          />
+                          <span
+                            className="text-xs font-medium uppercase tracking-[0.18em]"
+                            style={{ color: "var(--text-faint)" }}
+                          >
+                            {item.title}
+                          </span>
+                        </div>
+                        <p
+                          className="mt-3 text-sm leading-6"
+                          style={{ color: "var(--text-muted)" }}
+                        >
+                          {item.description}
+                        </p>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            </details>
           </div>
         </div>
       </div>
