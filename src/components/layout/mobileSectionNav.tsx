@@ -31,16 +31,20 @@ export default function MobileSectionNav({
 }: MobileSectionNavProps) {
   const pendingTargetRef = useRef<string | null>(null);
 
-  if (!showMobileNav) return null;
-
   return (
     <div className="md:hidden">
+      {/* Always mounted and slid in/out with a transform: mounting the bar
+          mid-scroll (plus a backdrop blur) caused visible flashes on mobile. */}
       <div
-        className="fixed left-0 top-0 z-40 w-full border-b px-3 py-3 backdrop-blur-md"
+        className="fixed left-0 top-0 z-40 w-full border-b px-3 py-3 transition-[transform,opacity] duration-300 ease-out will-change-transform"
         style={{
-          backgroundColor: "color-mix(in srgb, var(--bg) 92%, transparent)",
+          backgroundColor: "var(--bg)",
           borderColor: "var(--border)",
+          transform: showMobileNav ? "translateY(0)" : "translateY(-100%)",
+          opacity: showMobileNav ? 1 : 0,
         }}
+        inert={!showMobileNav}
+        aria-hidden={!showMobileNav}
       >
         <div className="flex flex-col">
           <button
