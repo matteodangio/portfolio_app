@@ -6,11 +6,11 @@ export const siteConfig = {
     "Matteo Dangiò — Full-Stack Engineer | Java/Spring Boot, Angular, TypeScript",
   shortTitle: "Matteo Dangiò — Full-Stack Engineer",
   description:
-    "Full-stack engineer working with Java/Spring Boot, Angular and TypeScript on fintech products, applying AI to modernize existing systems. Based in Italy, open to relocation and remote work across the EU.",
+    "Full-stack engineer working with Java/Spring Boot, Angular and TypeScript, with fintech experience and AI applied to modernizing existing systems. Based in Italy, open to relocation and remote work across the EU.",
   ogDescription:
     "Full-stack engineer: Java/Spring Boot, Angular, TypeScript, fintech and AI-assisted modernization of legacy systems.",
   twitterDescription:
-    "Java/Spring Boot and Angular full-stack engineer for fintech products, with AI-assisted modernization.",
+    "Java/Spring Boot and Angular full-stack engineer with fintech experience and AI-assisted modernization.",
   keywords: [
     "Full-Stack Engineer",
     "Full-Stack Developer",

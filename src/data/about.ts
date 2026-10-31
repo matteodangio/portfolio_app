@@ -55,9 +55,8 @@ export const focusItems: IFocusItem[] = [
 
 export const aboutLabels: ISectionLabel = {
   sectionTitle: "About",
-  title: "Full-stack engineering for fintech products",
-  description1: `Full-stack engineer with four years of experience building B2B software at Dedagroup. For the past two and a half years I've worked on a SaaS platform for credit and financial services, with modern Angular and end-to-end tests, integrating REST APIs exposed by a .NET backend. Before that I spent almost two years as a full-stack developer on logistics dashboards for an enterprise client, building REST APIs with Java, Spring Boot, Spring Data JPA and PostgreSQL.`,
-  description2: `Recently I've worked on AI-assisted modernization on the data side: migrating features from a legacy version of the product to the new one, adapting SQL scripts and database logic with AI coding agents and reviewing every change before release. I'm looking for full-stack roles in fintech, with Java/Spring Boot on the backend and room to build AI-powered features. React is my second frontend language, and this site is built with it.`,
+  description1: `Full-stack engineer with four years of experience building B2B software. For the past two and a half years I've worked on a SaaS platform for credit and financial services, with modern Angular and end-to-end tests, integrating REST APIs exposed by a .NET backend. Before that I spent almost two years as a full-stack developer on logistics dashboards for an enterprise client, building REST APIs with Java, Spring Boot, Spring Data JPA and PostgreSQL.`,
+  description2: `Recently I've worked on AI-assisted modernization on the data side: migrating features from a legacy version of the product to the new one, adapting SQL scripts and database logic with AI coding agents and reviewing every change before release. I'm looking for full-stack roles with Java/Spring Boot on the backend and room to build AI-powered features, in fintech or beyond.`,
   subtitle1: "Core strengths",
 };
 

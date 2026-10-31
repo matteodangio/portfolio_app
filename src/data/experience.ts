@@ -95,7 +95,7 @@ export const languageItems: ILanguageItem[] = [
 export const experienceLabels: ISectionLabel = {
   sectionTitle: "Experience",
   title: "Four years building enterprise software at Dedagroup",
-  description1: `From Java/Spring Boot services to Angular interfaces for fintech, with AI now part of how I modernize existing systems.`,
+  description1: `From Java/Spring Boot services to Angular interfaces for financial services, with AI now part of how I modernize existing systems.`,
   subtitle1: "Education & training",
   subtitle2: "Languages",
 };

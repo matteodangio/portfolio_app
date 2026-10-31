@@ -34,8 +34,7 @@ export default function Hero() {
                 <li key={item.target}>
                   <a
                     href={`#${item.target}`}
-                    className="text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-200 hover:text-[var(--hero-nav-hover)]"
-                    style={{ color: "var(--hero-nav)" }}
+                    className="relative text-xs font-medium uppercase tracking-[0.18em] text-[var(--hero-nav)] transition-colors duration-200 after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-full after:origin-left after:scale-x-0 after:bg-current after:transition-transform after:duration-300 hover:text-[var(--hero-nav-hover)] hover:after:scale-x-100"
                   >
                     {item.label}
                   </a>
@@ -47,7 +46,7 @@ export default function Hero() {
         </div>
       </header>
 
-      <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-6 py-10 md:grid-cols-2 md:gap-12">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-6 py-10 md:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)] md:gap-12">
         <motion.div
           className="order-2 md:order-1"
           variants={staggerContainer}
@@ -56,7 +55,7 @@ export default function Hero() {
         >
           <motion.h1
             variants={fadeUp}
-            className="font-display max-w-2xl text-[clamp(2.5rem,5vw,4.5rem)] leading-[1]"
+            className="font-display max-w-2xl text-[clamp(2.5rem,4.6vw,4.25rem)] leading-[1]"
             style={{ color: "var(--hero-display)" }}
           >
             {hero.title}
@@ -92,14 +91,9 @@ export default function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-8 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
+            className="mt-8 text-xs font-medium uppercase tracking-[0.16em]"
             style={{ color: "var(--text-faint)" }}
           >
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full"
-              style={{ background: "var(--accent)" }}
-            />
             {hero.availability}
           </motion.p>
         </motion.div>
