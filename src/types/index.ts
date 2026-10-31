@@ -14,10 +14,8 @@ export interface ISectionLabel {
 
 export interface IHeroContent {
   name: string;
-  eyebrow: string;
   title: string;
   description: string;
-  stack: string[];
   availability: string;
   primaryCta: { label: string; target: string };
   secondaryCta: { label: string; target: string };

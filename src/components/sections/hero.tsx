@@ -47,24 +47,16 @@ export default function Hero() {
         </div>
       </header>
 
-      <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-6 py-10 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:gap-10">
+      <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-6 py-10 md:grid-cols-2 md:gap-12">
         <motion.div
           className="order-2 md:order-1"
           variants={staggerContainer}
           initial="hidden"
           animate="visible"
         >
-          <motion.p
-            variants={fadeUp}
-            className="text-xs font-medium uppercase tracking-[0.22em]"
-            style={{ color: "var(--text-faint)" }}
-          >
-            {hero.eyebrow}
-          </motion.p>
-
           <motion.h1
             variants={fadeUp}
-            className="font-display mt-5 max-w-3xl text-[clamp(2.75rem,6.2vw,5.75rem)] leading-[0.95]"
+            className="font-display max-w-2xl text-[clamp(2.5rem,5vw,4.5rem)] leading-[1]"
             style={{ color: "var(--hero-display)" }}
           >
             {hero.title}
@@ -72,7 +64,7 @@ export default function Hero() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-6 max-w-xl text-base leading-8 md:text-lg"
+            className="mt-6 max-w-lg text-base leading-8 md:text-lg"
             style={{ color: "var(--text-muted)" }}
           >
             {hero.description}
@@ -80,7 +72,7 @@ export default function Hero() {
 
           <motion.div
             variants={fadeUp}
-            className="mt-8 flex flex-wrap items-center gap-3"
+            className="mt-9 flex flex-wrap items-center gap-3"
           >
             <a
               href={`#${hero.primaryCta.target}`}
@@ -98,20 +90,9 @@ export default function Hero() {
             </a>
           </motion.div>
 
-          <motion.ul
-            variants={fadeUp}
-            aria-label="Core stack"
-            className="mt-10 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium uppercase tracking-[0.16em]"
-            style={{ color: "var(--text-muted)" }}
-          >
-            {hero.stack.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </motion.ul>
-
           <motion.p
             variants={fadeUp}
-            className="mt-4 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
+            className="mt-8 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
             style={{ color: "var(--text-faint)" }}
           >
             <span
@@ -123,7 +104,7 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
-        <div className="order-1 mx-auto w-full max-w-[280px] md:order-2 md:max-w-[460px]">
+        <div className="order-1 mx-auto w-full max-w-[260px] md:order-2 md:max-w-[540px]">
           <HeroWordmark
             srcLight="/dark-hero-me.png"
             srcDark="/light-hero-me.png"
