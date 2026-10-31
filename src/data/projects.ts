@@ -15,12 +15,13 @@ export const projects: IProjectShowcaseItem[] = [
   {
     index: "01",
     title: "MC Saldature",
+    status: "published",
     slug: "mcsaldature",
     featured: true,
     mainProject: true,
     projectPageEnabled: true,
     year: "2026",
-    role: "Product Design · Frontend Development · SEO · Content Architecture",
+    role: "Design · Development · SEO · Content Architecture",
     summary:
       "Static-first marketing site for a local welding company, built to improve search visibility and convert visits into contact requests.",
     problem:
@@ -154,30 +155,31 @@ export const projects: IProjectShowcaseItem[] = [
   {
     index: "02",
     title: "Portfolio",
+    status: "published",
     slug: "portfolio",
     featured: true,
     mainProject: false,
     projectPageEnabled: true,
     year: "2026",
-    role: "Frontend Engineering · Information Architecture · UI Design",
+    role: "Design · Frontend Development · Information Architecture",
     summary:
-      "Portfolio application built with reusable UI sections, typed content and dedicated project case studies.",
+      "This site: a Next.js and React portfolio where all content lives in typed data files, so updating it never means touching a component.",
     description:
-      "A professional showcase and frontend application, designed around structured content instead of a generic one-page template.",
+      "My second frontend stack after Angular. I built it to practice React and Next.js on a real product, with the same habits I use in production: typed data, small components and predictable routing.",
     content: "The implementation focuses on:",
 
     contentList: [
-      "Reusable React components",
-      "Centralized TypeScript-driven content",
-      "Dynamic project routing with Next.js",
-      "Responsive navigation patterns",
-      "Theming and design consistency",
+      "Next.js App Router with statically generated case-study routes",
+      "Content kept in typed TypeScript files, separate from the components",
+      "Light and dark themes through CSS variables and next-themes",
+      "Self-hosted fonts with next/font and optimized images with next/image",
+      "Motion animations, with prefers-reduced-motion respected",
     ],
 
     contentEnd:
-      "The project also deepened my React and Next.js practice while keeping the codebase ready to evolve.",
+      "Being new to React and Next.js, I kept the architecture simple and let the data model carry the structure.",
     outcome:
-      "The portfolio now has a scalable foundation for future work, with reusable components and centralized content.",
+      "A site I can update by editing data files, without touching the components.",
     links: [
       {
         label: "Project page",
@@ -213,26 +215,24 @@ export const projects: IProjectShowcaseItem[] = [
     ],
     decisionCards: [
       {
-        title: "Why centralized content?",
+        title: "Why typed content files?",
         description:
-          "Centralized TypeScript data keeps homepage cards and project detail pages aligned without duplicating content.",
+          "Hero, experience, technologies and projects live in src/data with shared TypeScript interfaces, so homepage cards and case-study pages read from one source.",
       },
       {
-        title: "Why dynamic project routes?",
+        title: "Why statically generated project pages?",
         description:
-          "Dynamic routing keeps the homepage concise while allowing each project to grow into a full case study.",
+          "Case studies use generateStaticParams with dynamicParams disabled, so every project route is built ahead of time and unknown slugs return a 404.",
       },
       {
-        title: "Why reusable sections?",
+        title: "Why CSS variables for theming?",
         description:
-          "Each major section is driven by typed data, making the portfolio easier to extend without duplicating layout logic.",
+          "Colors are defined once as variables and switched through a data-theme attribute set by next-themes, which keeps the light and dark themes consistent across components.",
       },
     ],
     futureImprovements: [
       "MDX-powered project pages",
-      "Full-text search",
-      "Interactive animations",
-      "Automated OG generation",
+      "Automated OG image generation",
       "Internationalization",
     ],
     liveUrl: "https://matteodangio.com",
@@ -241,6 +241,7 @@ export const projects: IProjectShowcaseItem[] = [
   {
     index: "03",
     title: "Gym Tracking App",
+    status: "draft",
     slug: "gym-tracking-app",
     featured: true,
     mainProject: false,
@@ -263,6 +264,20 @@ export const projects: IProjectShowcaseItem[] = [
     links: [],
     liveUrl: undefined,
     githubUrl: undefined,
+  },
+  // Draft: not rendered or routed until its status is set to "published".
+  {
+    index: "04",
+    title: "Compliance Assistant (working title)",
+    status: "draft",
+    slug: "compliance-assistant",
+    featured: false,
+    mainProject: false,
+    projectPageEnabled: false,
+    year: "2027",
+    summary: "To be written when the project ships.",
+    tech: [],
+    links: [],
   },
 ];
 

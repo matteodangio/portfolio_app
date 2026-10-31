@@ -1,5 +1,9 @@
 import { IProjectShowcaseItem } from "@/types";
-import { projects } from "@/data/projects";
+import { projects as allProjects } from "@/data/projects";
+
+const projects: IProjectShowcaseItem[] = allProjects.filter(
+  (project) => project.status === "published",
+);
 
 export const navigableProjects: IProjectShowcaseItem[] = projects.filter(
   (project) => project.projectPageEnabled,

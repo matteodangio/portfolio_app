@@ -34,8 +34,12 @@ export interface ITechItem {
   color: string;
 }
 
+/** `draft` projects stay in the data but are never rendered or routed. */
+export type ProjectStatus = "published" | "draft";
+
 export interface IProjectShowcaseItem {
   title: string;
+  status: ProjectStatus;
   slug: string;
   featured: boolean;
   mainProject: boolean;

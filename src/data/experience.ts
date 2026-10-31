@@ -67,7 +67,7 @@ export const experienceItems: IExperienceItem[] = [
 
 export const educationItems: IEducationItem[] = [
   { title: "Scrum Master", issuer: "Agile Business Consortium" },
-  { title: "Secure Coding (OWASP)", issuer: "OWASP" },
+  { title: "Secure Coding", issuer: "OWASP" },
   { title: "Java Academy", issuer: "Dedagroup" },
   { title: "Web Development bootcamp", issuer: "start2impact" },
   {
