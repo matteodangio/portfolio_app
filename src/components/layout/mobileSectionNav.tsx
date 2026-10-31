@@ -1,6 +1,8 @@
 "use client";
 
+import { useRef } from "react";
 import type { ReactNode, Dispatch, SetStateAction } from "react";
+import SocialIconLink from "@/components/ui/socialIconLink";
 import { sectionNavItems } from "@/data/navigation";
 import type { SocialLink } from "@/data/navigation";
 import { motion } from "motion/react";
@@ -27,6 +29,8 @@ export default function MobileSectionNav({
   socialLinks,
   children,
 }: MobileSectionNavProps) {
+  const pendingTargetRef = useRef<string | null>(null);
+
   if (!showMobileNav) return null;
 
   return (
@@ -64,6 +68,13 @@ export default function MobileSectionNav({
             initial={false}
             animate={mobileExpanded ? "open" : "closed"}
             variants={panelVariants}
+            onAnimationComplete={(definition) => {
+              // Scrolling while the panel collapses cancels the smooth
+              // scroll, so wait for the close animation to finish.
+              if (definition !== "closed" || !pendingTargetRef.current) return;
+              scrollToSection(pendingTargetRef.current);
+              pendingTargetRef.current = null;
+            }}
           >
             <div
               className="flex flex-col gap-3 mt-3 pt-2 border-t"
@@ -76,16 +87,18 @@ export default function MobileSectionNav({
                   <button
                     key={item.target}
                     type="button"
-                    onClick={() => scrollToSection(item.target)}
+                    onClick={() => {
+                      pendingTargetRef.current = item.target;
+                      setMobileExpanded(false);
+                    }}
                     aria-current={active ? "true" : undefined}
-                    className="flex cursor-pointer items-center justify-between py-1 text-left"
+                    className={`group flex cursor-pointer items-center justify-between py-1 text-left transition-colors duration-200 ${
+                      active
+                        ? "text-[var(--text)]"
+                        : "text-[var(--text-muted)] hover:text-[var(--text)]"
+                    }`}
                   >
-                    <span
-                      className="text-xs font-medium uppercase tracking-[0.18em]"
-                      style={{
-                        color: active ? "var(--text)" : "var(--text-muted)",
-                      }}
-                    >
+                    <span className="text-xs font-medium uppercase tracking-[0.18em] transition-transform duration-200 group-hover:translate-x-1">
                       {item.label}
                     </span>
 
@@ -102,18 +115,8 @@ export default function MobileSectionNav({
 
             <div className="flex items-center justify-between gap-4 pt-4">
               <div className="flex items-center gap-4">
-                {socialLinks.map(({ label, href, icon: Icon }) => (
-                  <a
-                    key={label}
-                    href={href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={label}
-                    className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100"
-                    style={{ color: "var(--text-muted)", opacity: 0.82 }}
-                  >
-                    <Icon width={16} height={16} />
-                  </a>
+                {socialLinks.map((link) => (
+                  <SocialIconLink key={link.label} link={link} />
                 ))}
               </div>
 

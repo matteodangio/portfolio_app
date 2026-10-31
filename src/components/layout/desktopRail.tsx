@@ -1,6 +1,7 @@
 "use client";
 
 import type { Dispatch, RefObject, SetStateAction } from "react";
+import SocialIconLink from "@/components/ui/socialIconLink";
 import ThemeToggle from "@/components/ui/themeToggle";
 import type { NavItem, SocialLink } from "@/data/navigation";
 import { ChevronUp } from "lucide-react";
@@ -50,21 +51,8 @@ export default function DesktopRail({
           </button>
 
           <div className="mt-5 flex flex-col items-center gap-3">
-            {socialLinks.map(({ label, href, icon: SocialIcon }) => (
-              <a
-                key={label}
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={label}
-                className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100"
-                style={{
-                  color: "var(--text-muted)",
-                  opacity: 0.8,
-                }}
-              >
-                <SocialIcon width={16} height={16} />
-              </a>
+            {socialLinks.map((link) => (
+              <SocialIconLink key={link.label} link={link} />
             ))}
           </div>
         </div>
