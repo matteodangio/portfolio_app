@@ -56,7 +56,7 @@ function MetaLabel({ children }: { children: ReactNode }) {
 
 function MutedText({
   children,
-  className = "max-w-2xl text-sm leading-8 md:text-[15px]",
+  className = "max-w-2xl text-base leading-8",
 }: {
   children: ReactNode;
   className?: string;
@@ -100,7 +100,8 @@ function ProjectSection({
   return (
     <section
       id={id}
-      className="scroll-mt-24 grid gap-6 md:grid-cols-[180px_minmax(0,1fr)]"
+      className="scroll-mt-24 grid gap-6 border-t pt-10 first:border-t-0 first:pt-0 md:grid-cols-[180px_minmax(0,1fr)]"
+      style={{ borderColor: "var(--border)" }}
     >
       <div>
         <SectionLabel>{label}</SectionLabel>
@@ -116,10 +117,11 @@ function BulletList({ items }: { items: string[] }) {
       {items.map((item) => (
         <li
           key={item}
-          className="flex items-start gap-3 text-sm leading-7"
+          className="flex items-start gap-3 text-base leading-7"
           style={{ color: "var(--text-muted)" }}
         >
           <span
+            aria-hidden="true"
             className="mt-2.5 block h-1.5 w-1.5 shrink-0 rounded-full"
             style={{ background: "var(--accent)" }}
           />
@@ -315,10 +317,13 @@ export function ProjectContent({ project }: { project: IProjectShowcaseItem }) {
         />
       ) : null}
       {project.outcome && (
-        <ProjectSection id="status" label="Next steps">
-          <SurfaceCard>
-            <MutedText>{project.outcome}</MutedText>
-          </SurfaceCard>
+        <ProjectSection id="status" label="Status">
+          <p
+            className="max-w-2xl text-lg leading-8"
+            style={{ color: "var(--text)" }}
+          >
+            {project.outcome}
+          </p>
         </ProjectSection>
       )}
       {project.futureImprovements?.length ? (
@@ -527,7 +532,9 @@ function ProjectWorkflowView({ workflow }: { workflow: IProjectWorkflow }) {
 function ProjectGallery({ images }: { images: IProjectImage[] }) {
   return (
     <ProjectSection id="gallery" label="Selected views">
-      <div className="grid gap-6 md:grid-cols-2">
+      <div
+        className={`grid gap-6 ${images.length > 1 ? "md:grid-cols-2" : ""}`}
+      >
         {images.map((image) => (
           <figure
             key={image.src}
@@ -543,8 +550,12 @@ function ProjectGallery({ images }: { images: IProjectImage[] }) {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  sizes={
+                    images.length > 1
+                      ? "(max-width: 768px) 100vw, 50vw"
+                      : "(max-width: 768px) 100vw, 900px"
+                  }
+                  className="object-cover object-top"
                 />
               </div>
             </a>
@@ -577,9 +588,7 @@ function SimpleListSection({
 }) {
   return (
     <ProjectSection id={id} label={label}>
-      <SurfaceCard>
-        <BulletList items={items} />
-      </SurfaceCard>
+      <BulletList items={items} />
     </ProjectSection>
   );
 }
