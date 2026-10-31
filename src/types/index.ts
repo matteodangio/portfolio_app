@@ -108,11 +108,23 @@ export interface IExperienceItem {
   period: string;
   role: string;
   company: string;
-  location: string;
+  location?: string;
   summary: string;
   highlights: string[];
   stack: string[];
-  context: string;
+  context?: string;
+  /** Short entries render as a static row instead of an expandable panel. */
+  compact?: boolean;
+}
+
+export interface IEducationItem {
+  title: string;
+  issuer: string;
+}
+
+export interface ILanguageItem {
+  language: string;
+  level: string;
 }
 
 {
