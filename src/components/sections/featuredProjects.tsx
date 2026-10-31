@@ -10,46 +10,19 @@ import { motion } from "motion/react";
 import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
 
 function ProjectLink({ project }: { project: IProjectShowcaseItem }) {
-  if (!project.projectPageEnabled) {
-    return (
-      <span
-        className="inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em]"
-        style={{ color: "var(--text-faint)" }}
-      >
-        Coming soon
-      </span>
-    );
-  }
-
-  const projectPageLink = project.links?.find(
-    (link) => link.href === `/projects/${project.slug}`,
-  );
-
-  if (!projectPageLink) return null;
+  if (!project.projectPageEnabled) return null;
 
   return (
     <Link
-      href={projectPageLink.href}
-      className="group
-                inline-flex
-                items-center
-                gap-2
-                text-sm
-                font-medium
-                uppercase
-                tracking-[0.14em]
-                transition-colors
-                duration-200"
+      href={`/projects/${project.slug}`}
+      className="group inline-flex items-center gap-2 text-sm font-medium uppercase tracking-[0.14em] transition-colors duration-200"
       style={{ color: "var(--text)" }}
     >
-      {projectPageLink.label}
+      Project page
       <ArrowUpRight
         size={15}
-        className="transition-transform
-                  duration-200
-                  ease-out
-                  group-hover:-translate-y-0.5
-                  group-hover:translate-x-0.5"
+        aria-hidden="true"
+        className="transition-transform duration-200 ease-out group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
       />
     </Link>
   );

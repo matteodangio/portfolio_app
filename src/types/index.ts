@@ -4,7 +4,6 @@ import { ComponentType, SVGProps } from "react";
 export interface ISectionLabel {
   sectionTitle?: string;
   sectionSubtitle?: string;
-  sectionSubtitle2?: string;
   title?: string;
   description1?: string;
   description2?: string;
@@ -13,20 +12,20 @@ export interface ISectionLabel {
   subtitle3?: string;
 }
 
-export interface ILink {
-  label: string;
-  href: string;
-  icon?: string;
-  description?: string;
+export interface IHeroContent {
+  name: string;
+  eyebrow: string;
+  title: string;
+  description: string;
+  stack: string[];
+  availability: string;
+  primaryCta: { label: string; target: string };
+  secondaryCta: { label: string; target: string };
+  imageAlt: string;
 }
 
 {
   /*FEATURED PROJECTS*/
-}
-
-export interface IProjectLink {
-  label: string;
-  href: string;
 }
 
 export interface ITechItem {
@@ -49,7 +48,6 @@ export interface IProjectShowcaseItem {
   context?: string;
   outcome?: string;
   projectPageEnabled: boolean;
-  links?: IProjectLink[];
   tech?: ITechItem[];
   description?: string;
   content?: string;

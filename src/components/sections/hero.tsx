@@ -1,139 +1,137 @@
 "use client";
-import ThemeToggle from "@/components/ui/themeToggle";
+
 import HeroWordmark from "@/components/ui/heroWordmark";
-import { heroLabels } from "@/data/hero";
+import ThemeToggle from "@/components/ui/themeToggle";
+import { hero } from "@/data/hero";
 import { heroNavItems } from "@/data/navigation";
+import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
 import { motion } from "motion/react";
-import {
-  heroVariants,
-  navItem,
-  navList,
-} from "@/lib/animations/motionVariants";
 
-function scrollToSection(targetId: string) {
-  const element = document.getElementById(targetId);
-  if (!element) return;
-
-  element.scrollIntoView({
-    behavior: "smooth",
-    block: "start",
-  });
-}
+const primaryButton =
+  "inline-flex items-center rounded-full px-7 py-3.5 text-xs font-medium uppercase tracking-[0.16em] transition-opacity duration-200 hover:opacity-80";
+const secondaryButton =
+  "inline-flex items-center rounded-full border px-7 py-3.5 text-xs font-medium uppercase tracking-[0.16em] transition-colors duration-200 hover:bg-[var(--surface-2)]";
 
 export default function Hero() {
   return (
-    <motion.section
+    <section
       id="home"
-      className="min-h-[100svh] px-4 md:px-6 lg:px-6"
+      className="flex min-h-svh flex-col px-4 md:px-6"
       style={{ background: "var(--bg)", color: "var(--text)" }}
-      variants={heroVariants}
-      initial="hidden"
-      animate="show"
     >
-      <div className="mx-auto flex max-w-7xl flex-row items-center justify-between pt-6 [@media(max-height:480px)]:pt-3">
-        <h1
-          className="md:mb-3 text-base font-normal uppercase tracking-[0.24em]"
-          style={{ color: "var(--text-faint)" }}
+      <header className="mx-auto flex w-full max-w-7xl items-center justify-between pt-6">
+        <p
+          className="font-display text-xl"
+          style={{ color: "var(--hero-display)" }}
         >
-          <span className="sr-only">Matteo Dangiò — </span>
-          {heroLabels.sectionSubtitle}
-        </h1>
-        <ThemeToggle />
-      </div>
-      <div className="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-7xl grid-cols-1 gap-6 pb-8 pt-4 md:grid-cols-[minmax(0,0.82fr)_minmax(320px,1fr)] md:items-center md:gap-8 md:py-6 lg:gap-10 [@media(max-height:820px)]:gap-5 [@media(max-height:820px)]:py-3 [@media(max-height:480px)]:min-h-[calc(100svh-3.5rem)] [@media(max-height:480px)]:gap-4 [@media(max-height:480px)]:py-2">
-        <div className="flex flex-col justify-center py-2 md:py-6 [@media(max-height:820px)]:py-1 [@media(max-height:480px)]:py-0">
-          <div
-            className="flex max-w-5xl justify-center md:justify-start"
-            style={{
-              color: "var(--hero-display)",
-            }}
-          >
-            <HeroWordmark
-              srcLight="/dark-hero-me.png"
-              srcDark="/light-hero-me.png"
-              alt="Line illustration of Matteo Dangiò drinking coffee at a laptop"
-              className="hero-wordmark w-full max-w-[260px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[470px] xl:max-w-[520px] 2xl:max-w-[560px] [@media(max-height:820px)]:md:max-w-[360px] [@media(max-height:820px)]:lg:max-w-[410px] [@media(max-height:820px)]:xl:max-w-[450px] [@media(max-height:480px)]:max-w-[220px]"
-            />
-          </div>
+          {hero.name}
+        </p>
 
-          <p
-            className="font-display mt-2 text-3xl leading-none md:text-4xl [@media(max-height:480px)]:hidden"
+        <div className="flex items-center gap-8">
+          <nav aria-label="Primary" className="hidden md:block">
+            <ul className="flex gap-8">
+              {heroNavItems.map((item) => (
+                <li key={item.target}>
+                  <a
+                    href={`#${item.target}`}
+                    className="text-xs font-medium uppercase tracking-[0.18em] transition-colors duration-200 hover:text-[var(--hero-nav-hover)]"
+                    style={{ color: "var(--hero-nav)" }}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <ThemeToggle />
+        </div>
+      </header>
+
+      <div className="mx-auto grid w-full max-w-7xl flex-1 grid-cols-1 items-center gap-6 py-10 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:gap-10">
+        <motion.div
+          className="order-2 md:order-1"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="visible"
+        >
+          <motion.p
+            variants={fadeUp}
+            className="text-xs font-medium uppercase tracking-[0.22em]"
+            style={{ color: "var(--text-faint)" }}
+          >
+            {hero.eyebrow}
+          </motion.p>
+
+          <motion.h1
+            variants={fadeUp}
+            className="font-display mt-5 max-w-3xl text-[clamp(2.75rem,6.2vw,5.75rem)] leading-[0.95]"
             style={{ color: "var(--hero-display)" }}
-            aria-hidden="true"
           >
-            Matteo Dangiò
-          </p>
+            {hero.title}
+          </motion.h1>
 
-          <p
-            className="mt-4 max-w-xl text-base leading-8 md:text-lg [@media(max-height:820px)]:max-w-lg [@media(max-height:820px)]:text-base [@media(max-height:820px)]:leading-7 [@media(max-height:480px)]:max-w-md [@media(max-height:480px)]:text-sm [@media(max-height:480px)]:leading-6"
+          <motion.p
+            variants={fadeUp}
+            className="mt-6 max-w-xl text-base leading-8 md:text-lg"
             style={{ color: "var(--text-muted)" }}
           >
-            {heroLabels.description1}
-          </p>
+            {hero.description}
+          </motion.p>
 
-          <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 [@media(max-height:480px)]:hidden">
-            <button
-              type="button"
-              onClick={() => scrollToSection("contact")}
-              className="cursor-pointer rounded-full px-6 py-3 text-xs font-medium uppercase tracking-[0.16em] transition-opacity duration-200 hover:opacity-80"
+          <motion.div
+            variants={fadeUp}
+            className="mt-8 flex flex-wrap items-center gap-3"
+          >
+            <a
+              href={`#${hero.primaryCta.target}`}
+              className={primaryButton}
               style={{ background: "var(--text)", color: "var(--bg)" }}
             >
-              Get in touch
-            </button>
-            <p
-              className="inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
-              style={{ color: "var(--text-faint)" }}
+              {hero.primaryCta.label}
+            </a>
+            <a
+              href={`#${hero.secondaryCta.target}`}
+              className={secondaryButton}
+              style={{ borderColor: "var(--border)", color: "var(--text)" }}
             >
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 rounded-full"
-                style={{ background: "var(--accent)" }}
-              />
-              {heroLabels.sectionSubtitle2}
-            </p>
-          </div>
+              {hero.secondaryCta.label}
+            </a>
+          </motion.div>
+
+          <motion.ul
+            variants={fadeUp}
+            aria-label="Core stack"
+            className="mt-10 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium uppercase tracking-[0.16em]"
+            style={{ color: "var(--text-muted)" }}
+          >
+            {hero.stack.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </motion.ul>
+
+          <motion.p
+            variants={fadeUp}
+            className="mt-4 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em]"
+            style={{ color: "var(--text-faint)" }}
+          >
+            <span
+              aria-hidden="true"
+              className="h-2 w-2 rounded-full"
+              style={{ background: "var(--accent)" }}
+            />
+            {hero.availability}
+          </motion.p>
+        </motion.div>
+
+        <div className="order-1 mx-auto w-full max-w-[280px] md:order-2 md:max-w-[460px]">
+          <HeroWordmark
+            srcLight="/dark-hero-me.png"
+            srcDark="/light-hero-me.png"
+            alt={hero.imageAlt}
+            className="hero-wordmark"
+          />
         </div>
-
-        <motion.nav
-          className="w-full"
-          aria-label="Hero navigation"
-          variants={navList}
-        >
-          <div className="flex flex-col items-start gap-2 text-left md:items-end md:text-right [@media(max-height:480px)]:gap-1">
-            <motion.ul
-              className="flex flex-col gap-2 md:items-end [@media(max-height:480px)]:gap-1"
-              variants={navList}
-            >
-              {heroNavItems.map((item) => (
-                <motion.li key={item.target} variants={navItem}>
-                  <button
-                    type="button"
-                    onClick={() => scrollToSection(item.target)}
-                    className="group relative block text-left md:text-right"
-                  >
-                    <span
-                      className="font-body relative block text-[2rem] font-bold uppercase leading-[0.92] tracking-normal transition-all duration-200 ease-out group-hover:translate-x-1 md:text-[clamp(3.4rem,7vw,4.5rem)] lg:text-[clamp(4.2rem,6.5vw,5.25rem)] xl:text-[clamp(4.75rem,6.2vw,6rem)] 2xl:text-[7rem] [@media(max-height:820px)]:md:text-[clamp(3rem,6.2vw,4.25rem)] [@media(max-height:820px)]:xl:text-[clamp(4rem,5.5vw,5rem)] [@media(max-height:480px)]:text-[2.2rem]"
-                      style={{
-                        color: "var(--hero-nav)",
-                      }}
-                    >
-                      {item.label}
-                    </span>
-
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-200 ease-out group-hover:w-full md:left-auto md:right-0"
-                      style={{
-                        background: "var(--hero-nav-hover)",
-                      }}
-                    />
-                  </button>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </div>
-        </motion.nav>
       </div>
-    </motion.section>
+    </section>
   );
 }

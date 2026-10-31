@@ -17,12 +17,6 @@ export function getSecondaryProjects(): IProjectShowcaseItem[] {
   return projects.filter((project) => !project.mainProject);
 }
 
-export function getProjectBySlug(
-  slug: string,
-): IProjectShowcaseItem | undefined {
-  return projects.find((project) => project.slug === slug);
-}
-
 export function getNavigableProjectBySlug(
   slug: string,
 ): IProjectShowcaseItem | undefined {

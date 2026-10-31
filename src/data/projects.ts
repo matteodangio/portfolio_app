@@ -56,12 +56,6 @@ export const projects: IProjectShowcaseItem[] = [
       "Git-based CMS workflows need clear onboarding for non-technical clients",
       "Early SEO setup compounds quickly for local businesses",
     ],
-    links: [
-      {
-        label: "Project page",
-        href: "/projects/mcsaldature",
-      },
-    ],
     tech: [
       { label: "Astro", icon: SiAstro, color: "#FF5D01" },
       { label: "Tailwind", icon: SiTailwindcss, color: "#06B6D4" },
@@ -180,12 +174,6 @@ export const projects: IProjectShowcaseItem[] = [
       "Being new to React and Next.js, I kept the architecture simple and let the data model carry the structure.",
     outcome:
       "A site I can update by editing data files, without touching the components.",
-    links: [
-      {
-        label: "Project page",
-        href: "/projects/portfolio",
-      },
-    ],
     tech: [
       { label: "Next.js", icon: SiNextdotjs, color: "#888888" },
       { label: "React", icon: SiReact, color: "#61DAFB" },
@@ -261,7 +249,6 @@ export const projects: IProjectShowcaseItem[] = [
       { label: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
     ],
     stack: ["Angular", "TypeScript", "Supabase"],
-    links: [],
     liveUrl: undefined,
     githubUrl: undefined,
   },
@@ -277,7 +264,6 @@ export const projects: IProjectShowcaseItem[] = [
     year: "2027",
     summary: "To be written when the project ships.",
     tech: [],
-    links: [],
   },
 ];
 
