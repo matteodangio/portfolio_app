@@ -32,13 +32,10 @@ export default function MobileSectionNav({
   return (
     <div className="md:hidden">
       <div
-        className="fixed left-0 top-0 z-40 w-full px-3 py-3 backdrop-blur"
+        className="fixed left-0 top-0 z-40 w-full border-b px-3 py-3 backdrop-blur-md"
         style={{
-          backgroundColor: "var(--bg)",
-          opacity: 0.92,
-          backdropFilter: "blur(12px)",
-          WebkitBackdropFilter: "blur(12px)",
-          borderBottom: "1px solid var(--border)",
+          backgroundColor: "color-mix(in srgb, var(--bg) 92%, transparent)",
+          borderColor: "var(--border)",
         }}
       >
         <div className="flex flex-col">
@@ -79,16 +76,12 @@ export default function MobileSectionNav({
                   <button
                     key={item.target}
                     type="button"
-                    onClick={() => {
-                      setMobileExpanded(false);
-                      setTimeout(() => scrollToSection(item.target), 0);
-                    }}
-                    className={`cursor-pointer flex items-center justify-between py-1 text-left transition-all duration-200 ${
-                      active ? "opacity-100" : "opacity-72 hover:opacity-100"
-                    }`}
+                    onClick={() => scrollToSection(item.target)}
+                    aria-current={active ? "true" : undefined}
+                    className="flex cursor-pointer items-center justify-between py-1 text-left"
                   >
                     <span
-                      className=" text-xs font-medium uppercase tracking-[0.18em] hover:color-(--text)"
+                      className="text-xs font-medium uppercase tracking-[0.18em]"
                       style={{
                         color: active ? "var(--text)" : "var(--text-muted)",
                       }}
@@ -116,7 +109,7 @@ export default function MobileSectionNav({
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={label}
-                    className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100 focus-visible:outline-none focus-visible:ring-1"
+                    className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100"
                     style={{ color: "var(--text-muted)", opacity: 0.82 }}
                   >
                     <Icon width={16} height={16} />

@@ -34,7 +34,7 @@ export default function DesktopRail({
           <button
             type="button"
             onClick={() => scrollToSection(activeSection)}
-            className="rounded-sm transition-opacity duration-200 hover:opacity-80 focus-visible:outline-none focus-visible:ring-1"
+            className="rounded-sm transition-opacity duration-200 hover:opacity-80"
             aria-label={`Current section: ${activeLabel}`}
           >
             <span
@@ -57,7 +57,7 @@ export default function DesktopRail({
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={label}
-                className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100 focus-visible:outline-none focus-visible:ring-1"
+                className="rounded-sm transition-all duration-200 hover:scale-105 hover:opacity-100"
                 style={{
                   color: "var(--text-muted)",
                   opacity: 0.8,
@@ -94,7 +94,7 @@ export default function DesktopRail({
             aria-label={railOpen ? "Collapse navigation" : "Expand navigation"}
             animate={{ rotate: railOpen ? 180 : 0 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="mb-4 inline-flex cursor-pointer rounded-sm focus-visible:outline-none focus-visible:ring-1"
+            className="mb-4 inline-flex cursor-pointer rounded-sm"
           >
             <ChevronUp size={24} />
           </motion.button>
@@ -115,7 +115,7 @@ export default function DesktopRail({
                   aria-label={`Go to ${item.label}`}
                   aria-hidden={!railOpen}
                   tabIndex={railOpen ? 0 : -1}
-                  className="group/nav-item rounded-sm px-1 py-2 transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-1"
+                  className="group/nav-item rounded-sm px-1 py-2 transition-[transform,opacity] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]"
                   style={{
                     cursor: "pointer",
                     opacity,
