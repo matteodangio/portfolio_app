@@ -8,6 +8,6 @@ export const mail = emailLink;
 export const contactLabels: ISectionLabel = {
   sectionTitle: "Contact",
   title: "Open to full-stack roles in Europe",
-  description1: `I'm looking for a full-stack role on a product team working with Java/Spring Boot and Angular, ideally in fintech. I can start in June 2027 and I'm open to relocation or EU remote work.`,
+  description1: `I'm looking for full-stack roles in fintech, with Java/Spring Boot on the backend and room to build AI-powered features. I can start in June 2027 and I'm open to relocation or remote work within the EU.`,
   description2: `Based in Italy • Spain, Benelux, Ireland, Germany, Nordics • Relocation or remote in the EU`,
 };

@@ -125,6 +125,7 @@ export interface IExperienceItem {
 export interface IEducationItem {
   title: string;
   issuer: string;
+  period?: string;
 }
 
 export interface ILanguageItem {

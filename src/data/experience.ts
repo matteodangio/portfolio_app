@@ -13,12 +13,14 @@ export const experienceItems: IExperienceItem[] = [
     location: "Remote",
     context: "B2B SaaS platform for credit and financial services",
     summary:
-      "Angular developer on a B2B SaaS platform for credit and financial services, working across the UI, the REST layer and SQL Server.",
+      "Development of a B2B SaaS platform for the credit and financial services industry, across the Angular UI, the REST layer and SQL Server.",
     highlights: [
-      "Built Angular 15–19 features with standalone components, Signals and RxJS, including UIs driven by JSON configuration, taking designs from Figma to production.",
-      "Integrated the frontend with the REST APIs of a .NET backend, and wrote SQL Server queries and scripts.",
-      "Wrote end-to-end tests with Cypress and Playwright.",
-      "Recently: AI-assisted legacy modernization on the data side. I port features from the old version of the product to the new one, adapting SQL scripts and logic with AI agents and reviewing every change.",
+      "AI-assisted legacy modernization on the data side: migrating features from the old version of the product to the new one by adapting SQL scripts and database logic with AI coding agents, with careful review of every change.",
+      "Build and maintain modern Angular applications (Angular 15–19, standalone architecture, Signals, RxJS).",
+      "Integrate the frontend with REST APIs exposed by a .NET backend, and support data workflows with SQL Server queries and scripts.",
+      "Maintain E2E test suites with Cypress and Playwright, covering critical business flows and regression scenarios.",
+      "Implement configuration-driven UI solutions with JSON-based configurations for dynamic business requirements.",
+      "Translate Figma designs into production-ready interfaces; troubleshoot and resolve production issues.",
     ],
     stack: [
       "Angular",
@@ -29,7 +31,7 @@ export const experienceItems: IExperienceItem[] = [
       "SQL Server",
       "Cypress",
       "Playwright",
-      "AI agents",
+      "AI coding agents",
     ],
   },
   {
@@ -39,11 +41,12 @@ export const experienceItems: IExperienceItem[] = [
     location: "Milano",
     context: "Enterprise client in manufacturing and logistics",
     summary:
-      "Fullstack developer on two applications that monitor orders and production for an enterprise manufacturing and logistics client.",
+      "Full-stack development for an enterprise client in the manufacturing and logistics sector, on two applications for monitoring orders and production processes.",
     highlights: [
-      "Built REST APIs with Java and Spring Boot, using Hibernate and Spring Data JPA on PostgreSQL.",
-      "Developed the AngularJS frontends of both applications.",
-      "Worked directly with the client on requirements and ran live demos.",
+      "Developed new features end to end across two logistics dashboard applications, from backend to frontend.",
+      "Built REST APIs with Java and Spring Boot, mapping the data model with Hibernate and Spring Data JPA on PostgreSQL, and connected them to the frontend.",
+      "Built and maintained frontend interfaces with AngularJS.",
+      "Worked directly with the client: gathered requirements, discussed solutions and presented new features in live demos.",
     ],
     stack: [
       "Java",
@@ -54,25 +57,31 @@ export const experienceItems: IExperienceItem[] = [
       "AngularJS",
     ],
   },
-  {
-    period: "Feb — Apr 2022",
-    role: "Backend Developer Intern",
-    company: "Sopra Steria",
-    summary: "Backend internship working with C# and SQL Server.",
-    highlights: [],
-    stack: ["C#", "SQL Server"],
-    compact: true,
-  },
 ];
 
 export const educationItems: IEducationItem[] = [
-  { title: "Scrum Master", issuer: "Agile Business Consortium" },
-  { title: "Secure Coding", issuer: "OWASP" },
-  { title: "Java Academy", issuer: "Dedagroup" },
-  { title: "Web Development bootcamp", issuer: "start2impact" },
   {
-    title: "MSc in Environmental Sciences",
-    issuer: "Career change into software",
+    title: "Java Academy — Java Developer Edition",
+    issuer: "Dedagroup",
+    period: "2022",
+  },
+  {
+    title: "Web Development bootcamp",
+    issuer: "start2impact",
+    period: "2021 — 2022",
+  },
+  {
+    title: "Scrum Master",
+    issuer: "Agile Business Consortium",
+  },
+  {
+    title: "Secure Coding",
+    issuer: "OWASP",
+  },
+  {
+    title: "MSc, Science and Technologies for Environment and Landscape",
+    issuer: "University of Milano-Bicocca",
+    period: "2018 — 2021",
   },
 ];
 
@@ -84,7 +93,7 @@ export const languageItems: ILanguageItem[] = [
 
 export const experienceLabels: ISectionLabel = {
   sectionTitle: "Experience",
-  title: "Four years of enterprise product work at Dedagroup",
+  title: "Four years building enterprise software at Dedagroup",
   description1: `From Java/Spring Boot services to Angular interfaces for fintech, with AI now part of how I modernize existing systems.`,
   subtitle1: "Education & training",
   subtitle2: "Languages",

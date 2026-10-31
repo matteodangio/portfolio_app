@@ -170,6 +170,7 @@ export default function Experience() {
                     <span style={{ color: "var(--text-faint)" }}>
                       {" "}
                       — {item.issuer}
+                      {item.period ? ` · ${item.period}` : ""}
                     </span>
                   </li>
                 ))}

@@ -56,8 +56,8 @@ export const focusItems: IFocusItem[] = [
 export const aboutLabels: ISectionLabel = {
   sectionTitle: "About",
   title: "Full-stack engineering for fintech products",
-  description1: `I'm a full-stack engineer with four years at Dedagroup, working on enterprise software for real business workflows: Java/Spring Boot services on PostgreSQL, and Angular interfaces for a B2B SaaS platform in credit and financial services.`,
-  description2: `In recent months I've applied AI agents to legacy modernization on the data side, always reviewing what they produce. React is my second frontend language, and this site is built with it. I came to software from environmental science, through a bootcamp and the Dedagroup Java Academy.`,
+  description1: `Full-stack engineer with four years of experience building B2B software at Dedagroup. For the past two and a half years I've worked on a SaaS platform for credit and financial services, with modern Angular and end-to-end tests, integrating REST APIs exposed by a .NET backend. Before that I spent almost two years as a full-stack developer on logistics dashboards for an enterprise client, building REST APIs with Java, Spring Boot, Spring Data JPA and PostgreSQL.`,
+  description2: `Recently I've worked on AI-assisted modernization on the data side: migrating features from a legacy version of the product to the new one, adapting SQL scripts and database logic with AI coding agents and reviewing every change before release. I'm looking for full-stack roles in fintech, with Java/Spring Boot on the backend and room to build AI-powered features. React is my second frontend language, and this site is built with it.`,
   subtitle1: "Core strengths",
 };
 
