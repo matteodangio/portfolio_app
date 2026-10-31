@@ -31,12 +31,13 @@ export default function Hero() {
       animate="show"
     >
       <div className="flex flex-row items-center justify-between pt-6 [@media(max-height:480px)]:pt-3">
-        <p
-          className="md:mb-3 uppercase tracking-[0.24em]"
+        <h1
+          className="md:mb-3 text-base font-normal uppercase tracking-[0.24em]"
           style={{ color: "var(--text-faint)" }}
         >
+          <span className="sr-only">Matteo Dangiò — </span>
           {heroLabels.sectionSubtitle}
-        </p>
+        </h1>
         <ThemeToggle />
       </div>
       <div className="mx-auto grid min-h-[calc(100svh-4.75rem)] max-w-7xl grid-cols-1 gap-6 pb-8 pt-4 md:grid-cols-[minmax(0,0.82fr)_minmax(320px,1fr)] md:items-center md:gap-8 md:py-6 lg:gap-10 [@media(max-height:820px)]:gap-5 [@media(max-height:820px)]:py-3 [@media(max-height:480px)]:min-h-[calc(100svh-3.5rem)] [@media(max-height:480px)]:gap-4 [@media(max-height:480px)]:py-2">

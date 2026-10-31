@@ -209,7 +209,7 @@ export default function About() {
 
                           {group.mode === "card" ? (
                             <motion.div
-                              className="mt-4 grid grid-cols-1 gap-3 xl:grid-cols-3"
+                              className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2"
                               variants={staggerContainer}
                               initial="hidden"
                               whileInView="visible"

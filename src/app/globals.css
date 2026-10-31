@@ -12,7 +12,7 @@
 
   --text: rgba(255, 255, 255, 0.94);
   --text-muted: rgba(255, 255, 255, 0.72);
-  --text-faint: rgba(255, 255, 255, 0.55);
+  --text-faint: rgba(255, 255, 255, 0.62);
 
   --accent: #9fb7c9;
 
@@ -30,7 +30,7 @@ html[data-theme="light"] {
   --border: rgba(33, 28, 24, 0.12);
   --text: #1e1a17;
   --text-muted: rgba(30, 26, 23, 0.74);
-  --text-faint: rgba(30, 26, 23, 0.56);
+  --text-faint: rgba(30, 26, 23, 0.68);
   --accent: #8c9bb0;
 
   --hero-display: #2e2a24;
@@ -62,6 +62,46 @@ html {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.skip-link {
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 100;
+  padding: 0.6rem 1rem;
+  border-radius: 9999px;
+  background: var(--text);
+  color: var(--bg);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transform: translateY(-200%);
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
 body {

@@ -71,6 +71,9 @@ export default function RootLayout({
       className={`${satoshi.variable} ${zodiak.variable}`}
     >
       <body>
+        <a href="#about" className="skip-link">
+          Skip to content
+        </a>
         <Providers>{children}</Providers>
       </body>
     </html>

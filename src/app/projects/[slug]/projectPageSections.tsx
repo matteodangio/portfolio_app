@@ -188,8 +188,8 @@ function ProjectImageFrame({
 export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
   return (
     <header
-      // className="border-b pb-12 md:pb-16"
-      // style={{ borderColor: "var(--border)" }}
+    // className="border-b pb-12 md:pb-16"
+    // style={{ borderColor: "var(--border)" }}
     >
       <div className="grid gap-10 xl:grid-cols-[minmax(0,1.15fr)_minmax(0,28rem)] xl:items-start xl:gap-16">
         <div className="min-w-0">
@@ -222,7 +222,13 @@ export function ProjectHero({ project }: { project: IProjectShowcaseItem }) {
           {(project.liveUrl || project.githubUrl) && (
             <div className="mt-8 flex flex-wrap gap-4">
               {project.liveUrl && (
-                <ExternalProjectLink href={project.temporaryUrl ? project.temporaryUrl : project.liveUrl!}>
+                <ExternalProjectLink
+                  href={
+                    project.temporaryUrl
+                      ? project.temporaryUrl
+                      : project.liveUrl!
+                  }
+                >
                   View live
                 </ExternalProjectLink>
               )}
@@ -531,17 +537,17 @@ function ProjectGallery({ images }: { images: IProjectImage[] }) {
               background: "var(--surface)",
             }}
           >
-          <a href={image.src} target="_blank" rel="noopener noreferrer">
-            <div className="relative aspect-video w-full">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
-          </a>
+            <a href={image.src} target="_blank" rel="noopener noreferrer">
+              <div className="relative aspect-video w-full">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                />
+              </div>
+            </a>
             {image.caption && (
               <figcaption
                 className="border-t px-5 py-4 text-sm leading-7"
