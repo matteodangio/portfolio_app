@@ -50,7 +50,7 @@ export default function Hero() {
             <HeroWordmark
               srcLight="/dark-hero-me.png"
               srcDark="/light-hero-me.png"
-              alt="Matteo Dangiò Frontend Engineer"
+              alt="Line illustration of Matteo Dangiò drinking coffee at a laptop"
               className="hero-wordmark w-full max-w-[260px] sm:max-w-[320px] md:max-w-[420px] lg:max-w-[470px] xl:max-w-[520px] 2xl:max-w-[560px] [@media(max-height:820px)]:md:max-w-[360px] [@media(max-height:820px)]:lg:max-w-[410px] [@media(max-height:820px)]:xl:max-w-[450px] [@media(max-height:480px)]:max-w-[220px]"
             />
           </div>

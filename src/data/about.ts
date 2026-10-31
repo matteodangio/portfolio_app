@@ -1,12 +1,14 @@
 import { IAboutTechGroup, IFocusItem, ISectionLabel } from "@/types";
 import {
   SiAngular,
-  SiCursor,
+  SiClaude,
   SiCypress,
-  SiDatabricks,
   SiGit,
   SiGithubcopilot,
+  SiHibernate,
   SiNextdotjs,
+  SiOpenjdk,
+  SiPostgresql,
   SiReact,
   SiReactivex,
   SiSpringboot,
@@ -15,40 +17,47 @@ import {
   SiTeamcity,
   SiTypescript,
 } from "@icons-pack/react-simple-icons";
-import { Guitar, LucideIcon, Mountain, Plane } from "lucide-react";
+import {
+  Database,
+  FlaskConical,
+  Guitar,
+  LucideIcon,
+  Mountain,
+  Plane,
+} from "lucide-react";
 
 export const focusItems: IFocusItem[] = [
   {
     index: "01",
-    title: "Frontend Engineering",
+    title: "Backend & APIs",
     description:
-      "Production Angular interfaces, built with typed data flows, reusable components and predictable delivery.",
+      "REST APIs with Java and Spring Boot, Hibernate and Spring Data JPA on PostgreSQL, built with direct input from the client on requirements.",
   },
   {
     index: "02",
-    title: "Component Architecture",
+    title: "Angular frontends",
     description:
-      "UI systems that reduce duplication, keep patterns consistent and make feature work easier to extend.",
+      "Production Angular 15–19 with standalone components, Signals and RxJS, from Figma to a B2B SaaS platform for credit and financial services.",
   },
   {
     index: "03",
-    title: "Product Quality",
+    title: "Data & testing",
     description:
-      "Responsive layouts, accessibility basics, performance awareness and E2E coverage for critical journeys.",
+      "SQL Server and PostgreSQL queries and scripts, plus end-to-end tests with Cypress and Playwright on critical user journeys.",
   },
   {
     index: "04",
-    title: "Collaboration",
+    title: "AI-assisted modernization",
     description:
-      "Comfortable translating product requirements into frontend work with designers, backend engineers and stakeholders.",
+      "Porting features from a legacy product version to the new one, adapting SQL scripts and logic with AI agents while reviewing every change myself.",
   },
 ];
 
 export const aboutLabels: ISectionLabel = {
   sectionTitle: "About",
-  title: "Frontend engineering for maintainable product interfaces",
-  description1: `I am a frontend engineer based in Italy, working on enterprise web applications for real business workflows. My strongest production experience is Angular, TypeScript, RxJS, REST API integrations and E2E testing.`,
-  description2: `I am expanding my React and Next.js work through product-focused projects, while keeping the same engineering standards I use in production: clear components, typed content and reliable interfaces.`,
+  title: "Full-stack engineering for fintech products",
+  description1: `I'm a full-stack engineer with four years at Dedagroup, working on enterprise software for real business workflows: Java/Spring Boot services on PostgreSQL, and Angular interfaces for a B2B SaaS platform in credit and financial services.`,
+  description2: `In recent months I've applied AI agents to legacy modernization on the data side, always reviewing what they produce. React is my second frontend language, and this site is built with it. I came to software from environmental science, through a bootcamp and the Dedagroup Java Academy.`,
   subtitle1: "Core strengths",
 };
 
@@ -58,52 +67,68 @@ export const techGroups: IAboutTechGroup[] = [
     mode: "card",
     items: [
       {
+        title: "Java",
+        description: "Backend services and REST APIs for enterprise clients.",
+        icon: SiOpenjdk,
+        color: "#ED8B00",
+      },
+      {
+        title: "Spring Boot",
+        description: "APIs with Spring Data JPA, Hibernate and PostgreSQL.",
+        icon: SiSpringboot,
+        color: "#6DB33F",
+      },
+      {
         title: "Angular",
         description:
-          "Production UI work with standalone components and Signals.",
+          "Angular 15–19 in production, with standalone components and Signals.",
         icon: SiAngular,
         color: "#DD0031",
       },
       {
         title: "TypeScript",
-        description: "Typed application code for safer long-term maintenance",
+        description: "Typed code across the Angular and React frontends.",
         icon: SiTypescript,
-      },
-      {
-        title: "RxJS",
-        description: "Asynchronous data flows for complex frontend state",
-        icon: SiReactivex,
+        color: "#3178C6",
       },
     ],
   },
   {
-    title: "Other technologies",
+    title: "Data & APIs",
+    mode: "chip",
+    items: [
+      { title: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { title: "SQL Server", icon: Database, color: "#888888" },
+      { title: "Hibernate / JPA", icon: SiHibernate, color: "#59666C" },
+      { title: "REST API", icon: SiSwagger },
+      { title: "RxJS", icon: SiReactivex },
+    ],
+  },
+  {
+    title: "Testing & tooling",
     mode: "chip",
     items: [
       { title: "Cypress", icon: SiCypress },
+      { title: "Playwright", icon: FlaskConical, color: "#888888" },
       { title: "Git", icon: SiGit },
-      { title: "SQL", icon: SiDatabricks, color: "#888888" },
-      { title: "Spring Boot", icon: SiSpringboot },
-      { title: "REST API", icon: SiSwagger },
-      {
-        title: "React",
-        icon: SiReact,
-      },
-      {
-        title: "Next.js",
-        icon: SiNextdotjs,
-        color: "#888888",
-      },
-      { title: "Tailwind", icon: SiTailwindcss },
+      { title: "TeamCity", icon: SiTeamcity, color: "#07C3F2" },
     ],
   },
   {
-    title: "Development workflow",
+    title: "AI-assisted workflow",
     mode: "chip",
     items: [
+      { title: "Claude", icon: SiClaude, color: "#D97757" },
       { title: "GitHub Copilot", icon: SiGithubcopilot, color: "#888888" },
-      { title: "TeamCity", icon: SiTeamcity, color: "#07C3F2" },
-      { title: "Cursor", icon: SiCursor, color: "#888888" },
+    ],
+  },
+  {
+    title: "Also working with",
+    mode: "chip",
+    items: [
+      { title: "React", icon: SiReact },
+      { title: "Next.js", icon: SiNextdotjs, color: "#888888" },
+      { title: "Tailwind", icon: SiTailwindcss },
     ],
   },
 ];

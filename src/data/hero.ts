@@ -1,7 +1,7 @@
 import { ISectionLabel } from "@/types";
 
 export const heroLabels: ISectionLabel = {
-  sectionSubtitle: "Frontend Engineer",
-  title: "Frontend engineer for product teams.",
-  description1: `I build maintainable frontend interfaces with Angular and TypeScript, turning complex requirements into clear, reliable product experiences.`,
+  sectionSubtitle: "Full-Stack Engineer",
+  title: "Matteo Dangiò — Full-Stack Engineer",
+  description1: `I build fintech products with Java/Spring Boot and Angular, and use AI to modernize the systems already in production, reviewing every change along the way.`,
 };

@@ -41,7 +41,7 @@ export const projects: IProjectShowcaseItem[] = [
       "Integrating a Git-based CMS that allows the client to publish content independently.",
     ],
     contentEnd: "",
-      // "Astro handles static rendering, with React added only where interaction is needed.",
+    // "Astro handles static rendering, with React added only where interaction is needed.",
 
     outcome:
       "Core architecture is ready for production. Remaining work: final content validation, launch preparation and post-launch monitoring.",

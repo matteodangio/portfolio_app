@@ -148,7 +148,7 @@ export default function About() {
                     className="text-xs font-medium uppercase tracking-[0.22em]"
                     style={{ color: "var(--text-faint)" }}
                   >
-                    Selected Technologies
+                    Technologies
                   </p>
                 </div>
 
@@ -188,8 +188,9 @@ export default function About() {
                       className="mt-3 max-w-2xl text-sm leading-7"
                       style={{ color: "var(--text-muted)" }}
                     >
-                      The technologies I use most often when building production
-                      applications.
+                      Java, Spring Boot, Angular and TypeScript are what I use
+                      in production. React and Next.js are my second frontend
+                      stack.
                     </p>
 
                     <div className="mt-6 flex flex-col gap-6">
