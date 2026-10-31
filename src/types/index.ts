@@ -4,6 +4,7 @@ import { ComponentType, SVGProps } from "react";
 export interface ISectionLabel {
   sectionTitle?: string;
   sectionSubtitle?: string;
+  sectionSubtitle2?: string;
   title?: string;
   description1?: string;
   description2?: string;

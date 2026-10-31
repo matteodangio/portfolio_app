@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { IProjectShowcaseItem } from "@/types";
@@ -147,12 +148,23 @@ export default function FeaturedProjects() {
 
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:gap-16">
           <div
-            className="min-h-[260px] rounded-2xl md:min-h-[400px]"
+            className="relative min-h-[260px] overflow-hidden rounded-2xl border md:min-h-[400px]"
             style={{
+              borderColor: "var(--border)",
               background:
                 "linear-gradient(135deg, color-mix(in srgb, var(--accent) 18%, var(--surface)) 0%, var(--surface-2) 100%)",
             }}
-          />
+          >
+            {mainProject.heroImage && (
+              <Image
+                src={mainProject.heroImage.src}
+                alt={mainProject.heroImage.alt}
+                fill
+                sizes="(min-width: 1280px) 640px, 100vw"
+                className="object-cover object-top"
+              />
+            )}
+          </div>
 
           <div className="min-w-0 flex flex-col justify-between">
             <div>

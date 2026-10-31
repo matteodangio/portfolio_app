@@ -30,7 +30,7 @@ export default function Hero() {
       initial="hidden"
       animate="show"
     >
-      <div className="flex flex-row items-center justify-between pt-6 [@media(max-height:480px)]:pt-3">
+      <div className="mx-auto flex max-w-7xl flex-row items-center justify-between pt-6 [@media(max-height:480px)]:pt-3">
         <h1
           className="md:mb-3 text-base font-normal uppercase tracking-[0.24em]"
           style={{ color: "var(--text-faint)" }}
@@ -57,10 +57,30 @@ export default function Hero() {
           </div>
 
           <p
-            className="max-w-xl text-base leading-8 md:text-lg [@media(max-height:820px)]:max-w-lg [@media(max-height:820px)]:text-base [@media(max-height:820px)]:leading-7 [@media(max-height:480px)]:max-w-md [@media(max-height:480px)]:text-sm [@media(max-height:480px)]:leading-6"
+            className="font-display mt-2 text-3xl leading-none md:text-4xl [@media(max-height:480px)]:hidden"
+            style={{ color: "var(--hero-display)" }}
+            aria-hidden="true"
+          >
+            Matteo Dangiò
+          </p>
+
+          <p
+            className="mt-4 max-w-xl text-base leading-8 md:text-lg [@media(max-height:820px)]:max-w-lg [@media(max-height:820px)]:text-base [@media(max-height:820px)]:leading-7 [@media(max-height:480px)]:max-w-md [@media(max-height:480px)]:text-sm [@media(max-height:480px)]:leading-6"
             style={{ color: "var(--text-muted)" }}
           >
             {heroLabels.description1}
+          </p>
+
+          <p
+            className="mt-5 inline-flex items-center gap-2.5 text-xs font-medium uppercase tracking-[0.16em] [@media(max-height:480px)]:hidden"
+            style={{ color: "var(--text-faint)" }}
+          >
+            <span
+              aria-hidden="true"
+              className="h-2 w-2 rounded-full"
+              style={{ background: "var(--accent)" }}
+            />
+            {heroLabels.sectionSubtitle2}
           </p>
         </div>
 
@@ -69,7 +89,7 @@ export default function Hero() {
           aria-label="Hero navigation"
           variants={navList}
         >
-          <div className="flex flex-col items-center gap-2 text-center md:items-end [@media(max-height:480px)]:gap-1">
+          <div className="flex flex-col items-start gap-2 text-left md:items-end md:text-right [@media(max-height:480px)]:gap-1">
             <motion.ul
               className="flex flex-col gap-2 md:items-end [@media(max-height:480px)]:gap-1"
               variants={navList}
