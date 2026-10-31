@@ -2,52 +2,32 @@ import "./globals.css";
 import type { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { satoshi, zodiak } from "@/lib/fonts";
+import { siteConfig } from "@/data/site";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://matteodangio.com"),
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Matteo Dangio — Frontend Engineer",
-    template: "%s — Matteo Dangio",
+    default: siteConfig.title,
+    template: "%s — Matteo Dangiò",
   },
-  description:
-    "Frontend engineer based in Italy, building Angular and React interfaces for maintainable product teams across Europe.",
-  keywords: [
-    "Frontend Engineer",
-    "Frontend Developer",
-    "React",
-    "Next.js",
-    "Angular",
-    "TypeScript",
-    "RxJS",
-    "UI Engineering",
-    "Design Systems",
-    "Frontend Architecture",
-    "Portfolio",
-  ],
-  authors: [{ name: "Matteo Dangio" }],
-  creator: "Matteo Dangio",
+  description: siteConfig.description,
+  keywords: [...siteConfig.keywords],
+  authors: [{ name: siteConfig.name }],
+  creator: siteConfig.name,
   openGraph: {
     type: "website",
     locale: "en_US",
-    title: "Matteo Dangio — Frontend Engineer",
-    siteName: "Matteo Dangio",
-    description:
-      "Frontend engineer focused on Angular, React, TypeScript and maintainable UI architecture for European product teams.",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Matteo Dangio Portfolio",
-      },
-    ],
+    url: "/",
+    title: siteConfig.shortTitle,
+    siteName: siteConfig.name,
+    description: siteConfig.ogDescription,
+    images: [siteConfig.ogImage],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Matteo Dangio — Frontend Engineer",
-    description:
-      "Angular and React frontend engineer building maintainable product interfaces across Europe.",
-    images: ["/og-image.png"],
+    title: siteConfig.shortTitle,
+    description: siteConfig.twitterDescription,
+    images: [siteConfig.ogImage.url],
   },
   robots: {
     index: true,
@@ -58,14 +38,11 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
     apple: "/apple-icon.png",
   },
-  verification: {
-    google: "...",
-  },
   alternates: {
     canonical: "/",
   },
   category: "technology",
-  applicationName: "Matteo Dangio Portfolio",
+  applicationName: `${siteConfig.name} Portfolio`,
   referrer: "origin-when-cross-origin",
   formatDetection: {
     telephone: false,
