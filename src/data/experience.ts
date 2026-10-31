@@ -89,6 +89,7 @@ export const languageItems: ILanguageItem[] = [
   { language: "Italian", level: "Native" },
   { language: "English", level: "Professional" },
   { language: "Spanish", level: "Elementary" },
+  { language: "Japanese", level: "Elementary" },
 ];
 
 export const experienceLabels: ISectionLabel = {
