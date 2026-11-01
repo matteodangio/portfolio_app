@@ -9,6 +9,10 @@ import {
 import { fadeUp, staggerContainer } from "@/lib/animations/motionVariants";
 import { IExperienceItem } from "@/types";
 import { motion } from "motion/react";
+import { useState } from "react";
+
+/** On mobile, longer roles show this many highlights until expanded. */
+const MOBILE_HIGHLIGHTS = 3;
 
 function StackChips({ stack }: { stack: string[] }) {
   return (
@@ -27,6 +31,9 @@ function StackChips({ stack }: { stack: string[] }) {
 }
 
 function ExperienceEntry({ item }: { item: IExperienceItem }) {
+  const [expanded, setExpanded] = useState(false);
+  // Hiding a single highlight behind a button is not worth the extra tap.
+  const hasHiddenHighlights = item.highlights.length > MOBILE_HIGHLIGHTS + 1;
   const meta = [item.company, item.location].filter(Boolean).join(" · ");
 
   return (
@@ -82,10 +89,16 @@ function ExperienceEntry({ item }: { item: IExperienceItem }) {
             )}
 
             <ul className="mt-6 space-y-4">
-              {item.highlights.map((highlight) => (
+              {item.highlights.map((highlight, index) => (
                 <li
                   key={highlight}
-                  className="flex gap-3 text-base leading-7"
+                  className={`gap-3 text-base leading-7 ${
+                    expanded ||
+                    !hasHiddenHighlights ||
+                    index < MOBILE_HIGHLIGHTS
+                      ? "flex"
+                      : "hidden md:flex"
+                  }`}
                   style={{ color: "var(--text-muted)" }}
                 >
                   <span
@@ -97,6 +110,20 @@ function ExperienceEntry({ item }: { item: IExperienceItem }) {
                 </li>
               ))}
             </ul>
+
+            {hasHiddenHighlights && (
+              <button
+                type="button"
+                onClick={() => setExpanded((prev) => !prev)}
+                aria-expanded={expanded}
+                className="mt-4 cursor-pointer text-xs font-medium uppercase tracking-[0.16em] underline-offset-4 hover:underline md:hidden"
+                style={{ color: "var(--text)" }}
+              >
+                {expanded
+                  ? "Show less"
+                  : `Show ${item.highlights.length - MOBILE_HIGHLIGHTS} more`}
+              </button>
+            )}
 
             <StackChips stack={item.stack} />
           </>
