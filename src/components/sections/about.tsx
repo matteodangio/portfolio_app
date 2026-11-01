@@ -32,13 +32,13 @@ export default function About() {
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-12">
         <p
-          className="text-justify text-base leading-8 hyphens-auto md:text-lg"
+          className="text-base leading-8 md:text-lg"
           style={{ color: "var(--text-muted)" }}
         >
           {aboutLabels.description1}
         </p>
         <p
-          className="text-justify text-base leading-8 hyphens-auto"
+          className="text-base leading-8"
           style={{ color: "var(--text-muted)" }}
         >
           {aboutLabels.description2}
