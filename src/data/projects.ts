@@ -182,20 +182,20 @@ export const projects: IProjectShowcaseItem[] = [
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     heroImage: {
-      src: "/images/projects/personal-portfolio/hero-homepage-v4.jpg",
+      src: "/images/projects/personal-portfolio/hero-homepage-v5.jpg",
       alt: "Homepage preview of the personal portfolio",
       caption:
         "The homepage presents work and experience through a clear hierarchy and dedicated navigation.",
     },
     gallery: [
       {
-        src: "/images/projects/personal-portfolio/projects-section-v4.jpg",
+        src: "/images/projects/personal-portfolio/projects-section-v5.jpg",
         alt: "Projects section of the personal portfolio",
         caption:
           "The projects section is driven by centralized TypeScript data.",
       },
       {
-        src: "/images/projects/personal-portfolio/project-detail-page-v4.jpg",
+        src: "/images/projects/personal-portfolio/project-detail-page-v5.jpg",
         alt: "Project detail page of the personal portfolio",
         caption:
           "Dynamic project pages create space for decisions, content and visuals.",
