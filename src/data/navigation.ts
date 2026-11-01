@@ -15,8 +15,6 @@ export type SocialLink = {
   href: string;
   icon: SocialIconComponent;
   description?: string;
-  /** Brand color the icon lights up with on hover. */
-  hoverColor: string;
 };
 
 function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
@@ -52,14 +50,12 @@ export const profileLinks: SocialLink[] = [
     description: "Professional profile",
     href: "https://www.linkedin.com/in/matteo-dangio",
     icon: LinkedinIcon,
-    hoverColor: "#0A66C2",
   },
   {
     label: "GitHub",
     description: "Projects & experiments",
     href: "https://github.com/matteodangio",
     icon: SiGithub,
-    hoverColor: "#8957E5",
   },
 ];
 
@@ -67,7 +63,6 @@ export const emailLink: SocialLink = {
   label: "Send me an email",
   href: "mailto:matteo.dangio@outlook.com",
   icon: Mail,
-  hoverColor: "#D9A441",
 };
 
 export const railSocialLinks: SocialLink[] = [

@@ -121,7 +121,7 @@ export default function FeaturedProjects() {
 
         <div className="grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] xl:gap-16">
           <div
-            className="relative min-h-[260px] overflow-hidden rounded-2xl border md:min-h-[400px]"
+            className="relative aspect-[2940/1600] self-center overflow-hidden rounded-2xl border"
             style={{
               borderColor: "var(--border)",
               background:
@@ -134,7 +134,7 @@ export default function FeaturedProjects() {
                 alt={mainProject.heroImage.alt}
                 fill
                 sizes="(min-width: 1280px) 640px, 100vw"
-                className="object-cover object-top"
+                className="object-cover"
               />
             )}
           </div>
