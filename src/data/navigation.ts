@@ -36,7 +36,7 @@ function LinkedinIcon(props: SVGProps<SVGSVGElement>) {
  * Desktop navigation after the hero: "rail" is the vertical side rail,
  * "topbar" a fixed bar at the top. Mobile always uses its own bar.
  */
-export const desktopNavStyle: "rail" | "topbar" = "topbar";
+export const desktopNavStyle: "rail" | "topbar" = "rail";
 
 export const sectionNavItems: NavItem[] = [
   { label: "Home", target: "home" },

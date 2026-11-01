@@ -3,6 +3,7 @@ import type { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import { satoshi, zodiak } from "@/lib/fonts";
 import { siteConfig } from "@/data/site";
+import { desktopNavStyle } from "@/data/navigation";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
@@ -68,6 +69,7 @@ export default function RootLayout({
       lang="en"
       suppressHydrationWarning
       data-scroll-behavior="smooth"
+      data-desktop-nav={desktopNavStyle}
       className={`${satoshi.variable} ${zodiak.variable}`}
     >
       <body>
