@@ -182,20 +182,20 @@ export const projects: IProjectShowcaseItem[] = [
     ],
     stack: ["Next.js", "React", "Tailwind CSS", "TypeScript"],
     heroImage: {
-      src: "/images/projects/personal-portfolio/hero-homepage-v3.jpg",
+      src: "/images/projects/personal-portfolio/hero-homepage-v4.jpg",
       alt: "Homepage preview of the personal portfolio",
       caption:
         "The homepage presents work and experience through a clear hierarchy and dedicated navigation.",
     },
     gallery: [
       {
-        src: "/images/projects/personal-portfolio/projects-section-v3.jpg",
+        src: "/images/projects/personal-portfolio/projects-section-v4.jpg",
         alt: "Projects section of the personal portfolio",
         caption:
           "The projects section is driven by centralized TypeScript data.",
       },
       {
-        src: "/images/projects/personal-portfolio/project-detail-page-v3.jpg",
+        src: "/images/projects/personal-portfolio/project-detail-page-v4.jpg",
         alt: "Project detail page of the personal portfolio",
         caption:
           "Dynamic project pages create space for decisions, content and visuals.",
@@ -269,7 +269,7 @@ export const projects: IProjectShowcaseItem[] = [
 
 export const projectLabel: ISectionLabel = {
   sectionTitle: "Projects",
-  title: "Selected work and the decisions behind it",
+  title: "Selected work",
   description1:
     "A client project and this portfolio, each with the technical decisions behind it.",
   subtitle1: "01 — Featured project",

@@ -69,7 +69,7 @@ export default function FeaturedProjects() {
       aria-labelledby="projects-title"
     >
       <motion.div
-        className="mb-14 grid grid-cols-1 gap-8 xl:grid-cols-[minmax(0,0.42fr)_minmax(0,1fr)] xl:gap-16"
+        className="mb-14"
         variants={fadeUp}
         initial="hidden"
         whileInView="visible"
@@ -94,9 +94,9 @@ export default function FeaturedProjects() {
           </h2>
         </div>
 
-        <div className="flex items-end">
+        <div>
           <p
-            className="max-w-2xl text-base leading-8 md:text-lg"
+            className="mt-5 max-w-2xl text-base leading-8 md:text-lg"
             style={{ color: "var(--text-muted)" }}
           >
             {projectLabel.description1}
