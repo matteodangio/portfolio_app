@@ -43,12 +43,6 @@ html {
   scroll-padding-top: 5rem;
 }
 
-@media (min-width: 768px) {
-  html {
-    scroll-padding-top: 2rem;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

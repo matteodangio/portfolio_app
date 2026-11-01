@@ -4,7 +4,12 @@ import { useEffect, useRef, useState } from "react";
 import DesktopRail from "@/components/layout/desktopRail";
 import MobileSectionNav from "@/components/layout/mobileSectionNav";
 import ThemeToggle from "@/components/ui/themeToggle";
-import { railSocialLinks, sectionNavItems } from "@/data/navigation";
+import DesktopTopBar from "@/components/layout/desktopTopBar";
+import {
+  desktopNavStyle,
+  railSocialLinks,
+  sectionNavItems,
+} from "@/data/navigation";
 import { useActiveSection } from "@/lib/hooks/useActiveSection";
 
 const sectionIds = sectionNavItems.map((item) => item.target);
@@ -49,20 +54,30 @@ export default function SectionRailNav() {
   const inactiveItems = sectionNavItems.filter(
     (item) => item.target !== active,
   );
+  // Both compact bars appear once the hero is scrolled past.
   const showMobileNav = active !== "home";
 
   return (
     <>
-      <DesktopRail
-        activeLabel={activeLabel}
-        activeSection={active}
-        inactiveItems={inactiveItems}
-        railOpen={railOpen}
-        setRailOpen={setRailOpen}
-        scrollToSection={scrollToSection}
-        socialLinks={railSocialLinks}
-        railHoveredRef={railHoveredRef}
-      />
+      {desktopNavStyle === "topbar" ? (
+        <DesktopTopBar
+          activeSection={active}
+          visible={showMobileNav}
+          scrollToSection={scrollToSection}
+          socialLinks={railSocialLinks}
+        />
+      ) : (
+        <DesktopRail
+          activeLabel={activeLabel}
+          activeSection={active}
+          inactiveItems={inactiveItems}
+          railOpen={railOpen}
+          setRailOpen={setRailOpen}
+          scrollToSection={scrollToSection}
+          socialLinks={railSocialLinks}
+          railHoveredRef={railHoveredRef}
+        />
+      )}
 
       <MobileSectionNav
         activeLabel={activeLabel}
